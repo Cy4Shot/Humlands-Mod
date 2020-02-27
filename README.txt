@@ -1,53 +1,7 @@
--------------------------------------------
-Source installation information for modders
--------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
+Ok everyone, here is the hopefully exciting thing I want to have for the Turty's Productions Discord Server. So I am going to be starting a new mod, but with a twist, so this mod is actually undecided as of me writing this, but basically this is a mod in which anyone can work on. I know this sounds insane and crazy, but I think this can work. My idea is that every week on a Sunday, I will make a video on the current progress of the mod, showing everything that has been added throughout that week. Now this mod is going to be a themed mod, and therefore not a Kitchen Sink Mod. My idea for the theme is some sort of dimension, but that's not fully decided yet of course. This mod will be for 1.15.2. 
 
-Note also that the patches are built against "unrenamed" MCP source code (aka
-srgnames) - this means that you will not be able to read them directly against
-normal code.
+The way you can contribute to this is through the GitHub repository: https://github.com/DaRealTurtyWurty/coming-soon. All you have to do is fork the repository to your own and then you can add whatever changes you like to it. Once you are done with your changes you can make a pull request on the main mod's repository and I will verify the request. If it is valid, I will accept it.
 
-Source pack installation information:
+TDLR: I'm sorry this is a bad explanation, but basically this is just a mod which anyone can contribute to which I will be showcasing every Sunday on my YouTube channel. If you are confused, don't worry, I will be creating a video on this soon!
 
-Standalone source installation
-==============================
-
-See the Forge Documentation online for more detailed instructions:
-http://mcforge.readthedocs.io/en/latest/gettingstarted/
-
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
-
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: "gradlew genEclipseRuns" (./gradlew genEclipseRuns if you are on Mac/Linux)
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run "gradlew eclipse" to generate the project.
-(Current Issue)
-4. Open Project > Run/Debug Settings > Edit runClient and runServer > Environment
-5. Edit MOD_CLASSES to show [modid]%%[Path]; 2 times rather then the generated 4.
-
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: "gradlew genIntellijRuns" (./gradlew genIntellijRuns if you are on Mac/Linux)
-4. Refresh the Gradle Project in IDEA if required.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can run "gradlew --refresh-dependencies" to refresh the local cache. "gradlew clean" to reset everything {this does not affect your code} and then start the processs again.
-
-Should it still not work, 
-Refer to #ForgeGradle on EsperNet for more information about the gradle environment.
-or the Forge Project Discord discord.gg/UvedJ9m
-
-Forge source installation
-=========================
-MinecraftForge ships with this code and installs it as part of the forge
-installation process, no further action is required on your part.
-
-LexManos' Install Video
-=======================
-https://www.youtube.com/watch?v=8VEdtQLuLO0&feature=youtu.be
-
-For more details update more often refer to the Forge Forums:
-http://www.minecraftforge.net/forum/index.php/topic,14048.0.html
+You can make suggestions for the mod in https://discordapp.com/channels/621352915034177566/682682576703586415.
