@@ -25,6 +25,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class HumlandsMod {
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final String MOD_ID = "humlands";
+	public static String DIMENSION_PROFILE = "default";
+	public static int DIMENSION_ID = 753;
 
 	public HumlandsMod() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
