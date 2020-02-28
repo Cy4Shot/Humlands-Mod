@@ -4,11 +4,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.turtysproductions.humlands.init.BlockInit;
+import com.turtysproductions.humlands.init.DimensionInit;
 import com.turtysproductions.humlands.item.HumlandsTab;
+import com.turtysproductions.humlands.world.dimension.HumlandsModDimension;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.ModDimension;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,10 +26,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod("humlands")
 public class HumlandsMod {
+	
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final String MOD_ID = "humlands";
-	public static String DIMENSION_PROFILE = "default";
-	public static int DIMENSION_ID = 753;
 
 	public HumlandsMod() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -79,5 +81,10 @@ public class HumlandsMod {
     				});
     		LOGGER.debug("Registered BlockItems");
     	}
+		
+		@SubscribeEvent
+		public static void registerDimension(final RegistryEvent.Register<ModDimension> event) {
+			event.getRegistry().register(new HumlandsModDimension().setRegistryName(DimensionInit.DIMENSION_ID));
+		}
 	}
 }
