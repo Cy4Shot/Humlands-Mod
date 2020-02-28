@@ -55,7 +55,7 @@ public class HumlandsDimension extends Dimension {
 
 	@Override
 	public Vec3d getFogColor(float celestialAngle, float partialTicks) {
-		return null;
+		return Vec3d.ZERO;
 	}
 
 	@Override
