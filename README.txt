@@ -4,4 +4,4 @@ The way you can contribute to this is through the GitHub repository: https://git
 
 TDLR: I'm sorry this is a bad explanation, but basically this is just a mod which anyone can contribute to which I will be showcasing every Sunday on my YouTube channel. If you are confused, don't worry, I will be creating a video on this soon!
 
-You can make suggestions for the mod in https://discordapp.com/channels/621352915034177566/682682576703586415.
+You can make suggestions for the mod in https://discordapp.com/channels/621352915034177566/682682576703586415. 
