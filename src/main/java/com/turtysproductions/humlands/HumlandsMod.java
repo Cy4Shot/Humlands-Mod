@@ -68,9 +68,6 @@ public class HumlandsMod {
 
 	@Mod.EventBusSubscriber(modid = HumlandsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 	public static class RegistryEvents {
-		
-		@ObjectHolder(HumlandsMod.MOD_ID + ":humlands")
-		public static ModDimension DIMENSION = null;
 
 		@SubscribeEvent
 		public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
@@ -93,11 +90,6 @@ public class HumlandsMod {
 						registry.register(blockItem);
 					});
 			LOGGER.debug("Registered BlockItems");
-		}
-
-		@SubscribeEvent
-		public static void onDimensionRegistryEvent(final RegistryEvent.Register<ModDimension> event) {
-			event.getRegistry().register(new HumlandsModDimension().setRegistryName("humlands:humlands"));
 		}
 	}
 
