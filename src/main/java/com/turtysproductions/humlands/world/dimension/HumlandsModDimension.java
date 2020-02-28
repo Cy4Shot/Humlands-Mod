@@ -11,6 +11,6 @@ public class HumlandsModDimension extends ModDimension {
 
 	@Override
 	public BiFunction<World, DimensionType, ? extends Dimension> getFactory() {
-		return HumlandsModDimension::new;
+		return HumlandsDimension::new;
 	}
 }

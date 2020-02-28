@@ -1,5 +1,7 @@
 package com.turtysproductions.humlands.item;
 
+import com.turtysproductions.humlands.init.ItemInit;
+
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -13,6 +15,6 @@ public class HumlandsTab extends ItemGroup {
 
 	@Override
 	public ItemStack createIcon() {
-		return null;
+		return new ItemStack(ItemInit.TEST_ITEM.get());
 	}
 }

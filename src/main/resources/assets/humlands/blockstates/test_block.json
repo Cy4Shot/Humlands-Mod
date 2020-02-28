@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": {"model": "examplemod:block/example_block"}
+        "": {"model": "examplemod:block/test_block"}
     }
 }

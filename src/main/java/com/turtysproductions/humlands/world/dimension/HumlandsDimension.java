@@ -11,8 +11,8 @@ import net.minecraft.world.gen.ChunkGenerator;
 
 public class HumlandsDimension extends Dimension {
 
-	public HumlandsDimension(World worldIn, DimensionType typeIn, float partialTicksIn) {
-		super(worldIn, typeIn, partialTicksIn);
+	public HumlandsDimension(World worldIn, DimensionType typeIn) {
+		super(worldIn, typeIn, 0.0f);
 	}
 
 	@Override
