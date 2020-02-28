@@ -22,6 +22,6 @@ public class HumlandsBiomeProvider extends BiomeProvider {
 
 	@Override
 	public Biome getNoiseBiome(int x, int y, int z) {
-		return ((Biome[]) biomeList.toArray())[0];
+		return Biomes.PLAINS;
 	}
 }

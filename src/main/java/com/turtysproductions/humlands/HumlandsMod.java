@@ -4,9 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.turtysproductions.humlands.init.BlockInit;
+import com.turtysproductions.humlands.init.DimensionInit;
 import com.turtysproductions.humlands.init.ItemInit;
 import com.turtysproductions.humlands.item.HumlandsTab;
-import com.turtysproductions.humlands.world.dimension.HumlandsModDimension;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -96,7 +96,7 @@ public class HumlandsMod {
 		@SubscribeEvent
 		public static void registerDimension(final RegisterDimensionsEvent event) {
 			if (DimensionType.byName(DIMENSION_TYPE) == null) {
-				DimensionManager.registerDimension(DIMENSION_TYPE, new HumlandsModDimension(), null, true);
+				DimensionManager.registerDimension(DIMENSION_TYPE, DimensionInit.HUMLANDS_DIM, null, true);
 			}
 		}
 	}

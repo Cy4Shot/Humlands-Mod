@@ -14,7 +14,7 @@ import net.minecraftforge.registries.ObjectHolder;
 public class DimensionInit
 {
     @ObjectHolder("humlands:humlands")
-    public static final ModDimension YOUR_MOD_DIMENSION = null;
+    public static final ModDimension HUMLANDS_DIM = null;
     
   @SubscribeEvent
     public static void onDimensionRegistryEvent(RegistryEvent.Register<ModDimension> event)
