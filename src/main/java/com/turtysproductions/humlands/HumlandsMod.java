@@ -98,6 +98,7 @@ public class HumlandsMod {
 			if (DimensionType.byName(DIMENSION_TYPE) == null) {
 				DimensionManager.registerDimension(DIMENSION_TYPE, DimensionInit.HUMLANDS_DIM, null, true);
 			}
+			LOGGER.info("Dimension Registered!");
 		}
 	}
 }
