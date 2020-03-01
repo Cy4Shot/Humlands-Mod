@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.world.dimension;
+package com.turtysproductions.humlands.common.world.dimension;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;

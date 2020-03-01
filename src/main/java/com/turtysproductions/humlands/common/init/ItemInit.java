@@ -1,8 +1,8 @@
-package com.turtysproductions.humlands.init;
+package com.turtysproductions.humlands.common.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.item.HumlandsTab;
-import com.turtysproductions.humlands.objects.items.GlintingItem;
+import com.turtysproductions.humlands.common.items.GlintingItem;
+import com.turtysproductions.humlands.common.tab.HumlandsTab;
 
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;

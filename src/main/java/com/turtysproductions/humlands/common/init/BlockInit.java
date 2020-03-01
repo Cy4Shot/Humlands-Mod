@@ -1,8 +1,8 @@
-package com.turtysproductions.humlands.init;
+package com.turtysproductions.humlands.common.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.objects.blocks.ScrapGlassBlock;
-import com.turtysproductions.humlands.objects.blocks.ScrapSandBlock;
+import com.turtysproductions.humlands.common.blocks.ScrapGlassBlock;
+import com.turtysproductions.humlands.common.blocks.ScrapSandBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;

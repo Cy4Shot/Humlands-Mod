@@ -1,8 +1,10 @@
-package com.turtysproductions.humlands.world.dimension;
+package com.turtysproductions.humlands.common.world.dimension;
 
 import net.minecraft.world.gen.GenerationSettings;
 
+@SuppressWarnings("unused")
 public class HumlandsGenSettings extends GenerationSettings {
+
 	   private final int field_202212_j = 4;
 	   private final int field_202213_k = 4;
 	   private final int field_202214_l = -1;

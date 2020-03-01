@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.world.dimension;
+package com.turtysproductions.humlands.common.world.dimension;
 
 import java.util.Random;
 import java.util.Set;
@@ -11,6 +11,7 @@ import net.minecraft.world.biome.provider.BiomeProvider;
 
 public class HumlandsBiomeProvider extends BiomeProvider {
 
+	@SuppressWarnings("unused")
 	private Random rand;
 
 	public HumlandsBiomeProvider() {

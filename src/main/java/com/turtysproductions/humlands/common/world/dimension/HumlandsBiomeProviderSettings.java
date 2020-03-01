@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.world.dimension;
+package com.turtysproductions.humlands.common.world.dimension;
 
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.provider.IBiomeProviderSettings;

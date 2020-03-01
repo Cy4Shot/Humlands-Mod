@@ -1,7 +1,7 @@
-package com.turtysproductions.humlands.init;
+package com.turtysproductions.humlands.common.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.world.dimension.HumlandsModDimension;
+import com.turtysproductions.humlands.common.world.dimension.HumlandsModDimension;
 
 import net.minecraftforge.common.ModDimension;
 import net.minecraftforge.event.RegistryEvent;
