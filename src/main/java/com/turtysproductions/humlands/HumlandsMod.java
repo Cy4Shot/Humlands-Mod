@@ -8,6 +8,8 @@ import com.turtysproductions.humlands.init.DimensionInit;
 import com.turtysproductions.humlands.init.ItemInit;
 import com.turtysproductions.humlands.item.HumlandsTab;
 
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -53,6 +55,7 @@ public class HumlandsMod {
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {
+		RenderTypeLookup.setRenderLayer(BlockInit.SCRAP_GLASS.get(), RenderType.getTranslucent());
 
 	}
 
