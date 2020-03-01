@@ -1,8 +1,11 @@
 package com.turtysproductions.humlands;
 
+import javax.annotation.Nonnull;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.common.base.Preconditions;
 import com.turtysproductions.humlands.common.init.BlockInit;
 import com.turtysproductions.humlands.common.init.DimensionInit;
 import com.turtysproductions.humlands.common.init.ItemInit;
@@ -29,6 +32,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @Mod("humlands")
 public class HumlandsMod {
@@ -91,6 +95,23 @@ public class HumlandsMod {
 						registry.register(blockItem);
 					});
 			LOGGER.debug("Registered BlockItems");
+		}
+		
+		@Nonnull
+		private static <T extends IForgeRegistryEntry<T>> T setup(@Nonnull final T entry, @Nonnull final String name)
+		{
+			Preconditions.checkNotNull(name, "Name to assign to entry cannot be null!");
+			return setup(entry, new ResourceLocation(HumlandsMod.MOD_ID, name));
+		}
+
+		@Nonnull
+		private static <T extends IForgeRegistryEntry<T>> T setup(@Nonnull final T entry,
+				@Nonnull final ResourceLocation registryName)
+		{
+			Preconditions.checkNotNull(entry, "Entry cannot be null!");
+			Preconditions.checkNotNull(registryName, "Registry name to assign to entry cannot be null!");
+			entry.setRegistryName(registryName);
+			return entry;
 		}
 	}
 

@@ -21,7 +21,7 @@ public class ItemModelsDataGen extends ItemModelProvider {
 		// blocks
 		blockParented(BlockInit.SCRAP_GLASS.get(), "block/scrap_glass");
 		blockParented(BlockInit.SCRAP_SAND.get(), "block/scrap_sand");
-		blockParented(BlockInit.SCRAP_SANDSTONE.get(), "block/scrap_sand_stone");
+		blockParented(BlockInit.SCRAP_SANDSTONE.get(), "block/scrap_sandstone");
 		blockParented(BlockInit.TEST_BLOCK.get(), "block/test_block");
 		/*
 		 * not implemented blockParented(BlockInit.SIFTER.get(), "block/sifter");
@@ -31,11 +31,9 @@ public class ItemModelsDataGen extends ItemModelProvider {
 		itemGenerated(ItemInit.ROYAL_FLAN_RAW.get(), "item/royal_flan_raw");
 		itemGenerated(ItemInit.ROYAL_FLAN.get(), "item/royal_flan");
 		itemGenerated(ItemInit.ROYAL_SLIME.get(), "item/royal_slime");
-		itemGenerated(ItemInit.SUPER_ROYAL_FLAN_RAW.get(), "item/super_royal_flan_raw");
-		itemGenerated(ItemInit.SUPER_ROYAL_FLAN.get(), "item/super_royal_flan");
-		itemGenerated(ItemInit.SUPER_ROYAL_SLIME.get(), "item/super_royal_slime");
-
-		itemGenerated(ItemInit.TEST_ITEM.get(), "item/test_item");
+		itemGenerated(ItemInit.SUPER_ROYAL_FLAN_RAW.get(), "item/royal_flan_raw");
+		itemGenerated(ItemInit.SUPER_ROYAL_FLAN.get(), "item/royal_flan");
+		itemGenerated(ItemInit.SUPER_ROYAL_SLIME.get(), "item/royal_slime");
 	}
 
 	public void blockParented(Block block, String model) {
@@ -51,7 +49,7 @@ public class ItemModelsDataGen extends ItemModelProvider {
 
 	public void itemGenerated(Item item, String texture) {
 		HumlandsMod.LOGGER.debug("Creating generated item model for " + item.getRegistryName());
-		getBuilder(item.getRegistryName().getPath()).parent(getExistingFile(modLoc("item/generated"))).texture("layer0",
+		getBuilder(item.getRegistryName().getPath()).parent(getExistingFile(mcLoc("item/generated"))).texture("layer0",
 				modLoc(texture));
 	}
 
