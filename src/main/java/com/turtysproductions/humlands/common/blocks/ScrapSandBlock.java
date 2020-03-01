@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.objects.blocks;
+package com.turtysproductions.humlands.common.blocks;
 
 import net.minecraft.block.FallingBlock;
 

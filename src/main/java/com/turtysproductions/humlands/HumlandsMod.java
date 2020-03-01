@@ -3,10 +3,10 @@ package com.turtysproductions.humlands;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.turtysproductions.humlands.init.BlockInit;
-import com.turtysproductions.humlands.init.DimensionInit;
-import com.turtysproductions.humlands.init.ItemInit;
-import com.turtysproductions.humlands.item.HumlandsTab;
+import com.turtysproductions.humlands.common.init.BlockInit;
+import com.turtysproductions.humlands.common.init.DimensionInit;
+import com.turtysproductions.humlands.common.init.ItemInit;
+import com.turtysproductions.humlands.common.tab.HumlandsTab;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
