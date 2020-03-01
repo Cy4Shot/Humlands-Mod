@@ -1,8 +1,4 @@
 {
     "item.humlands.test_item": "Test Item",
-    "block.jumlands.test_block": "Test Block",
-    
-    "item.humlands.royal_slime": "Royal Slime",
-    "item.humlands.royal_flan_raw": "Raw Royal Flan",
-    "item.humlands.royal_flan": "Royal Flan"
+    "block.jumlands.test_block": "Test Block"
 }
