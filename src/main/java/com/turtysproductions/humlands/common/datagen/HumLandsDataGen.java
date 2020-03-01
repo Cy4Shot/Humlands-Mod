@@ -15,14 +15,19 @@ import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class HumLandsDataGen {
+	/*
+	 * Data will be generated in "src/generated"
+	 */
+	
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
-		HumlandsMod.LOGGER.debug("Starting server side data generators");
 		DataGenerator generator = event.getGenerator();
 		if (event.includeServer()) {
+			HumlandsMod.LOGGER.debug("Starting server side data generators");
 			generator.addProvider(new LootTablesDataGen(generator));
 			generator.addProvider(new BlockTagsDataGen(generator));
 			generator.addProvider(new ItemTagsDataGen(generator));
+			HumlandsMod.LOGGER.debug("Finished server side data generators");			
 		}
 
 		if (event.includeClient()) {
@@ -30,6 +35,7 @@ public class HumLandsDataGen {
 			generator.addProvider(new BlockStatesDataGen(generator, HumlandsMod.MOD_ID, event.getExistingFileHelper()));
 			generator.addProvider(new ItemModelsDataGen(generator, HumlandsMod.MOD_ID, event.getExistingFileHelper()));
 			generator.addProvider(new LanguagesDataGen(generator, HumlandsMod.MOD_ID));
+			HumlandsMod.LOGGER.debug("Finished client side data generators");
 		}
 	}
 }

@@ -17,13 +17,11 @@ public class BlockStatesDataGen extends BlockStateProvider {
 	protected void registerStatesAndModels() {
 		singleTextureBlock(BlockInit.SCRAP_GLASS.get(), "scrap_glass", "block/scrap_glass");
 		singleTextureBlock(BlockInit.SCRAP_SAND.get(), "scrap_sand", "block/scrap_sand");
-		singleTextureBlock(BlockInit.SCRAP_SANDSTONE.get(), "scrap_sandstone", "block/scrap_sandstone");
-		singleTextureBlock(BlockInit.TEST_BLOCK.get(), "test_block", "block/test_block");
 	}
 
 	public void singleTextureBlock(Block block, String model, String textureName) {
 		simpleBlock(block);
-		HumlandsMod.LOGGER.debug("Creating block states model for :" + block);
+		HumlandsMod.LOGGER.debug("Creating block states model for :" + block.getRegistryName());
 	}
 
 	@Override
