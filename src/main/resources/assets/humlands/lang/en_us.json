@@ -1,4 +1,16 @@
 {
     "item.humlands.test_item": "Test Item",
-    "block.jumlands.test_block": "Test Block"
+    "block.jumlands.test_block": "Test Block",
+    
+    "item.humlands.royal_slime": "Royal Slime",
+    "item.humlands.royal_flan_raw": "Raw Royal Flan",
+    "item.humlands.royal_flan": "Royal Flan",
+    "item.humlands.super_royal_slime": "Super Royal Slime",
+    "item.humlands.super_royal_flan_raw": "Super Raw Royal Flan",
+    "item.humlands.super_royal_flan": "Super Royal Flan",
+    
+    "block.humlands.scrap_sand": "Scrap Sand",
+    "block.humlands.scrap_sandstone": "Scrap Sandstone",
+    "block.humlands.scrap_glass": "Scrap Glass"
+    
 }
