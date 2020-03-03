@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.objects.items;
+package com.turtysproductions.humlands.common.items;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
