@@ -26,7 +26,4 @@ public class ItemInit {
 	public static final RegistryObject<Item> SUPER_ROYAL_SLIME = ITEMS.register("super_royal_slime", () -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC)));
 	public static final RegistryObject<Item> SUPER_ROYAL_FLAN = ITEMS.register("super_royal_flan", () -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC).food(new Food.Builder().hunger(8).saturation(4.0f).effect(new EffectInstance(Effects.SPEED, 6000, 5), 1).effect(new EffectInstance(Effects.HEALTH_BOOST), 1).build())));
 	public static final RegistryObject<Item> SUPER_ROYAL_FLAN_RAW = ITEMS.register("super_royal_flan_raw", () -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC)));
-	
-	
-	
 }

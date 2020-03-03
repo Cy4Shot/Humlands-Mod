@@ -1,25 +1,15 @@
 {
+	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-<<<<<<< Updated upstream
-		"0": "humlands:blocks/sifterarm3",
-		"1": "humlands:blocks/sifterarm2",
-		"2": "humlands:blocks/lifterlower",
-		"3": "humlands:blocks/sifterarm1",
-		"4": "humlands:blocks/sifterarm4",
-		"5": "humlands:blocks/filterupper",
-		"6": "humlands:blocks/sifterbody",
-		"particle": "humlands:blocks/sifterarm3"
-=======
-		"0": "humlands:block/sifterarm3",
-		"1": "humlands:block/sifterarm2",
-		"2": "humlands:block/lifterlower",
-		"3": "humlands:block/sifterarm1",
-		"4": "humlands:block/sifterarm4",
-		"5": "humlands:block/filterupper",
-		"6": "humlands:block/sifterbody",
-		"particle": "humlands:block/sifterarm3"
->>>>>>> Stashed changes
+		"0": "Desktop/sifterarm3",
+		"1": "Desktop/sifterarm2",
+		"2": "Desktop/lifterlower",
+		"3": "Desktop/sifterarm1",
+		"4": "Desktop/sifterarm4",
+		"5": "Desktop/filterupper",
+		"6": "Desktop/sifterbody",
+		"particle": "Desktop/sifterarm3"
 	},
 	"elements": [
 		{
@@ -51,16 +41,16 @@
 		},
 		{
 			"name": "SifterArm1",
-			"from": [6, 3, 12],
-			"to": [9, 6, 27],
-			"rotation": {"angle": -45, "axis": "x", "origin": [8, 8, 8]},
+			"from": [6, 12, 10],
+			"to": [9, 27, 13],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 8, 8]},
 			"faces": {
-				"north": {"uv": [3, 0, 4.5, 1.5], "rotation": 180, "texture": "#3"},
-				"east": {"uv": [4.5, 4.5, 6, 12.25], "rotation": 270, "texture": "#3"},
-				"south": {"uv": [1.5, 0, 3, 1.25], "texture": "#3"},
-				"west": {"uv": [4.5, 4.5, 6, 12.5], "rotation": 90, "texture": "#3"},
-				"up": {"uv": [0, 0, 1.5, 8], "rotation": 180, "texture": "#3"},
-				"down": {"uv": [1.5, 1.75, 3, 9.5], "texture": "#3"}
+				"north": {"uv": [0, 0, 1.5, 8], "texture": "#3"},
+				"east": {"uv": [4.5, 4.5, 6, 12.25], "texture": "#3"},
+				"south": {"uv": [1.5, 1.75, 3, 9.5], "texture": "#3"},
+				"west": {"uv": [4.5, 4.5, 6, 12.5], "texture": "#3"},
+				"up": {"uv": [1.5, 0, 3, 1.25], "texture": "#3"},
+				"down": {"uv": [3, 0, 4.5, 1.5], "texture": "#3"}
 			}
 		},
 		{
@@ -92,16 +82,16 @@
 		},
 		{
 			"name": "SifterArm4",
-			"from": [6, 6, 25],
-			"to": [9, 19, 27],
-			"rotation": {"angle": -45, "axis": "x", "origin": [8, 8, 8]},
+			"from": [6, 25, -3],
+			"to": [9, 27, 10],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 8, 8]},
 			"faces": {
-				"north": {"uv": [1.5, 1.5, 3, 8], "rotation": 180, "texture": "#4"},
-				"east": {"uv": [3, 3, 9.25, 4], "rotation": 270, "texture": "#4"},
-				"south": {"uv": [0, 0, 1.5, 6.5], "texture": "#4"},
-				"west": {"uv": [1.5, 0, 8, 1], "rotation": 90, "texture": "#4"},
-				"up": {"uv": [1.5, 0.5, 2.25, 1], "rotation": 180, "texture": "#4"},
-				"down": {"uv": [1.5, 0, 2.5, 0.75], "texture": "#4"}
+				"north": {"uv": [1.5, 0.5, 2.25, 1], "texture": "#4"},
+				"east": {"uv": [3, 3, 9.25, 4], "texture": "#4"},
+				"south": {"uv": [1.5, 0, 2.5, 0.75], "texture": "#4"},
+				"west": {"uv": [1.5, 0, 8, 1], "texture": "#4"},
+				"up": {"uv": [0, 0, 1.5, 6.5], "texture": "#4"},
+				"down": {"uv": [1.5, 1.5, 3, 8], "texture": "#4"}
 			}
 		},
 		{
@@ -118,47 +108,9 @@
 			}
 		}
 	],
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [75, 45, 0],
-			"translation": [0, 2.5, 0],
-			"scale": [0.375, 0.375, 0.375]
-		},
-		"thirdperson_lefthand": {
-			"rotation": [75, 45, 0],
-			"translation": [0, 2.5, 0],
-			"scale": [0.375, 0.375, 0.375]
-		},
-		"firstperson_righthand": {
-			"rotation": [0, 45, 0],
-			"scale": [0.4, 0.4, 0.4]
-		},
-		"firstperson_lefthand": {
-			"rotation": [0, 225, 0],
-			"scale": [0.4, 0.4, 0.4]
-		},
-		"ground": {
-			"translation": [0, -1.75, 0],
-			"scale": [0.25, 0.25, 0.25]
-		},
-		"gui": {
-			"rotation": [30, 225, 0],
-			"scale": [0.625, 0.625, 0.625]
-		},
-		"head": {
-			"rotation": [0, -90, 0],
-			"translation": [0, -54.75, 0],
-			"scale": [4, 4, 4]
-		},
-		"fixed": {
-			"rotation": [0, -90, 0],
-			"translation": [0, -2.75, 0],
-			"scale": [0.5, 0.5, 0.5]
-		}
-	},
 	"groups": [
 		{
-			"name": "VoxelShapes",
+			"name": "Sifter",
 			"origin": [8, 8, 8],
 			"children": [0, 1, 2, 3, 4, 5, 6]
 		}
