@@ -26,16 +26,14 @@ public class HumLandsDataGen {
 			HumlandsMod.LOGGER.debug("Starting server side data generators");
 			generator.addProvider(new LootTablesDataGen(generator));
 			generator.addProvider(new BlockTagsDataGen(generator));
-			generator.addProvider(new ItemTagsDataGen(generator));
-			HumlandsMod.LOGGER.debug("Finished server side data generators");			
+			generator.addProvider(new ItemTagsDataGen(generator));		
 		}
 
 		if (event.includeClient()) {
 			HumlandsMod.LOGGER.debug("Starting client side data generators");
 			generator.addProvider(new BlockStatesDataGen(generator, HumlandsMod.MOD_ID, event.getExistingFileHelper()));
 			generator.addProvider(new ItemModelsDataGen(generator, HumlandsMod.MOD_ID, event.getExistingFileHelper()));
-			generator.addProvider(new LanguagesDataGen(generator, HumlandsMod.MOD_ID));
-			HumlandsMod.LOGGER.debug("Finished client side data generators");
+			generator.addProvider(new LanguagesDataGen(generator, "en_us"));
 		}
 	}
 }

@@ -1,6 +1,6 @@
 3f0031d3f680dc0d7aaa99ffa2724ba19fcd941d assets\humlands\blockstates\scrap_glass.json
 63f4dd0524c3ae96c6e071e2189dbfde7aeca201 assets\humlands\blockstates\scrap_sand.json
-7500686c79b99c265eb4fdf0d95199dfed8d3860 assets\humlands\lang\humlands.json
+3de649c842b919f7a356acad42cc11349cfd090f assets\humlands\lang\en_us.json
 518f2a2b4a5e5c4e1e67681209ded1766348fa92 assets\humlands\models\block\scrap_glass.json
 b0b4b95813a8ed6dbb855a8b611f00f9173b120a assets\humlands\models\block\scrap_sand.json
 e70d997352eb193687119a7eb9ee92ed4c99704e assets\humlands\models\item\royal_flan.json
@@ -18,4 +18,5 @@ f92782a79102ed0823b7d38ac37bb8d79654bbfc assets\humlands\models\item\super_royal
 4153e2d7a230d0ad8e685a27fecd142c510e51b2 data\humlands\loot_tables\blocks\scrap_glass.json
 e0a3c2bc1c1a25998820b079456734923a5983ce data\humlands\loot_tables\blocks\scrap_sand.json
 85bfa5dc6a8c2d7d2475e940106153df3db69245 data\humlands\loot_tables\blocks\scrap_sandstone.json
+df00a1bf253572220e6e756bc3031fcdabf721e5 data\humlands\loot_tables\blocks\sifter.json
 fcaecb1135bdd46047f66f4e1a54650ac86fc284 data\humlands\loot_tables\blocks\test_block.json

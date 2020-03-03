@@ -16,10 +16,11 @@ public class LootTablesDataGen extends LootTableBaseProvider {
 		lootTables.put(BlockInit.SCRAP_SAND.get(), createStandardTable("scrap_sand", BlockInit.SCRAP_SAND.get()));
 		lootTables.put(BlockInit.SCRAP_SANDSTONE.get(), createStandardTable("scrap_sandstone", BlockInit.SCRAP_SANDSTONE.get()));
 		lootTables.put(BlockInit.TEST_BLOCK.get(), createStandardTable("test_block", BlockInit.TEST_BLOCK.get()));
+		lootTables.put(BlockInit.SIFTER.get(), createStandardTable("sifter", BlockInit.SIFTER.get()));
 	}
 
 	@Override
 	public String getName() {
-		return "Humlands Mod - Languages";
+		return "Humlands Mod - Loottables";
 	}
 }
