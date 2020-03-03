@@ -88,6 +88,6 @@ public abstract class LootTableBaseProvider extends LootTableProvider {
 
 	@Override
 	public String getName() {
-		return "Humlands Mod - LootTables";
+		return "Humlands Mod - Loottables Base";
 	}
 }

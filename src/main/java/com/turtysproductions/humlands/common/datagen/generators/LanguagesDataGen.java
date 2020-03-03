@@ -18,6 +18,7 @@ public class LanguagesDataGen extends LanguageProvider {
 		add("block.humlands.scrap_sand", "Scrap Sand");
 		add("block.humlands.scrap_sandstone", "Scrap Sandstone");
 		add("block.humlands.scrap_glass", "Scrap Glass");
+		add("blocks.humlands.sifter", "Sifter");
 
 		add("item.humlands.royal_slime", "Royal Slime");
 		add("item.humlands.royal_flan_raw", "Raw Royal Flan");
@@ -25,11 +26,12 @@ public class LanguagesDataGen extends LanguageProvider {
 		add("item.humlands.super_royal_slime", "Super Royal Slime");
 		add("item.humlands.super_royal_flan_raw", "Super Raw Royal Flan");
 		add("item.humlands.super_royal_flan", "Super Royal Flan");
-		add("blocks.humlands.sifter", "Sifter");
 	}
 
 	@Override
 	public String getName() {
 		return "Humlands Mod - Languages";
 	}
+	
+	
 }
