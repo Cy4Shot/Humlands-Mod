@@ -32,6 +32,4 @@ public class LanguagesDataGen extends LanguageProvider {
 	public String getName() {
 		return "Humlands Mod - Languages";
 	}
-	
-	
 }
