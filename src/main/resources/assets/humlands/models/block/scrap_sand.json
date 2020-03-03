@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "humlands:blocks/scrap_sand"
+        "all": "humlands:block/scrap_sand"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "humlands:blocks/test_block"
+        "all": "humlands:block/test_block"
     }
 }
