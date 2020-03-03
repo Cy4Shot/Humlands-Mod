@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.block;
+package com.turtysproductions.humlands.common.blocks;
 
 import java.util.stream.Stream;
 

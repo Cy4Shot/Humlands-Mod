@@ -25,6 +25,7 @@ public class LanguagesDataGen extends LanguageProvider {
 		add("item.humlands.super_royal_slime", "Super Royal Slime");
 		add("item.humlands.super_royal_flan_raw", "Super Raw Royal Flan");
 		add("item.humlands.super_royal_flan", "Super Royal Flan");
+		add("blocks.humlands.sifter", "Sifter");
 	}
 
 	@Override
