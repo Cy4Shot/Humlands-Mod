@@ -9,6 +9,7 @@ import com.google.common.base.Preconditions;
 import com.turtysproductions.humlands.common.init.BiomeInit;
 import com.turtysproductions.humlands.common.init.BlockInit;
 import com.turtysproductions.humlands.common.init.DimensionInit;
+import com.turtysproductions.humlands.common.init.FluidInit;
 import com.turtysproductions.humlands.common.init.ItemInit;
 import com.turtysproductions.humlands.common.tab.HumlandsTab;
 
