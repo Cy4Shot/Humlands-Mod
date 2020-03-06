@@ -11,7 +11,6 @@ import net.minecraft.world.biome.provider.BiomeProvider;
 
 public class HumlandsBiomeProvider extends BiomeProvider {
 
-	@SuppressWarnings("unused")
 	private Random rand;
 
 	public HumlandsBiomeProvider() {
