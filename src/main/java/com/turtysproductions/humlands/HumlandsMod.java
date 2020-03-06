@@ -52,6 +52,8 @@ public class HumlandsMod {
 		BiomeInit.BIOMES.register(bus);
 		BlockInit.BLOCKS.register(bus);
 		ItemInit.ITEMS.register(bus);
+		FluidInit.FLUIDS.register(bus);
+		FluidInit.BLOCKS.register(bus);
 
 
 		MinecraftForge.EVENT_BUS.register(this);
