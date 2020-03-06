@@ -28,12 +28,12 @@ public class ItemModelsDataGen extends ItemModelProvider {
 		 */
 
 		// items
-		itemGenerated(ItemInit.ROYAL_FLAN_RAW.get(), "item/royal_flan_raw");
-		itemGenerated(ItemInit.ROYAL_FLAN.get(), "item/royal_flan");
-		itemGenerated(ItemInit.ROYAL_SLIME.get(), "item/royal_slime");
-		itemGenerated(ItemInit.SUPER_ROYAL_FLAN_RAW.get(), "item/royal_flan_raw");
-		itemGenerated(ItemInit.SUPER_ROYAL_FLAN.get(), "item/royal_flan");
-		itemGenerated(ItemInit.SUPER_ROYAL_SLIME.get(), "item/royal_slime");
+		itemGenerated(ItemInit.ROYAL_FLAN_RAW.get(), "items/royal_flan_raw");
+		itemGenerated(ItemInit.ROYAL_FLAN.get(), "items/royal_flan");
+		itemGenerated(ItemInit.ROYAL_SLIME.get(), "items/royal_slime");
+		itemGenerated(ItemInit.SUPER_ROYAL_FLAN_RAW.get(), "items/royal_flan_raw");
+		itemGenerated(ItemInit.SUPER_ROYAL_FLAN.get(), "items/royal_flan");
+		itemGenerated(ItemInit.SUPER_ROYAL_SLIME.get(), "items/royal_slime");
 	}
 
 	public void blockParented(Block block, String model) {
