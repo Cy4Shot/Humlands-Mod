@@ -1,9 +1,9 @@
-package com.turtysproductions.humlands.common.init;
+package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.items.FluxVial;
 import com.turtysproductions.humlands.common.items.GlintingItem;
-import com.turtysproductions.humlands.common.tab.HumlandsTab;
+import com.turtysproductions.humlands.core.tab.HumlandsTab;
 
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Food;

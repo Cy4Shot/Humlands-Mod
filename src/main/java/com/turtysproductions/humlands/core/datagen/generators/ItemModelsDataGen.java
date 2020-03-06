@@ -1,8 +1,8 @@
-package com.turtysproductions.humlands.common.datagen.generators;
+package com.turtysproductions.humlands.core.datagen.generators;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.common.init.BlockInit;
-import com.turtysproductions.humlands.common.init.ItemInit;
+import com.turtysproductions.humlands.core.init.BlockInit;
+import com.turtysproductions.humlands.core.init.ItemInit;
 
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;

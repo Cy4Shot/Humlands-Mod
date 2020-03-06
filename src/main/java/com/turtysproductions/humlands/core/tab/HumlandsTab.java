@@ -1,6 +1,6 @@
-package com.turtysproductions.humlands.common.tab;
+package com.turtysproductions.humlands.core.tab;
 
-import com.turtysproductions.humlands.common.init.ItemInit;
+import com.turtysproductions.humlands.core.init.ItemInit;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

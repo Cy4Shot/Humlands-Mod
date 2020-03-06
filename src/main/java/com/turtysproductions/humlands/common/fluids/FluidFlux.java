@@ -1,8 +1,8 @@
 package com.turtysproductions.humlands.common.fluids;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.common.init.FluidInit;
-import com.turtysproductions.humlands.common.init.ItemInit;
+import com.turtysproductions.humlands.core.init.FluidInit;
+import com.turtysproductions.humlands.core.init.ItemInit;
 
 import net.minecraft.block.Block.Properties;
 import net.minecraft.block.BlockState;

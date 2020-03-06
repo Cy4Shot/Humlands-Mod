@@ -1,10 +1,10 @@
-package com.turtysproductions.humlands.common.world.dimension;
+package com.turtysproductions.humlands.core.world.dimension;
 
 import java.util.Random;
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
-import com.turtysproductions.humlands.common.init.BiomeInit;
+import com.turtysproductions.humlands.core.init.BiomeInit;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;

@@ -1,7 +1,7 @@
-package com.turtysproductions.humlands.common.init;
+package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.common.world.biomes.FarHumlandsBiome;
+import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;

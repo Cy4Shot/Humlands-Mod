@@ -3,8 +3,8 @@ package com.turtysproductions.humlands.common.items;
 import javax.annotation.Nullable;
 
 import com.turtysproductions.humlands.common.advancement.TriggerInit;
-import com.turtysproductions.humlands.common.init.FluidInit;
-import com.turtysproductions.humlands.common.init.ItemInit;
+import com.turtysproductions.humlands.core.init.FluidInit;
+import com.turtysproductions.humlands.core.init.ItemInit;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;

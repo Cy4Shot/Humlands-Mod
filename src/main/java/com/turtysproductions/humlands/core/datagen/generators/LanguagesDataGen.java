@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.datagen.generators;
+package com.turtysproductions.humlands.core.datagen.generators;
 
 import com.turtysproductions.humlands.HumlandsMod;
 

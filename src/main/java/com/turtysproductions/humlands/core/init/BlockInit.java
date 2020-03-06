@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.init;
+package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.blocks.ScrapGlassBlock;
