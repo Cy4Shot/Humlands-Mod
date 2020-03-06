@@ -13,7 +13,6 @@ public class FluidInit
 	    public static final ResourceLocation FLUX_FLOWING = new ResourceLocation("humlands:blocks/flux_flowing");
 
 	    public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MODID);
-	    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, MODID);
 	    public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS, MODID);
 
 	    public static RegistryObject<FlowingFluid> flux_fluid = FLUIDS.register("flux_fluid", () -> new ForgeFlowingFluid.Source(FluidInit.flux_fluid_properties));
