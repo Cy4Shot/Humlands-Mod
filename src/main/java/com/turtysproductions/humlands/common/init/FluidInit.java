@@ -4,13 +4,13 @@ public class FluidInit
 	public static final FluidFlux FLUIDFLUX_FLUX = null;
 	
 	public static class Tags {
-		public static final Tag<Fluid> FLUX = new FluidTags.Wrapper(new ResourceLocation(TestMod.MOD_ID, "flux_tag"));
+		public static final Tag<Fluid> FLUX = new FluidTags.Wrapper(new ResourceLocation(HumlandsMod.MOD_ID, "flux_tag"));
 	}
 	 
 	 public static final String MODID = "humlands";
 
-	    public static final ResourceLocation FLUX_STILL = new ResourceLocation("drnick:blocks/flux_still");
-	    public static final ResourceLocation FLUX_FLOWING = new ResourceLocation("drnick:blocks/flux_flowing");
+	    public static final ResourceLocation FLUX_STILL = new ResourceLocation("humlands:blocks/flux_still");
+	    public static final ResourceLocation FLUX_FLOWING = new ResourceLocation("humlands:blocks/flux_flowing");
 
 	    public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MODID);
 	    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, MODID);
