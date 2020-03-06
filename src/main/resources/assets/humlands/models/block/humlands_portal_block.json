@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "humlands:blocks/portal_block_top",
+        "side": "humlands:blocks/portal_block_side"
+    }
+}

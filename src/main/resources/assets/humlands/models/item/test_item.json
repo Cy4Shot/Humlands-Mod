@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
         "textures": {
-            "layer0": "humlands:item/test_item"
+            "layer0": "humlands:items/test_item"
         }
     }                                                                           
 }
