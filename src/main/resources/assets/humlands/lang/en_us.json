@@ -9,9 +9,14 @@
     "item.humlands.super_royal_flan_raw": "Super Raw Royal Flan",
     "item.humlands.super_royal_flan": "Super Royal Flan",
     
+    "item.humlands.flux_vial": "Flux Vial",
+    "item.humlands.full_vial": "Vial Full of Flux",
+    
     "block.humlands.scrap_sand": "Scrap Sand",
     "block.humlands.scrap_sandstone": "Scrap Sandstone",
     "block.humlands.scrap_glass": "Scrap Glass",
     
-    "block.humlands.sifter": "Sifter"    
+    "block.humlands.sifter": "Sifter"   
+    
+    "block.humlands.flux": "Flux"
 }
