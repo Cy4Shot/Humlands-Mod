@@ -21,5 +21,10 @@
     
     "block.humlands.flux": "Flusso"
     
+    "item.humlands.carbon_tube": "Tubo di Carbonio",
+    "item.humlands.metal_sheet": "Lamiera di Ferro",
+    "item.humlands.gold_wire": "Filo D'Oro",
+    "item.humlands.mechanical_arm": "Braccio Meccanico",
+    
     
 }
