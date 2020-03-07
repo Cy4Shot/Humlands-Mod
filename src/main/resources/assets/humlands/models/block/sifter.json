@@ -1,14 +1,14 @@
 {
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "humlands:block/sifterarm3",
-		"1": "humlands:block/sifterarm2",
-		"2": "humlands:block/lifterlower",
-		"3": "humlands:block/sifterarm1",
-		"4": "humlands:block/sifterarm4",
-		"5": "humlands:block/filterupper",
-		"6": "humlands:block/sifterbody",
-		"particle": "humlands:blocks/sifterarm3"
+		"0": "humlands:blocks/sifterarm3",
+		"1": "humlands:blocks/sifterarm2",
+		"2": "humlands:blocks/lifterlower",
+		"3": "humlands:blocks/sifterarm1",
+		"4": "humlands:blocks/sifterarm4",
+		"5": "humlands:blocks/filterupper",
+		"6": "humlands:blocks/sifterbody",
+		"particle": "humlands:blockss/sifterarm3"
 	},
 	"elements": [
 		{
