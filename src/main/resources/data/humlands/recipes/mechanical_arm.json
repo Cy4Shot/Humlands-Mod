@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "SCS",
+        "SWS",
+        "SCS"
+    ],
+    
+    "key":
+    {
+        "S":
+        {
+            "item": "humlands:silver_sheet"
+        },
+        
+        "C":
+        {
+            "item": "humlands:carbon_tube"
+        },
+        
+        "W":
+        {
+            "item": "humlands:gold_wire"
+        }
+        
+        
+    },
+    
+    "result":
+    {
+        "item":  "humlands:mechanical_arm",
+        "count": 1
+    }
+}
