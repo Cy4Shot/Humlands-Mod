@@ -3,7 +3,6 @@ package com.turtysproductions.humlands.core.init;
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.world.biomes.BiomeWasteland;
 import com.turtysproductions.humlands.core.world.surfaces.HumlandsSurfaceBuilder;
-
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;

@@ -2,7 +2,6 @@ package com.turtysproductions.humlands.core.world.dimension;
 
 import net.minecraft.world.gen.GenerationSettings;
 
-@SuppressWarnings("unused")
 public class HumlandsGenSettings extends GenerationSettings {
 
 	   private final int field_202212_j = 4;
