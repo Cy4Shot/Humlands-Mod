@@ -33,10 +33,9 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class FluxVial extends Item
-{
-	public FluxVial(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder)
-	{
+public class FluxVial extends Item {
+
+	public FluxVial(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder) {
 		super(builder);
 		this.fluidSupplier = supplier;
 	}
@@ -68,6 +67,7 @@ public class FluxVial extends Item
 								blockstate1);
 						if (fluid != Fluids.EMPTY) {
 							playerIn.addStat(Stats.ITEM_USED.get(this));
+
 							SoundEvent soundevent = this.getFluid().getAttributes().getEmptySound();
 							if (soundevent == null)
 								soundevent = fluid.isIn(FluidInit.Tags.FLUX) ? SoundEvents.ITEM_BUCKET_FILL_LAVA
@@ -78,19 +78,22 @@ public class FluxVial extends Item
 								TriggerInit.FILLED_VIAL.trigger((ServerPlayerEntity) playerIn,
 										new ItemStack(fluid.getFilledBucket()));
 							}
+
 							return ActionResult.resultSuccess(itemstack1);
 						}
 					}
+
 					return ActionResult.resultFail(itemstack);
 				} else {
 					BlockState blockstate = worldIn.getBlockState(blockpos);
 					BlockPos blockpos2 = blockstate.getBlock() instanceof ILiquidContainer
-							&& this.getFluid() == FluidInit.flux_fluid.get() ? blockpos : blockpos1;
+							&& this.getFluid() == FluidInit.FLUX_FLUID.get() ? blockpos : blockpos1;
 					if (this.tryPlaceContainedLiquid(playerIn, worldIn, blockpos2, blockraytraceresult)) {
 						this.onLiquidPlaced(worldIn, itemstack, blockpos2);
 						if (playerIn instanceof ServerPlayerEntity) {
 							CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayerEntity) playerIn, blockpos2, itemstack);
 						}
+
 						playerIn.addStat(Stats.ITEM_USED.get(this));
 						return ActionResult.resultSuccess(this.emptyBucket(itemstack, playerIn));
 					} else {
@@ -104,7 +107,7 @@ public class FluxVial extends Item
 	}
 
 	protected ItemStack emptyBucket(ItemStack stack, PlayerEntity player) {
-		return !player.abilities.isCreativeMode ? new ItemStack(ItemInit.flux_vial.get()) : stack;
+		return !player.abilities.isCreativeMode ? new ItemStack(ItemInit.FLUX_VIAL.get()) : stack;
 	}
 
 	public void onLiquidPlaced(World worldIn, ItemStack stack, BlockPos pos) {
@@ -121,6 +124,7 @@ public class FluxVial extends Item
 				if (!player.inventory.addItemStackToInventory(new ItemStack(fullVial))) {
 					player.dropItem(new ItemStack(fullVial), false);
 				}
+
 				return emptyVials;
 			}
 		}
@@ -144,28 +148,27 @@ public class FluxVial extends Item
 					int k = posIn.getZ();
 					worldIn.playSound(player, posIn, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F,
 							2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
+
 					for (int l = 0; l < 8; ++l) {
 						worldIn.addParticle(ParticleTypes.LARGE_SMOKE, (double) i + Math.random(),
 								(double) j + Math.random(), (double) k + Math.random(), 0.0D, 0.0D, 0.0D);
 					}
-				}
-				else if (blockstate.getBlock() instanceof ILiquidContainer
-						&& this.getFluid() == FluidInit.flux_fluid.get())
-				{
+
+				} else if (blockstate.getBlock() instanceof ILiquidContainer
+						&& this.getFluid() == FluidInit.FLUX_FLUID.get()) {
 					if (((ILiquidContainer) blockstate.getBlock()).receiveFluid(worldIn, posIn, blockstate,
-							((FlowingFluid) this.getFluid()).getStillFluidState(false)))
-					{
+							((FlowingFluid) this.getFluid()).getStillFluidState(false))) {
 						this.playEmptySound(player, worldIn, posIn);
 					}
-				}
-				else
-				{
+				} else {
 					if (!worldIn.isRemote && flag && !material.isLiquid()) {
 						worldIn.destroyBlock(posIn, true);
 					}
+
 					this.playEmptySound(player, worldIn, posIn);
 					worldIn.setBlockState(posIn, this.getFluid().getDefaultState().getBlockState(), 11);
 				}
+
 				return true;
 			}
 			{
@@ -193,8 +196,11 @@ public class FluxVial extends Item
 		else
 			return super.initCapabilities(stack, nbt);
 	}
+
 	private final java.util.function.Supplier<? extends Fluid> fluidSupplier;
+
 	public Fluid getFluid() {
 		return fluidSupplier.get();
 	}
+
 }

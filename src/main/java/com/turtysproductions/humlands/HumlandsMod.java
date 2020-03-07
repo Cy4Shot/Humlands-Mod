@@ -6,12 +6,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.google.common.base.Preconditions;
-import com.turtysproductions.humlands.common.tab.HumlandsTab;
 import com.turtysproductions.humlands.core.init.BiomeInit;
 import com.turtysproductions.humlands.core.init.BlockInit;
 import com.turtysproductions.humlands.core.init.DimensionInit;
 import com.turtysproductions.humlands.core.init.FluidInit;
 import com.turtysproductions.humlands.core.init.ItemInit;
+import com.turtysproductions.humlands.core.tab.HumlandsTab;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -49,15 +49,12 @@ public class HumlandsMod {
 		bus.addListener(this::enqueueIMC);
 		bus.addListener(this::processIMC);
 		bus.addListener(this::doClientStuff);
-		
+
+		BiomeInit.BIOMES.register(bus);
+		BlockInit.BLOCKS.register(bus);
+		ItemInit.ITEMS.register(bus);
 		FluidInit.FLUIDS.register(bus);
 		FluidInit.BLOCKS.register(bus);
-
-		BlockInit.BLOCKS.register(bus);
-		// BiomeInit has to be registered after BlockInit
-
-		ItemInit.ITEMS.register(bus);
-		BiomeInit.BIOMES.register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}

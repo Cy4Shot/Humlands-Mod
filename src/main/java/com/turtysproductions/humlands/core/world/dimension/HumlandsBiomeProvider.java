@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.world.dimension;
+package com.turtysproductions.humlands.core.world.dimension;
 
 import java.util.Random;
 import java.util.Set;

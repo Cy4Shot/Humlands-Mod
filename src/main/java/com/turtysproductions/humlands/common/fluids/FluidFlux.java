@@ -4,6 +4,7 @@ import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.init.FluidInit;
 import com.turtysproductions.humlands.core.init.ItemInit;
 
+import net.minecraft.block.Block.Properties;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.fluid.FlowingFluid;
@@ -18,29 +19,26 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraftforge.fluids.FluidAttributes;
-import net.minecraftforge.fluids.ForgeFlowingFluid.Properties;
 
-public abstract class FluidFlux extends FlowingFluid
-{
+public abstract class FluidFlux extends FlowingFluid {
 	@Override
 	public Fluid getFlowingFluid() {
-		return FluidInit.flux_flowing.get();
+		return FluidInit.FLUX_FLOWING.get();
 	}
 
 	@Override
 	public Fluid getStillFluid() {
-		return FluidInit.flux_fluid.get();
+		return FluidInit.FLUX_FLUID.get();
 	}
 
 	@Override
-	protected boolean canSourcesMultiply()
-	{
+	protected boolean canSourcesMultiply() {
 		return true;
 	}
 
 	@Override
-	protected void beforeReplacingBlock(IWorld worldIn, BlockPos pos, BlockState state)
-	{
+	protected void beforeReplacingBlock(IWorld worldIn, BlockPos pos, BlockState state) {
+
 	}
 
 	@Override
@@ -55,12 +53,11 @@ public abstract class FluidFlux extends FlowingFluid
 
 	@Override
 	public Item getFilledBucket() {
-		return ItemInit.full_vial.get();
+		return ItemInit.FULL_VIAL.get();
 	}
 
 	protected boolean setDirection(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid,
-			Direction direction)
-	{
+			Direction direction) {
 		return direction == Direction.DOWN && !fluid.isIn(FluidInit.Tags.FLUX);
 	}
 
@@ -82,13 +79,12 @@ public abstract class FluidFlux extends FlowingFluid
 
 	@Override
 	protected FluidAttributes createAttributes() {
-		return FluidAttributes
-				.builder(new ResourceLocation(HumlandsMod.MOD_ID, "blocks/flux_still"),
-						new ResourceLocation(HumlandsMod.MOD_ID, "blocks/flux_flow"))
-				.build(this);
+		return FluidAttributes.builder(new ResourceLocation(HumlandsMod.MOD_ID, "blocks/flux_still"),
+				new ResourceLocation(HumlandsMod.MOD_ID, "blocks/flux_flow")).build(this);
 	}
 
 	public static class Flowing extends FluidFlux {
+
 		@Override
 		protected void fillStateContainer(Builder<Fluid, IFluidState> builder) {
 			super.fillStateContainer(builder);
@@ -108,12 +104,16 @@ public abstract class FluidFlux extends FlowingFluid
 		@Override
 		protected boolean canDisplace(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid,
 				Direction direction) {
+
 			return false;
 		}
+
 	}
 
 	public static class Source extends FluidFlux {
+
 		public Source(Properties create) {
+
 		}
 
 		@Override
@@ -129,7 +129,9 @@ public abstract class FluidFlux extends FlowingFluid
 		@Override
 		protected boolean canDisplace(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid,
 				Direction direction) {
+
 			return false;
 		}
+
 	}
 }

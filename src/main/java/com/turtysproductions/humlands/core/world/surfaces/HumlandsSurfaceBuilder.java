@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.world.surfaces;
+package com.turtysproductions.humlands.core.world.surfaces;
 
 import com.turtysproductions.humlands.core.init.BlockInit;
 

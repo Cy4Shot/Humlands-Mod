@@ -18,7 +18,7 @@ public class HumLandsDataGen {
 	/*
 	 * Data will be generated in "src/generated"
 	 */
-	
+
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
@@ -26,7 +26,7 @@ public class HumLandsDataGen {
 			HumlandsMod.LOGGER.debug("Starting server side data generators");
 			generator.addProvider(new LootTablesDataGen(generator));
 			generator.addProvider(new BlockTagsDataGen(generator));
-			generator.addProvider(new ItemTagsDataGen(generator));		
+			generator.addProvider(new ItemTagsDataGen(generator));
 		}
 
 		if (event.includeClient()) {

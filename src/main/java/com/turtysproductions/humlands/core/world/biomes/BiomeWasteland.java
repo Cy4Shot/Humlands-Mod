@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.world.biomes;
+package com.turtysproductions.humlands.core.world.biomes;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;

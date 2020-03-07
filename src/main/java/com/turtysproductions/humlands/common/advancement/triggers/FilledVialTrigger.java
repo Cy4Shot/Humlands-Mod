@@ -23,9 +23,9 @@ public class FilledVialTrigger extends AbstractCriterionTrigger<FilledVialTrigge
 		return new FilledVialTrigger.Instance(itempredicate);
 	}
 
-	public void trigger(ServerPlayerEntity serverplay, ItemStack stack) {
-		this.func_227070_a_(serverplay.getAdvancements(), (p_227037_1_) -> {
-			return p_227037_1_.test(stack);
+	public void trigger(ServerPlayerEntity serverplayer, ItemStack stack) {
+		this.func_227070_a_(serverplayer.getAdvancements(), (serverPlayer) -> {
+			return serverPlayer.test(stack);
 		});
 	}
 

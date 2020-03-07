@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.tab;
+package com.turtysproductions.humlands.core.tab;
 
 import com.turtysproductions.humlands.core.init.ItemInit;
 
@@ -15,6 +15,6 @@ public class HumlandsTab extends ItemGroup {
 
 	@Override
 	public ItemStack createIcon() {
-		return new ItemStack(ItemInit.TEST_ITEM.get());
+		return new ItemStack(ItemInit.SUPER_ROYAL_SLIME.get());
 	}
 }
