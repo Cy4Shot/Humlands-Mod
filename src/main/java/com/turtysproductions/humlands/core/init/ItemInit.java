@@ -45,7 +45,9 @@ public class ItemInit {
 		
 	public static final RegistryObject<Item> POWERED_SIFTER_BODY = ITEMS.register("powered_sifter_body", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	
-	
+	public static final RegistryObject<Item> IRON_MESH = ITEMS.register("iron_mesh", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+		
+	public static final RegistryObject<Item> FILTER = ITEMS.register("filter", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	
 	
 	
