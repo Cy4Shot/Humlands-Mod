@@ -18,10 +18,10 @@ public class HumlandsBiomeProvider extends BiomeProvider {
 		rand = new Random();
 	}
 
-	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.WASTELAND.get());
+	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.FAR_HUMLANDS.get());
 
 	@Override
 	public Biome getNoiseBiome(int x, int y, int z) {
-		return BiomeInit.WASTELAND.get();
+		return BiomeInit.FAR_HUMLANDS.get();
 	}
 }

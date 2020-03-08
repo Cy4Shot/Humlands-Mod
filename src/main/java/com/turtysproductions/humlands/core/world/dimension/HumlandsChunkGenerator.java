@@ -38,7 +38,7 @@ public class HumlandsChunkGenerator extends NoiseChunkGenerator<HumlandsGenSetti
 	private final PhantomSpawner phantomSpawner = new PhantomSpawner();
 	private final PatrolSpawner patrolSpawner = new PatrolSpawner();
 	private final CatSpawner catSpawner = new CatSpawner();
-	private final VillageSiege field_225495_n = new VillageSiege();
+	private final VillageSiege villageSiege = new VillageSiege();
 
 	public HumlandsChunkGenerator(IWorld worldIn, BiomeProvider provider, HumlandsGenSettings settingsIn) {
 		super(worldIn, provider, 4, 8, 256, settingsIn, true);
@@ -167,7 +167,7 @@ public class HumlandsChunkGenerator extends NoiseChunkGenerator<HumlandsGenSetti
 		this.phantomSpawner.tick(worldIn, spawnHostileMobs, spawnPeacefulMobs);
 		this.patrolSpawner.tick(worldIn, spawnHostileMobs, spawnPeacefulMobs);
 		this.catSpawner.tick(worldIn, spawnHostileMobs, spawnPeacefulMobs);
-		this.field_225495_n.func_225477_a(worldIn, spawnHostileMobs, spawnPeacefulMobs);
+		this.villageSiege.func_225477_a(worldIn, spawnHostileMobs, spawnPeacefulMobs);
 	}
 
 	public int getGroundHeight() {

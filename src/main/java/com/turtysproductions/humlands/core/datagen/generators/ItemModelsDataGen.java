@@ -22,7 +22,6 @@ public class ItemModelsDataGen extends ItemModelProvider {
 		blockParented(BlockInit.SCRAP_GLASS.get(), "block/scrap_glass");
 		blockParented(BlockInit.SCRAP_SAND.get(), "block/scrap_sand");
 		blockParented(BlockInit.SCRAP_SANDSTONE.get(), "block/scrap_sandstone");
-		blockParented(BlockInit.TEST_BLOCK.get(), "block/test_block");
 		/*
 		 * not implemented blockParented(BlockInit.SIFTER.get(), "block/sifter");
 		 */
