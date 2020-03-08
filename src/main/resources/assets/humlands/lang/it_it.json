@@ -37,5 +37,8 @@
     "item.humlands.carbon_tube": "Tubo di Carbonio",
     "item.humlands.metal_sheet": "Lamiera di Ferro",
     "item.humlands.gold_wire": "Filo D'Oro",
-    "item.humlands.mechanical_arm": "Braccio Meccanico"
+    "item.humlands.mechanical_arm": "Braccio Meccanico",
+    "item.humlands.carbon_sheet": "Lastra di Carbonio",
+    "item.humlands.unpowered_sifter_body": "Tronco di Vaglio Meccanico Disalimentato",
+    "item.humlands.powered_sifter_body": "Tronco di Vaglio Meccanico Alimentato",
 }
