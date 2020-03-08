@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
     "block.humlands.flux": "Flusso",
 	  "block.humlands.humlands_portal_block": "Humlands Portal Block",
 	  "block.humlands.scrap_sand": "Sabbia di Detriti",
@@ -13,6 +14,8 @@
 	  "item.humlands.super_royal_flan_raw": "Sformato Super Regale Crudo",
 	  "item.humlands.super_royal_flan": "Sformato Super Regale",
 	  "item.humlands.super_royal_slime": "Bava Super Regale",
+=======
+>>>>>>> Stashed changes
     "item.humlands.test_item": "Oggetto Test",
     "block.humlands.test_block": "Blocco Test",
     
@@ -32,10 +35,18 @@
     "block.humlands.scrap_glass": "Vetro di Detriti",
     "block.humlands.sifter": "Vaglio Meccanico",
     
+<<<<<<< Updated upstream
     "block.humlands.flux": "Flusso",
     
     "item.humlands.carbon_tube": "Tubo di Carbonio",
     "item.humlands.metal_sheet": "Lamiera di Ferro",
     "item.humlands.gold_wire": "Filo D'Oro",
     "item.humlands.mechanical_arm": "Braccio Meccanico"
+=======
+    "block.humlands.sifter": "Vaglio Meccanico" 
+    
+    "block.humlands.flux": "Flusso"
+    
+    
+>>>>>>> Stashed changes
 }

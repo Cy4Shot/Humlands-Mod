@@ -8,6 +8,7 @@ import com.turtysproductions.humlands.core.tab.HumlandsTab;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Rarity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -16,6 +17,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ItemInit {
+	
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, HumlandsMod.MOD_ID);
 	
 	public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
@@ -28,6 +30,7 @@ public class ItemInit {
 	public static final RegistryObject<Item> SUPER_ROYAL_FLAN = ITEMS.register("super_royal_flan", () -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC).food(new Food.Builder().hunger(8).saturation(4.0f).effect(new EffectInstance(Effects.SPEED, 6000, 5), 1).effect(new EffectInstance(Effects.HEALTH_BOOST), 1).build())));
   public static final RegistryObject<Item> SUPER_ROYAL_FLAN_RAW = ITEMS.register("super_royal_flan_raw", () -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC)));
 	
+<<<<<<< Updated upstream
   public static final RegistryObject<Item> FLUX_VIAL = ITEMS.register("flux_vial", () -> new FluxVial(() -> Fluids.EMPTY, new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)));
   public static final RegistryObject<Item> FULL_VIAL = ITEMS.register("full_vial", () -> new FluxVial(FluidInit.FLUX_FLUID, new Item.Properties().containerItem(ItemInit.FLUX_VIAL.get()).maxStackSize(1).group(HumlandsTab.HUMLANDS)));
 	
@@ -38,4 +41,8 @@ public class ItemInit {
 	public static final RegistryObject<Item> CARBON_TUBE = ITEMS.register("carbon_tube", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	
 	public static final RegistryObject<Item> MECHANICAL_ARM = ITEMS.register("mechanical_arm", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+=======
+	public static final RegistryObject<Item> FLUX_VIAL = ITEMS.register("flux_vial", () -> new FluxVial(() -> Fluids.EMPTY, new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)));
+    public static RegistryObject<Item> FULL_VIAL = ITEMS.register("full_vial", () -> new FluxVial(FluidInit.FLUX_FLUID, new Item.Properties().containerItem(ItemInit.FLUX_VIAL.get()).maxStackSize(1).group(ItemGroup.MISC)));
+>>>>>>> Stashed changes
 }

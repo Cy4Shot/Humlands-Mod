@@ -15,6 +15,6 @@ public class HumlandsTab extends ItemGroup {
 
 	@Override
 	public ItemStack createIcon() {
-		return new ItemStack(ItemInit.SUPER_ROYAL_SLIME.get());
+		return new ItemStack(ItemInit.TEST_ITEM.get());
 	}
 }
