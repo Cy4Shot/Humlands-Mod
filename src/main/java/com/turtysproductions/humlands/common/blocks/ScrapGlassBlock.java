@@ -8,31 +8,31 @@ import net.minecraft.world.IBlockReader;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ScrapGlassBlock extends Block{
+public class ScrapGlassBlock extends Block {
 
-	public ScrapGlassBlock(Properties p_i49999_1_) {
-		super(p_i49999_1_);
+	public ScrapGlassBlock(Properties properties) {
+		super(properties);
 	}
-	
+
 	@OnlyIn(Dist.CLIENT)
-	   public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
-	      return 1.0F;
-	   }
+	public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return 1.0F;
+	}
 
-	   public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
-	      return true;
-	   }
+	public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
+		return true;
+	}
 
-	   public boolean causesSuffocation(BlockState state, IBlockReader worldIn, BlockPos pos) {
-	      return false;
-	   }
+	public boolean causesSuffocation(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return false;
+	}
 
-	   public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
-	      return false;
-	   }
+	public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
+		return false;
+	}
 
-	   public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {
-	      return false;
-	   }
+	public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {
+		return false;
+	}
 
 }

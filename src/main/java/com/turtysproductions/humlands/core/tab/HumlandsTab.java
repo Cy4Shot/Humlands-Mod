@@ -6,7 +6,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public class HumlandsTab extends ItemGroup {
-	
+
 	public static final ItemGroup HUMLANDS = new HumlandsTab(ItemGroup.GROUPS.length, "humlands");
 
 	public HumlandsTab(int index, String label) {

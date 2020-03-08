@@ -28,6 +28,7 @@ import net.minecraft.world.storage.loot.functions.CopyNbt;
 import net.minecraft.world.storage.loot.functions.SetContents;
 
 public abstract class LootTableBaseProvider extends LootTableProvider {
+
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 	protected final Map<Block, LootTable.Builder> lootTables = new HashMap<>();
 	private final DataGenerator generator;

@@ -18,6 +18,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class FluidInit {
+	
 	public static final FluidFlux FLUIDFLUX_FLOWING_FLUX = null;
 	public static final FluidFlux FLUIDFLUX_FLUX = null;
 

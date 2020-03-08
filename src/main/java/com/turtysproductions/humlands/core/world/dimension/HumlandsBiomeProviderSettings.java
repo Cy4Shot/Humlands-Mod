@@ -5,26 +5,26 @@ import net.minecraft.world.biome.provider.IBiomeProviderSettings;
 import net.minecraft.world.storage.WorldInfo;
 
 public class HumlandsBiomeProviderSettings implements IBiomeProviderSettings {
-	private final long field_226848_a_;
-	private final WorldType field_226849_b_;
+	private final long seed;
+	private final WorldType worldType;
 	private HumlandsGenSettings generatorSettings = new HumlandsGenSettings();
 
-	public HumlandsBiomeProviderSettings(WorldInfo p_i225751_1_) {
-		this.field_226848_a_ = p_i225751_1_.getSeed();
-		this.field_226849_b_ = p_i225751_1_.getGenerator();
+	public HumlandsBiomeProviderSettings(WorldInfo info) {
+		this.seed = info.getSeed();
+		this.worldType = info.getGenerator();
 	}
 
-	public HumlandsBiomeProviderSettings setGeneratorSettings(HumlandsGenSettings p_205441_1_) {
-		this.generatorSettings = p_205441_1_;
+	public HumlandsBiomeProviderSettings setGeneratorSettings(HumlandsGenSettings settings) {
+		this.generatorSettings = settings;
 		return this;
 	}
 
-	public long func_226850_a_() {
-		return this.field_226848_a_;
+	public long getSeed() {
+		return this.seed;
 	}
 
-	public WorldType func_226851_b_() {
-		return this.field_226849_b_;
+	public WorldType getWorldType() {
+		return this.worldType;
 	}
 
 	public HumlandsGenSettings getGeneratorSettings() {

@@ -26,5 +26,5 @@ public class FarHumlandsBiome extends Biome {
 	@OnlyIn(Dist.CLIENT)
 	public int getGrassColor(double posX, double posZ) {
 		return 9470285;
-	}
+	} 
 }

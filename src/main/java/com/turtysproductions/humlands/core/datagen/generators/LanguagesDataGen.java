@@ -6,6 +6,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class LanguagesDataGen extends LanguageProvider {
+
 	public LanguagesDataGen(DataGenerator gen, String locale) {
 		super(gen, HumlandsMod.MOD_ID, locale);
 	}
