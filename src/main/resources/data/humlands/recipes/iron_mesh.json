@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": 
+  {
+    "item": "minecraft:iron_ingot"
+  },
+   "result":
+    {
+        "item":  "humlands:iron_mesh",
+        "experience": 1.0,
+        "cookingtime": 100,
+        "count": 2
+    }
+  
+  
+  
+}
