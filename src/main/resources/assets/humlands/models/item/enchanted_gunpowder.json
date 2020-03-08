@@ -2,6 +2,6 @@
    "parent": "item/generated",
    "textures": 
    {
-       "layer0": "humlands:items/gold_wire"
+       "layer0": "humlands:items/enchanted_gunpowder"
    }
 }
