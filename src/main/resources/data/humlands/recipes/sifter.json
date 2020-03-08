@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "F F",
+        "MSM",
+        "   "
+    ],
+    
+    "key":
+    {
+        "M":
+        {
+            "item": "humlands:mechanical_arm"
+        },
+        
+        "F":
+        {
+            "item": "humlands:filter"
+        },
+        
+        "S":
+        {
+            "item": "humlands:powered_sifter_body"
+        }
+        
+        
+    },
+    
+    "result":
+    {
+        "item":  "humlands:sifter",
+        "count": 1
+    }
+}
