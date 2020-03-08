@@ -2,6 +2,8 @@
    "parent": "item/generated",
    "textures": 
    {
+   "textures": {
+
        "layer0": "humlands:items/gold_wire"
    }
 }
