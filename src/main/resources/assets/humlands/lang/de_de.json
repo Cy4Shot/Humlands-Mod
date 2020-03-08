@@ -1,17 +1,16 @@
 {
-    "item.humlands.test_item": "Test Gegenstand",
-    "block.humlands.test_block": "Test Block",
-    
-    "item.humlands.royal_slime": "Königlicher Schleim",
-    "item.humlands.royal_flan_raw": "Roher königlicher Flan",
-    "item.humlands.royal_flan": "Königlicher Flan",
-    "item.humlands.super_royal_slime": "Hervorragend königlicher Schleim",
-    "item.humlands.super_royal_flan_raw": "Hervorragend roher königlicher Flan",
-    "item.humlands.super_royal_flan": "Hervorragend königlicher Flan",
-    
-    "block.humlands.scrap_sand": "Brüchiger Sand",
-    "block.humlands.scrap_sandstone": "Brüchiger Sandstein",
-    "block.humlands.scrap_glass": "Brüchiges Glas",
-    
-    "block.humlands.sifter": "Sieber"    
+	"block.humlands.flux": "Flux",
+	"block.humlands.humlands_portal_block": "Humlands Portal Block",
+	"block.humlands.scrap_sand": "Brüchiger Sand",
+	"block.humlands.scrap_sandstone": "Brüchiger Sandstein",
+	"block.humlands.scrap_glass": "Brüchiges Glas",
+	"block.humlands.sifter": "Sieber",
+	"item.humlands.flux_vial": "Flux Phiole",
+	"item.humlands.full_vial": "Volle Flux Phiole",
+	"item.humlands.royal_flan_raw": "Roher königlicher Flan",
+	"item.humlands.royal_flan": "Königlicher Flan",
+	"item.humlands.royal_slime": "Königlicher Schleim",
+	"item.humlands.super_royal_flan_raw": "Hervorragend roher königlicher Flan",
+	"item.humlands.super_royal_flan": "Hervorragend königlicher Flan",
+	"item.humlands.super_royal_slime": "Hervorragend königlicher Schleim"
 }
