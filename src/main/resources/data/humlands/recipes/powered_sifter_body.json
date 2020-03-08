@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        " V ",
+        "VSV",
+        " V "
+    ],
+    
+    "key":
+    {
+        "V":
+        {
+            "item": "humlands:full_vial"
+        },
+        
+                "S":
+        {
+            "item": "humlands:unpowered_sifter_body"
+        }
+        
+    },
+    
+    "result":
+    {
+        "item":  "humlands:powered_sifter_body",
+        "count": 1
+    }
+}

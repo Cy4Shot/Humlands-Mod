@@ -38,4 +38,23 @@ public class ItemInit {
 	public static final RegistryObject<Item> CARBON_TUBE = ITEMS.register("carbon_tube", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	
 	public static final RegistryObject<Item> MECHANICAL_ARM = ITEMS.register("mechanical_arm", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	
+	public static final RegistryObject<Item> CARBON_SHEET = ITEMS.register("carbon_sheet", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+		
+	public static final RegistryObject<Item> UNPOWERED_SIFTER_BODY = ITEMS.register("unpowered_sifter_body", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+		
+	public static final RegistryObject<Item> POWERED_SIFTER_BODY = ITEMS.register("powered_sifter_body", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	
+	public static final RegistryObject<Item> IRON_MESH = ITEMS.register("iron_mesh", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+		
+	public static final RegistryObject<Item> FILTER = ITEMS.register("filter", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "IGI",
+        "IGI",
+        " I "
+    ],
+    
+    "key":
+    {
+        "G":
+        {
+            "item": "minecraft:glass"
+        },
+        
+                "I":
+        {
+            "item": "minecraft:iron_ingot"
+        }
+        
+    },
+    
+    "result":
+    {
+        "item":  "humlands:flux_vial",
+        "count": 1
+    }
+}

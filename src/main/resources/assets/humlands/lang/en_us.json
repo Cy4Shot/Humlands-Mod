@@ -37,5 +37,9 @@
     "item.humlands.carbon_tube": "Carbon Tube",
     "item.humlands.silver_sheet": "Silver Sheet",
     "item.humlands.gold_wire": "Gold Wire",
-    "item.humlands.mechanical_arm": "Mechanical Arm"
+    "item.humlands.mechanical_arm": "Mechanical Arm",
+	
+    "item.humlands.carbon_sheet": "Carbon Sheet",
+    "item.humlands.unpowered_sifter_body": "Unpowered Sifter Body",
+    "item.humlands.powered_sifter_body": "Powered Sifter Body"
 }
