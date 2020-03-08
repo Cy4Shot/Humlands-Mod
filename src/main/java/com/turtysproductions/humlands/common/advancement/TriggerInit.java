@@ -9,7 +9,7 @@ import net.minecraft.advancements.ICriterionTrigger;
 import net.minecraft.util.ResourceLocation;
 
 public class TriggerInit {
-	
+
 	private static FilledVialTrigger register(FilledVialTrigger filledVialTrigger) {
 		return filledVialTrigger;
 	}

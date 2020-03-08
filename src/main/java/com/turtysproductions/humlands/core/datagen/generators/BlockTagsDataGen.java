@@ -10,6 +10,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 
 public class BlockTagsDataGen extends BlockTagsProvider {
+	
 	public BlockTagsDataGen(DataGenerator generatorIn) {
 		super(generatorIn);
 	}

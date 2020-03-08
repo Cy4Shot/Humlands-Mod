@@ -12,6 +12,7 @@ import net.minecraftforge.registries.ObjectHolder;
 
 @EventBusSubscriber(modid = HumlandsMod.MOD_ID, bus = Bus.MOD)
 public class DimensionInit {
+	
 	@ObjectHolder("humlands:humlands")
 	public static final ModDimension HUMLANDS_DIM = null;
 
