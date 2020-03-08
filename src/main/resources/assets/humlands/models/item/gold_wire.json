@@ -1,7 +1,6 @@
 {
    "parent": "item/generated",
-   "textures": 
-   {
-       "layer0": "humlands:items/gold_wire.json"
+   "textures": {
+       "layer0": "humlands:items/gold_wire"
    }
 }
