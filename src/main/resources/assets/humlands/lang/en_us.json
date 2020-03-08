@@ -30,8 +30,12 @@
     "block.humlands.scrap_sand": "Scrap Sand",
     "block.humlands.scrap_sandstone": "Scrap Sandstone",
     "block.humlands.scrap_glass": "Scrap Glass",
-    
     "block.humlands.sifter": "Sifter",  
     
-    "block.humlands.flux": "Flux"
+    "block.humlands.flux": "Flux",
+    
+    "item.humlands.carbon_tube": "Carbon Tube",
+    "item.humlands.silver_sheet": "Silver Sheet",
+    "item.humlands.gold_wire": "Gold Wire",
+    "item.humlands.mechanical_arm": "Mechanical Arm"
 }
