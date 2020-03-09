@@ -13,8 +13,6 @@ public class LanguagesDataGen extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		add("item.humlands.test_item", "Test Item");
-		add("block.humlands.test_block", "Test Block");
 
 		add("block.humlands.scrap_sand", "Scrap Sand");
 		add("block.humlands.scrap_sandstone", "Scrap Sandstone");

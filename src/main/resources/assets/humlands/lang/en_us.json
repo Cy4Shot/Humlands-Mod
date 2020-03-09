@@ -1,4 +1,5 @@
 {
+  "itemGroup.humlands": "Humlands Tab",
 	"block.humlands.flux": "Flux",
 	"block.humlands.humlands_portal_block": "Humlands Portal Block",
 	"block.humlands.scrap_sand": "Scrap Sand",
@@ -27,4 +28,5 @@
 	"item.humlands.super_royal_flan_raw": "Super Raw Royal Flan",
 	"item.humlands.super_royal_flan": "Super Royal Flan",
 	"item.humlands.super_royal_slime": "Super Royal Slime",
+  "item.humlands.wirecutters": "Wirecutters"
 }

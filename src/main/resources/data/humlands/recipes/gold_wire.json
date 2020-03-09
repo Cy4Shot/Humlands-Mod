@@ -1,21 +1,14 @@
 {
-    "type": "minecraft:crafting_shaped",
+    "type": "minecraft:crafting_shapeless",
     
-    "pattern":
+    "ingredients":
     [
-        "II ",
-        "II ",
-        "   "
+        { "item": "humlands:wirecutters" },
+        { "item": "minecraft:gold_ingot"},
+        { "item": "minecraft:gold_ingot"},
+        { "item": "minecraft:gold_ingot"},
+        { "item": "minecraft:gold_ingot"}
     ],
-    
-    "key":
-    {
-        "I":
-        {
-            "item": "minecraft:gold_ingot"
-        }
-        
-    },
     
     "result":
     {
