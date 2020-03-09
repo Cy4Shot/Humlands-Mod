@@ -1,6 +1,7 @@
 package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
+import com.turtysproductions.humlands.common.items.CraftingReuseItem;
 import com.turtysproductions.humlands.common.items.FluxVial;
 import com.turtysproductions.humlands.common.items.GlintingItem;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
@@ -32,7 +33,7 @@ public class ItemInit {
 	
 	public static final RegistryObject<Item> GOLD_WIRE = ITEMS.register("gold_wire", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	
-	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	
 	public static final RegistryObject<Item> METAL_SHEET = ITEMS.register("metal_sheet", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 
