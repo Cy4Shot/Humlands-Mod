@@ -1,33 +1,32 @@
 {
+  "itemGroup.humlands": "Humlands Tab",
 	"block.humlands.flux": "Flux",
 	"block.humlands.humlands_portal_block": "Humlands Portal Block",
 	"block.humlands.scrap_sand": "Scrap Sand",
 	"block.humlands.scrap_sandstone": "Scrap Sandstone",
 	"block.humlands.scrap_glass": "Scrap Glass",
 	"block.humlands.sifter": "Sifter",
-	
+	"block.humlands.test_block": "Test Block",
+	"item.humlands.carbon_sheet": "Carbon Sheet",
+	"item.humlands.carbon_tube": "Carbon Tube",
+	"item.humlands.diamond_encrusted_bone": "Diamond Encrusted Bone",
+	"item.humlands.enchanted_gunpowder": "Enchanted Gunpowder",
+	"item.humlands.filter": "Filter",
+	"item.humlands.flux_vial": "Flux Vial",
+	"item.humlands.full_vial": "Vial Full of Flux",
+	"item.humlands.gold_bone": "Golden Bone",
+	"item.humlands.gold_wire": "Golden Wire",
+	"item.humlands.iron_bone": "Iron Bone",
+	"item.humlands.iron_mesh": "Iron Mesh",
+	"item.humlands.mechanical_arm": "Mechanical Arm",
+	"item.humlands.metal_sheet": "Metal Sheet",
+	"item.humlands.powered_sifter_body": "Powered Sifter Body",
 	"item.humlands.royal_flan_raw": "Raw Royal Flan",
 	"item.humlands.royal_flan": "Royal Flan",
 	"item.humlands.royal_slime": "Royal Slime",
+	"item.humlands.silver_sheet": "Silver Sheet",
 	"item.humlands.super_royal_flan_raw": "Super Raw Royal Flan",
 	"item.humlands.super_royal_flan": "Super Royal Flan",
 	"item.humlands.super_royal_slime": "Super Royal Slime",
-    
-    "item.humlands.flux_vial": "Flux Vial",
-    "item.humlands.full_vial": "Vial Full of Flux", 
-    
-    "item.humlands.carbon_tube": "Carbon Tube",
-    "item.humlands.metal_sheet": "Metal Sheet",
-    "item.humlands.gold_wire": "Gold Wire",
-    "item.humlands.mechanical_arm": "Mechanical Arm",
-    
-    "item.humlands.wirecutters": "Wirecutters",
-	
-    "item.humlands.carbon_sheet": "Carbon Sheet",
-    "item.humlands.unpowered_sifter_body": "Unpowered Sifter Body",
-    "item.humlands.powered_sifter_body": "Powered Sifter Body",
-    "item.humlands.filter": "Filter",
-    "item.humlands.iron_mesh": "Iron Mesh",
-    
-    "itemGroup.humlands": "Humlands Tab"
+  "item.humlands.wirecutters": "Wirecutters"
 }
