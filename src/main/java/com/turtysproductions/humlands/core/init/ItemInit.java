@@ -10,6 +10,7 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -33,7 +34,7 @@ public class ItemInit {
 	
 	public static final RegistryObject<Item> GOLD_WIRE = ITEMS.register("gold_wire", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	
-	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS).maxStackSize(1)));
 	
 	public static final RegistryObject<Item> METAL_SHEET = ITEMS.register("metal_sheet", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 

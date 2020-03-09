@@ -8,9 +8,17 @@ public class CraftingReuseItem extends Item
 	public CraftingReuseItem(Item.Properties properties) {
 		super(properties);
 	}
-
-	public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack)
+	
+	@Override
+	public ItemStack getContainerItem(ItemStack itemStack) 
 	{
-			return false;
+		return itemStack.copy();
 	}
+	
+	@Override
+	public boolean hasContainerItem() 
+	{
+		return true;
+	}
+	
 }
