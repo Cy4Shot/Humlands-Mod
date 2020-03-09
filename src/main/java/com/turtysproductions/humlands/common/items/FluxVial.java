@@ -116,19 +116,15 @@ public class FluxVial extends Item {
 	}
 
 	private ItemStack fillBucket(ItemStack emptyVials, PlayerEntity player, Item fullVial) {
-		if (player.abilities.isCreativeMode) {
-			return emptyVials;
+		emptyVials.shrink(1);
+		if (emptyVials.isEmpty()) {
+			return new ItemStack(fullVial);
 		} else {
-			emptyVials.shrink(1);
-			if (emptyVials.isEmpty()) {
-				return new ItemStack(fullVial);
-			} else {
-				if (!player.inventory.addItemStackToInventory(new ItemStack(fullVial))) {
-					player.dropItem(new ItemStack(fullVial), false);
-				}
-
-				return emptyVials;
+			if (!player.inventory.addItemStackToInventory(new ItemStack(fullVial))) {
+				player.dropItem(new ItemStack(fullVial), false);
 			}
+
+			return emptyVials;
 		}
 	}
 

@@ -31,7 +31,9 @@ public class ItemInit {
     public static final RegistryObject<Item> FULL_VIAL = ITEMS.register("full_vial", () -> new FluxVial(FluidInit.FLUX_FLUID, new Item.Properties().containerItem(ItemInit.FLUX_VIAL.get()).maxStackSize(1).group(HumlandsTab.HUMLANDS)));
 	
 	public static final RegistryObject<Item> GOLD_WIRE = ITEMS.register("gold_wire", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
-
+	
+	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	
 	public static final RegistryObject<Item> METAL_SHEET = ITEMS.register("metal_sheet", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 
 	public static final RegistryObject<Item> CARBON_TUBE = ITEMS.register("carbon_tube", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
@@ -47,7 +49,6 @@ public class ItemInit {
 	public static final RegistryObject<Item> IRON_MESH = ITEMS.register("iron_mesh", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 		
 	public static final RegistryObject<Item> FILTER = ITEMS.register("filter", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
-	
 	
 	
 	
