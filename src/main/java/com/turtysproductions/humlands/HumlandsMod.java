@@ -65,6 +65,7 @@ public class HumlandsMod {
 
 	private void doClientStuff(final FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(BlockInit.SCRAP_GLASS.get(), RenderType.getTranslucent());
+		LOGGER.debug("RenderLayers set!");
 
 	}
 

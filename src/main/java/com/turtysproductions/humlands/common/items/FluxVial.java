@@ -1,5 +1,7 @@
 package com.turtysproductions.humlands.common.items;
 
+import java.util.function.Supplier;
+
 import javax.annotation.Nullable;
 
 import com.turtysproductions.humlands.common.advancement.TriggerInit;
@@ -35,7 +37,7 @@ import net.minecraft.world.World;
 
 public class FluxVial extends Item {
 
-	public FluxVial(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder) {
+	public FluxVial(Supplier<? extends Fluid> supplier, Item.Properties builder) {
 		super(builder);
 		this.fluidSupplier = supplier;
 	}
@@ -114,19 +116,15 @@ public class FluxVial extends Item {
 	}
 
 	private ItemStack fillBucket(ItemStack emptyVials, PlayerEntity player, Item fullVial) {
-		if (player.abilities.isCreativeMode) {
-			return emptyVials;
+		emptyVials.shrink(1);
+		if (emptyVials.isEmpty()) {
+			return new ItemStack(fullVial);
 		} else {
-			emptyVials.shrink(1);
-			if (emptyVials.isEmpty()) {
-				return new ItemStack(fullVial);
-			} else {
-				if (!player.inventory.addItemStackToInventory(new ItemStack(fullVial))) {
-					player.dropItem(new ItemStack(fullVial), false);
-				}
-
-				return emptyVials;
+			if (!player.inventory.addItemStackToInventory(new ItemStack(fullVial))) {
+				player.dropItem(new ItemStack(fullVial), false);
 			}
+
+			return emptyVials;
 		}
 	}
 

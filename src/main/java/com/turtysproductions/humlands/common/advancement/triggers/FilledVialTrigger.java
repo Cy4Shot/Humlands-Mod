@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class FilledVialTrigger extends AbstractCriterionTrigger<FilledVialTrigger.Instance> {
+
 	private static final ResourceLocation ID = new ResourceLocation("filled_vial_trigger");
 
 	public ResourceLocation getId() {

@@ -10,13 +10,14 @@ import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 
 public class ItemTagsDataGen extends ItemTagsProvider {
+	
 	public ItemTagsDataGen(DataGenerator generatorIn) {
 		super(generatorIn);
 	}
 
 	@Override
 	protected void registerTags() {
-		// foods
+		// Foods
 		addForgeTag("slime/royal", ItemInit.ROYAL_SLIME.get());
 	}
 
