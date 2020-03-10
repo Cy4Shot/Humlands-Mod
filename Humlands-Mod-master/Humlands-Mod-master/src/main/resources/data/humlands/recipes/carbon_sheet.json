@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "CC",
+        "DC"
+    ],
+    
+    "key":
+    {
+        "C":
+        {
+            "item": "minecraft:coal"
+        },
+        
+        "D":
+        {
+            "item": "minecraft:diamond"
+        }
+        
+    },
+    
+    "result":
+    {
+        "item":  "humlands:carbon_sheet",
+        "count": 1
+    }
+}

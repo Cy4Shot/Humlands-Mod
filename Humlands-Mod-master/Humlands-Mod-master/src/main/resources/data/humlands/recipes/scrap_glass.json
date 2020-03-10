@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": 
+  {
+    "item": "humlands:scrap_sand"
+  },
+   "result":
+    {
+        "item":  "humlands:scrap_glass",
+        "experience": 0.5,
+        "cookingtime": 300  
+    }
+  
+  
+  
+}

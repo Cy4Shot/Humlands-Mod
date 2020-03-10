@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        " C ",
+        "CDC",
+        " C "
+    ],
+    
+    "key":
+    {
+        "C":
+        {
+            "item": "minecraft:coal"
+        },
+        
+                "D":
+        {
+            "item": "minecraft:diamond"
+        }
+        
+    },
+    
+    "result":
+    {
+        "item":  "humlands:carbon_tube",
+        "count": 1
+    }
+}

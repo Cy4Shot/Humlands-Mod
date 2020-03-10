@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "humlands:royal_flan_raw"
+  },
+  "result": "humlands:royal_flan",
+  "experience": 0.3,
+  "cookingtime": 100
+}

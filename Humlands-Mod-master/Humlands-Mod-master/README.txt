@@ -1,0 +1,7 @@
+Ok everyone, here is the hopefully exciting thing I want to have for the Turty's Productions Discord Server. So I am going to be starting a new mod, but with a twist, so this mod is a SciFi - Fantasy Mod, but basically this is a mod in which anyone can work on. I know this sounds insane and crazy, but I think this can work. My idea is that every week on a Sunday, I will make a video on the current progress of the mod, showing everything that has been added throughout that week. Now this mod is going to be a themed mod, and therefore not a Kitchen Sink Mod. My idea for the theme is some sort of dimension, but that's not fully decided yet of course. This mod will be for 1.15.2. 
+
+The way you can contribute to this is through the GitHub repository: https://github.com/DaRealTurtyWurty/Humlands-Mod. All you have to do is fork the repository to your own and then you can add whatever changes you like to it. Once you are done with your changes you can make a pull request on the main mod's repository and I will verify the request. If it is valid, I will accept it.
+
+TDLR: I'm sorry this is a bad explanation, but basically this is just a mod which anyone can contribute to which I will be showcasing every Sunday on my YouTube channel. If you are confused, don't worry, I will be creating a video on this soon!
+
+You can make suggestions for the mod in https://discordapp.com/channels/621352915034177566/682682576703586415. 
