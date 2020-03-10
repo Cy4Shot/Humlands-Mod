@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "ISI"
+    ],
+    
+    "key":
+    {
+        "S":
+        {
+            "item": "humlands:carbon_sheet"
+        },
+        
+                "I":
+        {
+            "item": "humlands:iron_mesh"
+        }
+        
+    },
+    
+    "result":
+    {
+        "item":  "humlands:filter",
+        "count": 1
+    }
+}

@@ -1,13 +1,20 @@
 package com.turtysproductions.humlands;
 
+import javax.annotation.Nonnull;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.turtysproductions.humlands.init.BlockInit;
-import com.turtysproductions.humlands.init.DimensionInit;
-import com.turtysproductions.humlands.init.ItemInit;
-import com.turtysproductions.humlands.item.HumlandsTab;
+import com.google.common.base.Preconditions;
+import com.turtysproductions.humlands.core.init.BiomeInit;
+import com.turtysproductions.humlands.core.init.BlockInit;
+import com.turtysproductions.humlands.core.init.DimensionInit;
+import com.turtysproductions.humlands.core.init.FluidInit;
+import com.turtysproductions.humlands.core.init.ItemInit;
+import com.turtysproductions.humlands.core.tab.HumlandsTab;
 
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -27,6 +34,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @Mod("humlands")
 public class HumlandsMod {
@@ -42,8 +50,11 @@ public class HumlandsMod {
 		bus.addListener(this::processIMC);
 		bus.addListener(this::doClientStuff);
 
+		BiomeInit.BIOMES.register(bus);
 		BlockInit.BLOCKS.register(bus);
 		ItemInit.ITEMS.register(bus);
+		FluidInit.FLUIDS.register(bus);
+		FluidInit.BLOCKS.register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -53,6 +64,8 @@ public class HumlandsMod {
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {
+		RenderTypeLookup.setRenderLayer(BlockInit.SCRAP_GLASS.get(), RenderType.getTranslucent());
+		LOGGER.debug("RenderLayers set!");
 
 	}
 
@@ -89,6 +102,21 @@ public class HumlandsMod {
 					});
 			LOGGER.debug("Registered BlockItems");
 		}
+
+		@Nonnull
+		private static <T extends IForgeRegistryEntry<T>> T setup(@Nonnull final T entry, @Nonnull final String name) {
+			Preconditions.checkNotNull(name, "Name to assign to entry cannot be null!");
+			return setup(entry, new ResourceLocation(HumlandsMod.MOD_ID, name));
+		}
+
+		@Nonnull
+		private static <T extends IForgeRegistryEntry<T>> T setup(@Nonnull final T entry,
+				@Nonnull final ResourceLocation registryName) {
+			Preconditions.checkNotNull(entry, "Entry cannot be null!");
+			Preconditions.checkNotNull(registryName, "Registry name to assign to entry cannot be null!");
+			entry.setRegistryName(registryName);
+			return entry;
+		}
 	}
 
 	@Mod.EventBusSubscriber(modid = HumlandsMod.MOD_ID, bus = Bus.FORGE)
@@ -98,6 +126,7 @@ public class HumlandsMod {
 			if (DimensionType.byName(DIMENSION_TYPE) == null) {
 				DimensionManager.registerDimension(DIMENSION_TYPE, DimensionInit.HUMLANDS_DIM, null, true);
 			}
+			LOGGER.info("Dimension Registered!");
 		}
 	}
 }
