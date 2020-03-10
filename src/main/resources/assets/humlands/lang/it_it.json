@@ -1,11 +1,11 @@
 {
 	"block.humlands.flux": "Flusso",
-	"block.humlands.humlands_portal_block": "Humlands Portal Block",
+	"fluid.humlands.flux_fluid": "Flusso",
+	"block.humlands.humlands_portal_block": "Blocco del Portale per le Humlands",
 	"block.humlands.scrap_sand": "Sabbia di Detriti",
 	"block.humlands.scrap_sandstone": "Arenaria di Detriti",
 	"block.humlands.scrap_glass": "Vetro di Detriti",
 	"block.humlands.sifter": "Vaglio Meccanico",
-	"block.humlands.test_block": "Blocco Test",
 	"item.humlands.carbon_sheet": "Lastra di Carbonio",
 	"item.humlands.carbon_tube": "Tubo di Carbonio",
 	"item.humlands.flux_vial": "Fiala per Flusso",
@@ -20,6 +20,5 @@
 	"item.humlands.super_royal_flan_raw": "Sformato Super Regale Crudo",
 	"item.humlands.super_royal_flan": "Sformato Super Regale",
 	"item.humlands.super_royal_slime": "Bava Super Regale",
-	"item.humlands.test_item": "Oggetto Test",
 	"item.humlands.unpowered_sifter_body": "Tronco di Vaglio Meccanico Disalimentato"
 }
