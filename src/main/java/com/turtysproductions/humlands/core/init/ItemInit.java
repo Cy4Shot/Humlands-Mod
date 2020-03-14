@@ -5,6 +5,7 @@ import com.turtysproductions.humlands.common.items.CraftingReuseItem;
 import com.turtysproductions.humlands.common.items.FluxVial;
 import com.turtysproductions.humlands.common.items.GlintingItem;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
+import com.turtysproductions.humlands.common.items.RubberExtractor;
 
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Food;
