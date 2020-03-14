@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "humlands:block/rubber_wood_slab" },
+        "type=top": { "model": "humlands:block/rubber_wood_slab_top" },
+        "type=double": { "model": "humlands:block/rubber_wood_planks" }
+    }
+}
