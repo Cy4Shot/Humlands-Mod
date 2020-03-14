@@ -11,6 +11,7 @@ import com.turtysproductions.humlands.core.init.BlockInit;
 import com.turtysproductions.humlands.core.init.DimensionInit;
 import com.turtysproductions.humlands.core.init.FluidInit;
 import com.turtysproductions.humlands.core.init.ItemInit;
+import com.turtysproductions.humlands.core.init.NullBlockInit;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
 
 import net.minecraft.client.renderer.RenderType;
@@ -52,6 +53,7 @@ public class HumlandsMod {
 
 		BiomeInit.BIOMES.register(bus);
 		BlockInit.BLOCKS.register(bus);
+		NullBlockInit.NULL_BLOCKS.register(bus);
 		ItemInit.ITEMS.register(bus);
 		FluidInit.FLUIDS.register(bus);
 		FluidInit.BLOCKS.register(bus);

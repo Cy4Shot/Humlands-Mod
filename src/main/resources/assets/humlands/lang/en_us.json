@@ -7,7 +7,7 @@
 	"block.humlands.scrap_sandstone": "Scrap Sandstone",
 	"block.humlands.scrap_glass": "Scrap Glass",
 	"block.humlands.sifter": "Sifter",
-	"block.humlands.test_block": "Test Block",
+	"block.humlands.shaper": "Shaper",
 	"item.humlands.carbon_sheet": "Carbon Sheet",
 	"item.humlands.carbon_tube": "Carbon Tube",
 	"item.humlands.diamond_encrusted_bone": "Diamond Encrusted Bone",
@@ -17,6 +17,11 @@
 	"item.humlands.full_vial": "Full Vial",
 	"item.humlands.gold_bone": "Golden Bone",
 	"item.humlands.gold_wire": "Golden Wire",
+	"item.humlands.iron_wire": "Iron Wire",
+	"item.humlands.diamond_wire": "Diamond Wire",
+	"item.humlands.gold_plate": "Golden Plate",
+	"item.humlands.iron_plate": "Iron Plate",
+	"item.humlands.diamond_plate": "Diamond Plate",
 	"item.humlands.iron_bone": "Iron Bone",
 	"item.humlands.iron_mesh": "Iron Mesh",
 	"item.humlands.mechanical_arm": "Mechanical Arm",
@@ -29,5 +34,7 @@
 	"item.humlands.super_royal_flan_raw": "Super Raw Royal Flan",
 	"item.humlands.super_royal_flan": "Super Royal Flan",
 	"item.humlands.super_royal_slime": "Super Royal Slime",
-  "item.humlands.wirecutters": "Wirecutters"
+  	"item.humlands.wirecutters": "Wirecutters",
+  	"item.humlands.hammer": "Hammer"
+
 }
