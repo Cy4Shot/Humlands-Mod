@@ -4,6 +4,16 @@ import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.blocks.ScrapGlassBlock;
 import com.turtysproductions.humlands.common.blocks.ScrapSandBlock;
 import com.turtysproductions.humlands.common.blocks.SifterBlock;
+import com.turtysproductions.humlands.common.blocks.CustomDoor;
+import com.turtysproductions.humlands.common.blocks.CustomFence;
+import com.turtysproductions.humlands.common.blocks.CustomFenceGate;
+import com.turtysproductions.humlands.common.blocks.CustomLeaves;
+import com.turtysproductions.humlands.common.blocks.CustomLogBlock;
+import com.turtysproductions.humlands.common.blocks.CustomPressurePlate;
+import com.turtysproductions.humlands.common.blocks.CustomSlab;
+import com.turtysproductions.humlands.common.blocks.CustomStairs;
+import com.turtysproductions.humlands.common.blocks.CustomTrapdoor;
+import com.turtysproductions.humlands.common.blocks.CustomWoodButton;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
