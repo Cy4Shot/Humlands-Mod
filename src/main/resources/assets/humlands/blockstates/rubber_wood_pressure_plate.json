@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "humlands:block/rubber_wood_pressure_plate" },
+        "powered=true": { "model": "humlands:block/rubber_wood_pressure_plate_down" }
+    }
+}
