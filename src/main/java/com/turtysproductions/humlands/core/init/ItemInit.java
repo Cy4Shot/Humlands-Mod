@@ -41,5 +41,17 @@ public class ItemInit {
 	public static final RegistryObject<Item> SUPER_ROYAL_FLAN = ITEMS.register("super_royal_flan", () -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC).food(new Food.Builder().hunger(8).saturation(4.0f).effect(new EffectInstance(Effects.SPEED, 6000, 5), 1).effect(new EffectInstance(Effects.HEALTH_BOOST), 1).build())));	
 	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	public static final RegistryObject<Item> SUPER_ROYAL_FLAN_RAW = ITEMS.register("super_royal_flan_raw", () -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC)));
-	public static final RegistryObject<Item> UNPOWERED_SIFTER_BODY = ITEMS.register("unpowered_sifter_body", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+        public static final RegistryObject<Item> UNPOWERED_SIFTER_BODY = ITEMS.register("unpowered_sifter_body", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	public static final RegistryObject<Item> RUBBER_EXTRACTOR = ITEMS.register("rubber_extractor", () -> new RubberExtractor(new Item.Properties().group(ItemGroup.MISC).maxStackSize(1).maxDamage(500)));
+        public static final RegistryObject<Item> RUBBER = ITEMS.register("rubber", () -> new Item(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64)));
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
