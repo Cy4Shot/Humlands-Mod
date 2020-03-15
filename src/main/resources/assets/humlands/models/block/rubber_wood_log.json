@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "humlands:blocks/rubber_wood_log_top",
+        "side": "humlands:blocks/rubber_wood_log"
+    }
+}

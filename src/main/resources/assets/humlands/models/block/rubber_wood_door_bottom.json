@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "humlands:blocks/rubber_wood_door_bottom",
+        "top": "humlands:blocks/rubber_wood_door_top"
+    }
+}
