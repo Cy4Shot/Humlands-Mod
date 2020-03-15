@@ -17,7 +17,7 @@ public class HumlandsDimension extends Dimension {
 
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
-		return new HumlandsChunkGenerator(world, new HumlandsBiomeProvider(), new HumlandsGenSettings());
+		return new HumlandsChunkGenerator(world, new HumlandsBiomeProvider(new HumlandsBiomeProviderSettings(world.getWorldInfo())), new HumlandsGenSettings());
 	}
 
 	@Override
