@@ -1,7 +1,7 @@
-package com.turtysproductions.humlands.objects.items;
+package com.turtysproductions.humlands.common.items;
  
-import com.turtysproductions.humlands.init.BlockInit;
-import com.turtysproductions.humlands.init.ItemInit;
+import com.turtysproductions.humlands.core.init.BlockInit;
+import com.turtysproductions.humlands.core.init.ItemInit;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

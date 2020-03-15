@@ -15,7 +15,6 @@ import com.turtysproductions.humlands.common.blocks.ScrapGlassBlock;
 import com.turtysproductions.humlands.common.blocks.ScrapSandBlock;
 import com.turtysproductions.humlands.common.blocks.ShaperBlock;
 import com.turtysproductions.humlands.common.blocks.SifterBlock;
-import com.turtysproductions.humlands.core.tab.HumlandsTab;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
