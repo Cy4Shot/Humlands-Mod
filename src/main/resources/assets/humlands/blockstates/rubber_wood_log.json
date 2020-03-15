@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "humlands:block/rubber_wood_log" },
+        "axis=z":   { "model": "humlands:block/rubber_wood_log", "x": 90 },
+        "axis=x":   { "model": "humlands:block/rubber_wood_log", "x": 90, "y": 90 }
+    }
+}

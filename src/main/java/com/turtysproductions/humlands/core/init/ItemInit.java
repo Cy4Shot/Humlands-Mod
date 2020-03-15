@@ -5,6 +5,7 @@ import com.turtysproductions.humlands.common.items.CraftingReuseItem;
 import com.turtysproductions.humlands.common.items.FluxVial;
 import com.turtysproductions.humlands.common.items.GlintingItem;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
+import com.turtysproductions.humlands.common.items.RubberExtractor;
 
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Food;
@@ -46,5 +47,17 @@ public class ItemInit {
 	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer",() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 	public static final RegistryObject<Item> SUPER_ROYAL_FLAN_RAW = ITEMS.register("super_royal_flan_raw", () -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC)));
-	public static final RegistryObject<Item> UNPOWERED_SIFTER_BODY = ITEMS.register("unpowered_sifter_body", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+        public static final RegistryObject<Item> UNPOWERED_SIFTER_BODY = ITEMS.register("unpowered_sifter_body", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	public static final RegistryObject<Item> RUBBER_EXTRACTOR = ITEMS.register("rubber_extractor", () -> new RubberExtractor(new Item.Properties().group(HumlandsTab.HUMLANDS).maxStackSize(1).maxDamage(500)));
+        public static final RegistryObject<Item> RUBBER = ITEMS.register("rubber", () -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS).maxStackSize(64)));
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

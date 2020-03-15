@@ -1,0 +1,9 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": 
+    {
+        "bottom": "humlands:blocks/rubber_wood_planks",
+        "top": "humlands:blocks/rubber_wood_planks",
+        "side": "humlands:blocks/rubber_wood_planks"
+    }
+}

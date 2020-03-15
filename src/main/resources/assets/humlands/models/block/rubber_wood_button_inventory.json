@@ -1,0 +1,6 @@
+{
+    "parent": "block/button_inventory",
+    "textures": {
+        "texture": "humlands:blocks/rubber_wood_planks"
+    }
+}
