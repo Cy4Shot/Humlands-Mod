@@ -22,7 +22,7 @@ public class DirtyHumlandsSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderCo
 	public void buildSurface(Random random, IChunk chunkIn, Biome biomeIn, int x, int z, int startHeight, double noise,
 			BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig config) {
 		Random rd = new Random();
-		int i = rd.nextInt(2);
+		int i = rd.nextInt(3);
 		if (i == 0)
 			SurfaceBuilder.DEFAULT.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 					defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(Blocks.COARSE_DIRT.getDefaultState(),
@@ -31,7 +31,7 @@ public class DirtyHumlandsSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderCo
 			SurfaceBuilder.DEFAULT.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 					defaultFluid, seaLevel, seed,
 					new SurfaceBuilderConfig(
-							i == 1 ? Blocks.GRASS_BLOCK.getDefaultState()
+							i == 1 ? Blocks.DIRT.getDefaultState()
 									: Blocks.BROWN_CONCRETE_POWDER.getDefaultState(),
 							Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState()));
 	}

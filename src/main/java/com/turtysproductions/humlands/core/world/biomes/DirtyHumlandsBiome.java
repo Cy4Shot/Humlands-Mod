@@ -15,6 +15,7 @@ public class DirtyHumlandsBiome extends Biome{
 		DefaultBiomeFeatures.addTaigaRocks(this);
 		DefaultBiomeFeatures.addDenseGrass(this);
 		DefaultBiomeFeatures.addTaigaLargeFerns(this);
+		DefaultBiomeFeatures.addFossils(this);
 	}
 
 	@OnlyIn(Dist.CLIENT)
