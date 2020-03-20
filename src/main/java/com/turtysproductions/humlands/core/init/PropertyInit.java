@@ -1,10 +1,8 @@
 package com.turtysproductions.humlands.core.init;
 
-import com.turtysproductions.humlands.core.tab.HumlandsTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 
 public class PropertyInit
