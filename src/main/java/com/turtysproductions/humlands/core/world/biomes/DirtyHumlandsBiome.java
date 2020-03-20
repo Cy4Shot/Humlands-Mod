@@ -1,5 +1,7 @@
 package com.turtysproductions.humlands.core.world.biomes;
 
+import com.turtysproductions.humlands.core.world.feature.ModBiomeFeatures;
+
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,6 +18,7 @@ public class DirtyHumlandsBiome extends Biome{
 		DefaultBiomeFeatures.addDenseGrass(this);
 		DefaultBiomeFeatures.addTaigaLargeFerns(this);
 		DefaultBiomeFeatures.addFossils(this);
+		ModBiomeFeatures.addOvergroundFossils(this);
 	}
 
 	@OnlyIn(Dist.CLIENT)
