@@ -14,6 +14,7 @@ public class TriggerInit {
 		return filledVialTrigger;
 	}
 
+	@SuppressWarnings("unused")
 	private static final Map<ResourceLocation, ICriterionTrigger<?>> REGISTRY = Maps.newHashMap();
 
 	public static final FilledVialTrigger FILLED_VIAL = register(new FilledVialTrigger());
