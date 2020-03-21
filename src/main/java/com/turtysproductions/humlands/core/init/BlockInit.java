@@ -11,6 +11,7 @@ import com.turtysproductions.humlands.common.blocks.CustomSlab;
 import com.turtysproductions.humlands.common.blocks.CustomStairs;
 import com.turtysproductions.humlands.common.blocks.CustomTrapdoor;
 import com.turtysproductions.humlands.common.blocks.CustomWoodButton;
+import com.turtysproductions.humlands.common.blocks.OreClump;
 import com.turtysproductions.humlands.common.blocks.ScrapGlassBlock;
 import com.turtysproductions.humlands.common.blocks.ScrapSandBlock;
 import com.turtysproductions.humlands.common.blocks.ShaperBlock;
@@ -29,6 +30,11 @@ public class BlockInit {
 	
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, HumlandsMod.MOD_ID);
 
+	public static final RegistryObject<Block> IRON_ORE_CLUMP = BLOCKS.register("iron_ore_clump", () -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
+	public static final RegistryObject<Block> COAL_ORE_CLUMP = BLOCKS.register("coal_ore_clump", () -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
+	public static final RegistryObject<Block> GOLD_ORE_CLUMP = BLOCKS.register("gold_ore_clump", () -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
+	public static final RegistryObject<Block> LAPIS_ORE_CLUMP = BLOCKS.register("lapis_ore_clump", () -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
+	public static final RegistryObject<Block> REDSTONE_ORE_CLUMP = BLOCKS.register("redstone_ore_clump", () -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
 	public static final RegistryObject<Block> HUMLANDS_PORTAL_BLOCK = BLOCKS.register("humlands_portal_block", () -> new Block(PropertyInit.PORTAL_PROPERTY));
 	public static final RegistryObject<Block> SCRAP_SAND = BLOCKS.register("scrap_sand", () -> new ScrapSandBlock(PropertyInit.SAND_PROPERTY));
 	public static final RegistryObject<Block> SCRAP_SANDSTONE = BLOCKS.register("scrap_sandstone", () -> new Block(PropertyInit.SANDSTONE_PROPERTY));

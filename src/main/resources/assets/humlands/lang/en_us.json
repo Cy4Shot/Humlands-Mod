@@ -1,6 +1,11 @@
 {
     "itemGroup.humlands": "Humlands Tab",
 	"block.humlands.flux": "Flux",
+	"block.humlands.iron_ore_clump": "Iron Ore Clump",
+	"block.humlands.gold_ore_clump": "Gold Ore Clump",
+	"block.humlands.coal_ore_clump": "Coal Ore Clump",
+	"block.humlands.lapis_ore_clump": "Lapis Ore Clump",
+	"block.humlands.redstone_ore_clump": "Redstone Ore Clump",
 	"fluid.humlands.flux_fluid": "Flux",
 	"block.humlands.humlands_portal_block": "Humlands Portal Block",
 	"block.humlands.scrap_sand": "Scrap Sand",
