@@ -2,8 +2,11 @@ package com.turtysproductions.humlands.common.blocks;
 
 import java.util.stream.Stream;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItemUseContext;
@@ -18,6 +21,8 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
 import net.minecraftforge.common.IPlantable;
 
 public class OreClump extends Block {
@@ -27,9 +32,9 @@ public class OreClump extends Block {
 		super(properties);
 		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
 	}
-	
+
 	public boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
-	      return state.isOpaqueCube(worldIn, pos);
+		return state.isOpaqueCube(worldIn, pos);
 	}
 
 	public static final VoxelShape SHAPE_N = Stream.of(Block.makeCuboidShape(6, 0, 11, 7, 1, 12),
@@ -90,8 +95,11 @@ public class OreClump extends Block {
 	}
 
 	@Override
+	@Nullable
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+		BlockState blockstate = this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+		if (blockstate.isValidPosition(context.getWorld(), context.getPos())) return blockstate;
+		return null;
 	}
 
 	@Override
@@ -126,4 +134,26 @@ public class OreClump extends Block {
 	public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {
 		return false;
 	}
+
+	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		return func_220185_b(worldIn, pos, getFacing(state).getOpposite());
+	}
+
+	public static boolean func_220185_b(IWorldReader p_220185_0_, BlockPos p_220185_1_, Direction p_220185_2_) {
+		BlockPos blockpos = p_220185_1_.offset(p_220185_2_);
+		return p_220185_0_.getBlockState(blockpos).isSolidSide(p_220185_0_, blockpos, p_220185_2_.getOpposite());
+	}
+
+	@SuppressWarnings("deprecation")
+	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
+			BlockPos currentPos, BlockPos facingPos) {
+		return getFacing(stateIn).getOpposite() == facing && !stateIn.isValidPosition(worldIn, currentPos)
+				? Blocks.AIR.getDefaultState()
+				: super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+	}
+
+	protected static Direction getFacing(BlockState p_196365_0_) {
+		return Direction.UP;
+	}
+
 }
