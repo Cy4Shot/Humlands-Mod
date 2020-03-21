@@ -27,6 +27,10 @@ public class OreClump extends Block {
 		super(properties);
 		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
 	}
+	
+	public boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	      return state.isOpaqueCube(worldIn, pos);
+	}
 
 	public static final VoxelShape SHAPE_N = Stream.of(Block.makeCuboidShape(6, 0, 11, 7, 1, 12),
 			Block.makeCuboidShape(5, 0, 5, 11, 6, 11), Block.makeCuboidShape(5, 0, 2, 8, 3, 5),

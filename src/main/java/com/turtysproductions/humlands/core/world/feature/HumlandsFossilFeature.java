@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
-import com.turtysproductions.humlands.HumlandsMod;
 
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -59,8 +58,7 @@ public class HumlandsFossilFeature extends Feature<NoFeatureConfig> {
 			}
 		}
 		BlockPos blockpos1 = template.getZeroPositionWithTransform(
-				new BlockPos(pos.add(j, 0, k).getX(), l, pos.add(j, 0, k).getZ()), Mirror.NONE, rotation);
-		HumlandsMod.LOGGER.debug(blockpos1);
+				new BlockPos(pos.add(j, 0, 0).getX(), l, pos.add(0, 0, k).getZ()), Mirror.NONE, rotation);
 		IntegrityProcessor integrityprocessor = new IntegrityProcessor(0.9F);
 		placementsettings.clearProcessors().addProcessor(integrityprocessor);
 		template.addBlocksToWorld(worldIn, blockpos1, placementsettings, 4);
