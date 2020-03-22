@@ -1,5 +1,4 @@
 {
-	"texture_size": [64, 64],
 	"textures": {
 		"0": "humlands:blocks/sifterarm3",
 		"1": "humlands:blocks/sifterarm2",
@@ -8,7 +7,7 @@
 		"4": "humlands:blocks/sifterarm4",
 		"5": "humlands:blocks/filterupper",
 		"6": "humlands:blocks/sifterbody",
-		"particle": "humlands:blockss/sifterarm3"
+		"particle": "humlands:blocks/sifterarm3"
 	},
 	"elements": [
 		{
