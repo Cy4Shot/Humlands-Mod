@@ -58,7 +58,7 @@ public class BiomeInit {
 	.surfaceBuilder(SurfaceBuilder.DEFAULT,
 	new SurfaceBuilderConfig(BlockInit.RUBBER_WOOD_FOREST_GRASS.get()
 	.getDefaultState(BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(),
-	BlockInit.RUBBER_WOOD_PLANKS.get().getDefaultState()))
+	BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
 	.category(Category.FOREST)
 	.depth(0.125f)
 	.downfall(0.0f)
@@ -75,7 +75,7 @@ public class BiomeInit {
 	.surfaceBuilder(SurfaceBuilder.DEFAULT,
 	new SurfaceBuilderConfig(BlockInit.RUBBER_WOOD_FOREST_GRASS.get().getDefaultState(),
         BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(),
-	BlockInit.RUBBER_WOOD_PLANKS.get().getDefaultState()))
+	BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
 	.category(Category.FOREST)
 	.depth(0.125f)
 	.downfall(0.0f)
