@@ -23,11 +23,14 @@ public class HumlandsBiomeProvider extends BiomeProvider {
 	}
 
 	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.FAR_HUMLANDS.get(),
-			BiomeInit.DIRTY_HUMLANDS.get());
+			BiomeInit.DIRTY_HUMLANDS.get(), BiomeInit.BLUE_HUMLANDS_FOREST.get(), BiomeInit.GREEN_HUMLANDS_FOREST.get());
 
 	@Override
 	public Biome getNoiseBiome(int x, int y, int z) {
-		if(noise.noiseAt(((float)x)/biomeSize, ((float)z)/biomeSize, true) < 0) return BiomeInit.FAR_HUMLANDS.get();
-		else return BiomeInit.DIRTY_HUMLANDS.get();
+		double noiseVal = noise.noiseAt(((float)x)/biomeSize, ((float)z)/biomeSize, true);
+		if(noiseVal > 0.3) return BiomeInit.FAR_HUMLANDS.get();
+		else if(noiseVal > 0) return BiomeInit.DIRTY_HUMLANDS.get();
+		else if(noiseVal > -0.3) return BiomeInit.BLUE_HUMLANDS_FOREST.get();
+		else return BiomeInit.GREEN_HUMLANDS_FOREST.get();
 	}
 }
