@@ -1,5 +1,9 @@
 {
-    "itemGroup.humlands": "Humlands Tab",
+	
+	//Tabs
+        "itemGroup.humlands": "Humlands Tab",
+	
+	//Blocks
 	"block.humlands.flux": "Flux",
 	"block.humlands.iron_ore_clump": "Iron Ore Clump",
 	"block.humlands.gold_ore_clump": "Gold Ore Clump",
@@ -15,17 +19,21 @@
 	"block.humlands.shaper": "Shaper",
 	"block.humlands.test_block": "Test Block",
 	"block.humlands.rubber_wood_planks": "Rubber Wood Planks",
-    "block.humlands.rubber_wood_log": "Rubber Wood Log",
-    "block.humlands.rubber_wood_stairs": "Rubber Wood Stairs",
-    "block.humlands.rubber_wood_button": "Rubber Wood Button",
-    "block.humlands.rubber_wood_slab": "Rubber Wood Slab",
-    "block.humlands.rubber_wood_fence_gate": "Rubber Wood Gate",
-    "block.humlands.rubber_wood_fence": "Rubber Wood Fence",
-    "block.humlands.rubber_wood_trapdoor": "Rubber Wood Trapdoor",
-    "block.humlands.stripped_rubber_wood_log": "Stripped Rubber Wood Log",
-    "block.humlands.rubber_streaming_rubber_wood_log": "Rubber Streaming Rubber Wood Log",
-    "block.humlands.rubber_wood_door": "Rubber Wood Door",
-    "block.humlands.rubber_leaves": "Rubber Leaves",
+        "block.humlands.rubber_wood_log": "Rubber Wood Log",
+        "block.humlands.rubber_wood_stairs": "Rubber Wood Stairs",
+        "block.humlands.rubber_wood_button": "Rubber Wood Button",
+        "block.humlands.rubber_wood_slab": "Rubber Wood Slab",
+        "block.humlands.rubber_wood_fence_gate": "Rubber Wood Gate",
+        "block.humlands.rubber_wood_fence": "Rubber Wood Fence",
+        "block.humlands.rubber_wood_trapdoor": "Rubber Wood Trapdoor",
+        "block.humlands.stripped_rubber_wood_log": "Stripped Rubber Wood Log",
+        "block.humlands.rubber_streaming_rubber_wood_log": "Rubber Streaming Rubber Wood Log",
+        "block.humlands.rubber_wood_door": "Rubber Wood Door",
+        "block.humlands.rubber_leaves": "Rubber Leaves",
+	"block.humlands.rubber_wood_forest_grass": "Rubber Wood Forest Grass",
+        "block.humlands.rubber_wood_forest_dirt": "Rubber Wood Forest Dirt",
+	
+	//Items
 	"item.humlands.carbon_sheet": "Carbon Sheet",
 	"item.humlands.carbon_tube": "Carbon Tube",
 	"item.humlands.diamond_encrusted_bone": "Diamond Encrusted Bone",
@@ -55,5 +63,14 @@
   	"item.humlands.wirecutters": "Wirecutters",
   	"item.humlands.hammer": "Hammer",
 	"item.humlands.rubber_extractor": "Rubber Extractor",
-    "item.humlands.rubber": "Rubber"
+        "item.humlands.rubber": "Rubber"
+	
+	//Biomes
+	"biome.humlands.rubber_wood_forest": "Rubber Wood Forest",
+        "biome.humlands.rubber_streaming_rubber_wood_forest": "Rubber Streaming Rubber Wood Forest"
+	"biome.humlands.far_humlands": "Far Humlands"
+	"biome.humlands.dirty_humlands": "Dirty Humlands"
+	
+	
+	
 }
