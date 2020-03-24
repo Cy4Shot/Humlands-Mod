@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.google.common.base.Preconditions;
+import com.turtysproductions.humlands.core.init.ParticleInit
 import com.turtysproductions.humlands.core.init.BiomeInit;
 import com.turtysproductions.humlands.core.init.BlockInit;
 import com.turtysproductions.humlands.core.init.DimensionInit;
@@ -55,6 +56,7 @@ public class HumlandsMod {
 		ItemInit.ITEMS.register(bus);
 		FluidInit.FLUIDS.register(bus);
 		FluidInit.BLOCKS.register(bus);
+		ParticleInit.PARTICLES.register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
