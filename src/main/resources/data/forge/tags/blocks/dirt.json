@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": 
+  [
+    "minecraft:dirt",
+    "minecraft:grass_block",
+    "minecraft:coarse_dirt",
+    "minecraft:podzol",
+    "minecraft:mycelium",
+    "humlands:rubber_wood_forest_grass",
+    "humlands:rubber_wood_forest_dirt"
+  ]
+}
