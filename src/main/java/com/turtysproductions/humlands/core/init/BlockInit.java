@@ -16,6 +16,8 @@ import com.turtysproductions.humlands.common.blocks.ScrapGlassBlock;
 import com.turtysproductions.humlands.common.blocks.ScrapSandBlock;
 import com.turtysproductions.humlands.common.blocks.ShaperBlock;
 import com.turtysproductions.humlands.common.blocks.SifterBlock;
+import com.turtysproductions.humlands.common.blocks.CustomGrass;
+import com.turtysproductions.humlands.common.blocks.RubberStreamingRubberWoodLog;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
@@ -41,9 +43,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> SCRAP_GLASS = BLOCKS.register("scrap_glass", () -> new ScrapGlassBlock(PropertyInit.GLASS_PROPERTY));
 	public static final RegistryObject<Block> SIFTER = BLOCKS.register("sifter", () -> new SifterBlock(PropertyInit.MACHINE_PROPERTY.notSolid()));
 	public static final RegistryObject<Block> SHAPER = BLOCKS.register("shaper", () -> new ShaperBlock(PropertyInit.MACHINE_PROPERTY.notSolid()));
-    public static final RegistryObject<Block> RUBBER_WOOD_LOG = BLOCKS.register("rubber_wood_log", () -> new CustomLogBlock(MaterialColor.WOOD, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+        public static final RegistryObject<Block> RUBBER_WOOD_LOG = BLOCKS.register("rubber_wood_log", () -> new CustomLogBlock(MaterialColor.WOOD, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> STRIPPED_RUBBER_WOOD_LOG = BLOCKS.register("stripped_rubber_wood_log", () -> new CustomLogBlock(MaterialColor.WOOD, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
-	public static final RegistryObject<Block> RUBBER_STREAMING_RUBBER_WOOD_LOG = BLOCKS.register("rubber_streaming_rubber_wood_log", () -> new CustomLogBlock(MaterialColor.WOOD, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> RUBBER_STREAMING_RUBBER_WOOD_LOG = BLOCKS.register("rubber_streaming_rubber_wood_log", () -> new RubberStreamingRubberWoodLog(MaterialColor.WOOD, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> RUBBER_LEAVES = BLOCKS.register("rubber_leaves", () -> new CustomLeaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.PLANT)));
 	public static final RegistryObject<Block> RUBBER_WOOD_PLANKS = BLOCKS.register("rubber_wood_planks", () -> new Block(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> RUBBER_WOOD_STAIRS = BLOCKS.register("rubber_wood_stairs", () -> new CustomStairs(RUBBER_WOOD_PLANKS.get().getDefaultState(), Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
@@ -54,5 +56,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> RUBBER_WOOD_PRESSURE_PLATE = BLOCKS.register("rubber_wood_pressure_plate", () -> new CustomPressurePlate(Sensitivity.EVERYTHING, Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> RUBBER_WOOD_TRAPDOOR = BLOCKS.register("rubber_wood_trapdoor", () -> new CustomTrapdoor(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> RUBBER_WOOD_DOOR = BLOCKS.register("rubber_wood_door", () -> new CustomDoor(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+        public static final RegistryObject<Block> RUBBER_WOOD_FOREST_GRASS = BLOCKS.register("rubber_wood_forest_grass", () -> new CustomGrass(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(2.0F, 2.0F).sound(SoundType.PLANT)));
+	public static final RegistryObject<Block> RUBBER_WOOD_FOREST_DIRT = BLOCKS.register("rubber_wood_forest_dirt", () -> new Block(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(2.0F, 2.0F).sound(SoundType.GROUND)));
 
+	
+	
 }
