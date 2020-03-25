@@ -37,6 +37,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> GOLD_ORE_CLUMP = BLOCKS.register("gold_ore_clump", () -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
 	public static final RegistryObject<Block> LAPIS_ORE_CLUMP = BLOCKS.register("lapis_ore_clump", () -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
 	public static final RegistryObject<Block> REDSTONE_ORE_CLUMP = BLOCKS.register("redstone_ore_clump", () -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
+	public static final RegistryObject<Block> BLUE_FOREST_GRASS_BLOCK = BLOCKS.register("blue_forest_grass_block", () -> new Block(PropertyInit.DIRT_PROPERTY));
+	public static final RegistryObject<Block> GREEN_FOREST_GRASS_BLOCK = BLOCKS.register("green_forest_grass_block", () -> new Block(PropertyInit.DIRT_PROPERTY));
 	public static final RegistryObject<Block> HUMLANDS_PORTAL_BLOCK = BLOCKS.register("humlands_portal_block", () -> new Block(PropertyInit.PORTAL_PROPERTY));
 	public static final RegistryObject<Block> SCRAP_SAND = BLOCKS.register("scrap_sand", () -> new ScrapSandBlock(PropertyInit.SAND_PROPERTY));
 	public static final RegistryObject<Block> SCRAP_SANDSTONE = BLOCKS.register("scrap_sandstone", () -> new Block(PropertyInit.SANDSTONE_PROPERTY));

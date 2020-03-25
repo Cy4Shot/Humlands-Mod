@@ -1,33 +1,44 @@
 package com.turtysproductions.humlands.core.world.dimension;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 import com.turtysproductions.humlands.core.init.BiomeInit;
+import com.turtysproductions.humlands.core.world.generator.VoronoiGenerator;
 
-import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
-import net.minecraft.world.gen.PerlinNoiseGenerator;
 
 public class HumlandsBiomeProvider extends BiomeProvider {
-
-	private HumlandsBiomeProviderSettings genSettings;
-	private PerlinNoiseGenerator noise;
-	private float biomeSize = 16.0f;
+	private VoronoiGenerator biomeNoise;
+	double biomeSize = 32.0d;
 
 	public HumlandsBiomeProvider(HumlandsBiomeProviderSettings genSettings) {
 		super(biomeList);
-		this.genSettings = genSettings;
-		this.noise = new PerlinNoiseGenerator(new SharedSeedRandom(this.genSettings.getSeed()), 3, -3);
+		this.biomeNoise = new VoronoiGenerator();
+		this.biomeNoise.setSeed((int) genSettings.getSeed());
 	}
 
 	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.FAR_HUMLANDS.get(),
-			BiomeInit.DIRTY_HUMLANDS.get());
+			BiomeInit.DIRTY_HUMLANDS.get(), BiomeInit.BLUE_HUMLANDS_FOREST.get(), BiomeInit.GREEN_HUMLANDS_FOREST.get(),
+			BiomeInit.RUBBER_STREAMING_RUBBER_WOOD_FOREST.get());
+	private static final List<Biome> allBiomes = Arrays.asList(BiomeInit.FAR_HUMLANDS.get(),
+			BiomeInit.DIRTY_HUMLANDS.get(), BiomeInit.BLUE_HUMLANDS_FOREST.get(), BiomeInit.GREEN_HUMLANDS_FOREST.get(),
+			BiomeInit.RUBBER_STREAMING_RUBBER_WOOD_FOREST.get());
 
 	@Override
 	public Biome getNoiseBiome(int x, int y, int z) {
-		if(noise.noiseAt(((float)x)/biomeSize, ((float)z)/biomeSize, true) < 0) return BiomeInit.FAR_HUMLANDS.get();
-		else return BiomeInit.DIRTY_HUMLANDS.get();
+		return getBiome(allBiomes,
+				biomeNoise.getValue((double) x / biomeSize, (double) y / biomeSize, (double) z / biomeSize));
+	}
+
+	public Biome getBiome(List<Biome> biomeList, double noiseVal) {
+		for (int i = biomeList.size(); i >= 0; i--) {
+			if (noiseVal > (2.0f / biomeList.size()) * i - 1)
+				return biomeList.get(i);
+		}
+		return biomeList.get(biomeList.size() - 1);
 	}
 }
