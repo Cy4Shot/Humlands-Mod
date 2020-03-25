@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "down": "humlands:blocks/rubber_wood_forest_dirt",
+        "up": "humlands:blocks/rubber_wood_forest_grass_top",
+        "side": "humlands:blocks/rubber_wood_forest_grass_side"
+    }
+}
