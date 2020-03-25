@@ -38,8 +38,7 @@ public class HumlandsFossilFeature extends Feature<NoFeatureConfig> {
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
 		Random random = worldIn.getRandom();
-		Rotation[] arotation = Rotation.values();
-		Rotation rotation = arotation[random.nextInt(arotation.length)];
+		Rotation rotation = Rotation.values()[random.nextInt(Rotation.values().length)];
 		Template template = ((ServerWorld) worldIn.getWorld()).getSaveHandler().getStructureTemplateManager()
 				.getTemplateDefaulted(FOSSILS[random.nextInt(FOSSILS.length)]);
 		ChunkPos chunkpos = new ChunkPos(pos);
