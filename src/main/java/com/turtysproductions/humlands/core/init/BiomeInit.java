@@ -5,6 +5,8 @@ import com.turtysproductions.humlands.core.world.biomes.DirtyHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.HumlandsBlueForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.HumlandsGreenForestBiome;
+import com.turtysproductions.humlands.core.world.biomes.RubberStreamingRubberWoodForestBiome;
+import com.turtysproductions.humlands.core.world.biomes.RubberWoodForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.builder.DirtyHumlandsSurfaceBuilder;
 import com.turtysproductions.humlands.core.world.biomes.builder.HumlandsBlueForestSurfaceBuilder;
 import com.turtysproductions.humlands.core.world.biomes.builder.HumlandsGreenForestSurfaceBuilder;
@@ -12,6 +14,8 @@ import com.turtysproductions.humlands.core.world.biomes.builder.HumlandsGreenFor
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
@@ -24,9 +28,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class BiomeInit {
 
 	protected static final SurfaceBuilderConfig FAR_HUMLANDS_SURFACE = new SurfaceBuilderConfig(
-	Blocks.RED_SAND.getDefaultState(), Blocks.RED_SANDSTONE.getDefaultState(), Blocks.CLAY.getDefaultState());
+			Blocks.RED_SAND.getDefaultState(), Blocks.RED_SANDSTONE.getDefaultState(), Blocks.CLAY.getDefaultState());
 
-	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, HumlandsMod.MOD_ID);
+	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES,
+			HumlandsMod.MOD_ID);
 
 	public static final RegistryObject<Biome> FAR_HUMLANDS = BIOMES.register("far_humlands",
 			() -> new FarHumlandsBiome(new Biome.Builder()
@@ -37,53 +42,39 @@ public class BiomeInit {
 					.parent((String) null)));
 
 	public static final RegistryObject<Biome> DIRTY_HUMLANDS = BIOMES
-	.register("dirty_humlands",
-	() -> new DirtyHumlandsBiome(
-	new Biome.Builder()
-	.surfaceBuilder(
-	new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
-	register("dirty_humlands_surface",
-	new DirtyHumlandsSurfaceBuilder(
+			.register("dirty_humlands",
+					() -> new DirtyHumlandsBiome(
+							new Biome.Builder()
+									.surfaceBuilder(
+											new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
+													register("dirty_humlands_surface",
+															new DirtyHumlandsSurfaceBuilder(
 																	SurfaceBuilderConfig::deserialize)),
-	new SurfaceBuilderConfig(Blocks.COARSE_DIRT.getDefaultState(),
-	Blocks.DIRT.getDefaultState(),
-	Blocks.DIRT.getDefaultState())))
-        .precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.125F)
-	.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
-	.waterFogColor(329011).parent((String) null)));
-	
+													new SurfaceBuilderConfig(Blocks.COARSE_DIRT.getDefaultState(),
+															Blocks.DIRT.getDefaultState(),
+															Blocks.DIRT.getDefaultState())))
+									.precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.125F)
+									.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
+									.waterFogColor(329011).parent((String) null)));
+
 	public static final RegistryObject<Biome> RUBBER_WOOD_FOREST = BIOMES.register("rubber_wood_forest",
-			() -> new RubberWoodForestBiome(new Biome.Builder()
-	.precipitation(RainType.NONE)
-	.scale(0.2f)
-	.temperature(1.0f)
-	.waterColor(0x3f17ad)
-	.waterFogColor(0x3f17ad)
-	.surfaceBuilder(SurfaceBuilder.DEFAULT,
-	new SurfaceBuilderConfig(BlockInit.RUBBER_WOOD_FOREST_GRASS.get()
-	.getDefaultState(BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(),
-	BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
-	.category(Category.FOREST)
-	.depth(0.125f)
-	.downfall(0.0f)
-	.parent(null)));
-	                
-	
-	public static final RegistryObject<Biome> RUBBER_STREAMING_RUBBER_WOOD_FOREST = BIOMES.register("rubber_streaming_rubber_wood_forest",
-	() -> new RubberStreamingRubberWoodForestBiome(new Biome.Builder()
-	.precipitation(RainType.NONE)
-	.scale(0.2f)
-	.temperature(1.0f)
-	.waterColor(0x3f40ad)
-	.waterFogColor(0x3f40ad)
-	.surfaceBuilder(SurfaceBuilder.DEFAULT,
-	new SurfaceBuilderConfig(BlockInit.RUBBER_WOOD_FOREST_GRASS.get().getDefaultState(),
-        BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(),
-	BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
-	.category(Category.FOREST)
-	.depth(0.125f)
-	.downfall(0.0f)
-	.parent("rubber_wood_forest")));
+			() -> new RubberWoodForestBiome(new Biome.Builder().precipitation(RainType.NONE).scale(0.2f)
+					.temperature(1.0f).waterColor(0x3f17ad).waterFogColor(0x3f17ad)
+					.surfaceBuilder(SurfaceBuilder.DEFAULT,
+							new SurfaceBuilderConfig(BlockInit.RUBBER_WOOD_FOREST_GRASS.get().getDefaultState(),
+									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(),
+									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
+					.category(Category.FOREST).depth(0.125f).downfall(0.0f).parent((String) null)));
+
+	public static final RegistryObject<Biome> RUBBER_STREAMING_RUBBER_WOOD_FOREST = BIOMES.register(
+			"rubber_streaming_rubber_wood_forest",
+			() -> new RubberStreamingRubberWoodForestBiome(new Biome.Builder().precipitation(RainType.NONE).scale(0.2f)
+					.temperature(1.0f).waterColor(0x3f40ad).waterFogColor(0x3f40ad)
+					.surfaceBuilder(SurfaceBuilder.DEFAULT,
+							new SurfaceBuilderConfig(BlockInit.RUBBER_WOOD_FOREST_GRASS.get().getDefaultState(),
+									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(),
+									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
+					.category(Category.FOREST).depth(0.125f).downfall(0.0f).parent("rubber_wood_forest")));
 
 	public static final RegistryObject<Biome> BLUE_HUMLANDS_FOREST = BIOMES
 			.register("blue_humlands_forest",
@@ -97,7 +88,7 @@ public class BiomeInit {
 									.precipitation(Biome.RainType.RAIN).category(Biome.Category.DESERT).depth(0.125F)
 									.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
 									.waterFogColor(329011).parent((String) null)));
-	
+
 	public static final RegistryObject<Biome> GREEN_HUMLANDS_FOREST = BIOMES
 			.register("green_humlands_forest",
 					() -> new HumlandsGreenForestBiome(
@@ -113,15 +104,15 @@ public class BiomeInit {
 
 	public static final BiomeDictionary.Type HUMLANDS = BiomeDictionary.Type.getType("HUMLANDS");
 
-	public static void addBiomeTypes() 
-	{
+	public static void addBiomeTypes() {
 
 		BiomeDictionary.addTypes(FAR_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.HILLS);
 		BiomeDictionary.addTypes(DIRTY_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.HILLS);
 		BiomeDictionary.addTypes(BLUE_HUMLANDS_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 		BiomeDictionary.addTypes(GREEN_HUMLANDS_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 		BiomeDictionary.addTypes(RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(RUBBER_STREAMING_RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.RARE);
+		BiomeDictionary.addTypes(RUBBER_STREAMING_RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST,
+				BiomeDictionary.Type.RARE);
 	}
 
 	@SuppressWarnings({ "unchecked", "deprecation" })
