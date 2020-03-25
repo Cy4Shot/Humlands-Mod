@@ -13,7 +13,7 @@ import net.minecraft.world.biome.provider.BiomeProvider;
 
 public class HumlandsBiomeProvider extends BiomeProvider {
 	private VoronoiGenerator biomeNoise;
-	double biomeSize = 16.0d;
+	double biomeSize = 32.0d;
 
 	public HumlandsBiomeProvider(HumlandsBiomeProviderSettings genSettings) {
 		super(biomeList);
