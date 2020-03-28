@@ -16,7 +16,7 @@ import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 
 public class HumlandsRubberTreeFeature extends AbstractSmallTreeFeature<TreeFeatureConfig> {
-	int extra_log_chance = 0;
+	int extra_log_chance;
 
 	public HumlandsRubberTreeFeature(Function<Dynamic<?>, ? extends TreeFeatureConfig> config, int extra_log_chance) {
 		super(config);
