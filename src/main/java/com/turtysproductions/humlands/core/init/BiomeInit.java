@@ -5,7 +5,6 @@ import com.turtysproductions.humlands.core.world.biomes.DirtyHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.HumlandsBlueForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.HumlandsGreenForestBiome;
-import com.turtysproductions.humlands.core.world.biomes.RubberStreamingRubberWoodForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.RubberWoodForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.builder.DirtyHumlandsSurfaceBuilder;
 import com.turtysproductions.humlands.core.world.biomes.builder.HumlandsBlueForestSurfaceBuilder;
@@ -66,16 +65,6 @@ public class BiomeInit {
 									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
 					.category(Category.FOREST).depth(0.125f).downfall(0.0f).parent((String) null)));
 
-	public static final RegistryObject<Biome> RUBBER_STREAMING_RUBBER_WOOD_FOREST = BIOMES.register(
-			"rubber_streaming_rubber_wood_forest",
-			() -> new RubberStreamingRubberWoodForestBiome(new Biome.Builder().precipitation(RainType.NONE).scale(0.2f)
-					.temperature(1.0f).waterColor(0x3f40ad).waterFogColor(0x3f40ad)
-					.surfaceBuilder(SurfaceBuilder.DEFAULT,
-							new SurfaceBuilderConfig(BlockInit.RUBBER_WOOD_FOREST_GRASS.get().getDefaultState(),
-									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(),
-									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
-					.category(Category.FOREST).depth(0.125f).downfall(0.0f).parent("rubber_wood_forest")));
-
 	public static final RegistryObject<Biome> BLUE_HUMLANDS_FOREST = BIOMES
 			.register("blue_humlands_forest",
 					() -> new HumlandsBlueForestBiome(
@@ -111,8 +100,6 @@ public class BiomeInit {
 		BiomeDictionary.addTypes(BLUE_HUMLANDS_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 		BiomeDictionary.addTypes(GREEN_HUMLANDS_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 		BiomeDictionary.addTypes(RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(RUBBER_STREAMING_RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST,
-				BiomeDictionary.Type.RARE);
 	}
 
 	@SuppressWarnings({ "unchecked", "deprecation" })
