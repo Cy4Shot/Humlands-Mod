@@ -1,17 +1,21 @@
 package com.turtysproductions.humlands.core.world.dimension;
 
-import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import com.google.common.collect.ImmutableSet;
 import com.turtysproductions.humlands.core.init.BiomeInit;
 import com.turtysproductions.humlands.core.world.generator.VoronoiGenerator;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraftforge.fml.RegistryObject;
 
 public class HumlandsBiomeProvider extends BiomeProvider {
+
+	private static final Set<Biome> biomeList = new HashSet<>();
+
 	private VoronoiGenerator biomeNoise;
 	double biomeSize = 32.0d;
 
@@ -19,18 +23,14 @@ public class HumlandsBiomeProvider extends BiomeProvider {
 		super(biomeList);
 		this.biomeNoise = new VoronoiGenerator();
 		this.biomeNoise.setSeed((int) genSettings.getSeed());
+		BiomeInit.BIOMES.getEntries().stream().map(RegistryObject::get).forEach(biome -> {
+			biomeList.add(biome);
+		});
 	}
-
-	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.FAR_HUMLANDS.get(),
-			BiomeInit.DIRTY_HUMLANDS.get(), BiomeInit.BLUE_HUMLANDS_FOREST.get(), BiomeInit.GREEN_HUMLANDS_FOREST.get(),
-			BiomeInit.RUBBER_STREAMING_RUBBER_WOOD_FOREST.get());
-	private static final List<Biome> allBiomes = Arrays.asList(BiomeInit.FAR_HUMLANDS.get(),
-			BiomeInit.DIRTY_HUMLANDS.get(), BiomeInit.BLUE_HUMLANDS_FOREST.get(), BiomeInit.GREEN_HUMLANDS_FOREST.get(),
-			BiomeInit.RUBBER_STREAMING_RUBBER_WOOD_FOREST.get());
 
 	@Override
 	public Biome getNoiseBiome(int x, int y, int z) {
-		return getBiome(allBiomes,
+		return getBiome(new LinkedList<Biome>(biomeList),
 				biomeNoise.getValue((double) x / biomeSize, (double) y / biomeSize, (double) z / biomeSize));
 	}
 
