@@ -23,9 +23,7 @@ public class HumlandsBiomeProvider extends BiomeProvider {
 		super(biomeList);
 		this.biomeNoise = new VoronoiGenerator();
 		this.biomeNoise.setSeed((int) genSettings.getSeed());
-		BiomeInit.BIOMES.getEntries().stream().map(RegistryObject::get).forEach(biome -> {
-			biomeList.add(biome);
-		});
+		BiomeInit.BIOMES.getEntries().stream().map(RegistryObject::get).forEach(biome -> { biomeList.add(biome); });
 	}
 
 	@Override
