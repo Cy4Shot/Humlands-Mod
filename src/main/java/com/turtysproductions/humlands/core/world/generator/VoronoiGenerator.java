@@ -62,9 +62,7 @@ public class VoronoiGenerator {
 			double yDist = yCandidate - y;
 			double zDist = zCandidate - z;
 			value = (Math.sqrt(xDist * xDist + yDist * yDist + zDist * zDist)) * SQRT_3 - 1.0;
-		} else {
-			value = 0.0;
-		}
+		} else value = 0.0;
 		return value + (displacement * (double) ValueNoise3D((int) (Math.floor(xCandidate)),
 				(int) (Math.floor(yCandidate)), (int) (Math.floor(zCandidate)), seed));
 	}
