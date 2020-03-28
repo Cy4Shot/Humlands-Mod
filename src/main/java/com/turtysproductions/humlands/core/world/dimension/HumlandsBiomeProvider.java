@@ -36,8 +36,7 @@ public class HumlandsBiomeProvider extends BiomeProvider {
 
 	public Biome getBiome(List<Biome> biomeList, double noiseVal) {
 		for (int i = biomeList.size(); i >= 0; i--) {
-			if (noiseVal > (2.0f / biomeList.size()) * i - 1)
-				return biomeList.get(i);
+			if (noiseVal > (2.0f / biomeList.size()) * i - 1) return biomeList.get(i);
 		}
 		return biomeList.get(biomeList.size() - 1);
 	}
