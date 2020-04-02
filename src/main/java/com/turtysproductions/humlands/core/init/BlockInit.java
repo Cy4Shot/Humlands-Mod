@@ -18,6 +18,7 @@ import com.turtysproductions.humlands.common.blocks.ShaperBlock;
 import com.turtysproductions.humlands.common.blocks.SifterBlock;
 import com.turtysproductions.humlands.common.blocks.CustomGrass;
 import com.turtysproductions.humlands.common.blocks.RubberStreamingRubberWoodLog;
+import com.turtysproductions.humlands.common.blocks.TimeCapsule;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
