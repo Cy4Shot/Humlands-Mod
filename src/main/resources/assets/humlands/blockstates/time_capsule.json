@@ -1,0 +1,13 @@
+{
+    "variants":
+    {
+    "facing=north": { "model": "humlands:block/time_capsule" },
+    "facing=south": { "model": "humlands:block/time_capsule", "y": 180 },
+    "facing=west": { "model": "humlands:block/time_capsule", "y": 270 },
+    "facing=east": { "model": "humlands:block/time_capsule", "y": 90 }
+    
+    
+    
+    
+    }
+}

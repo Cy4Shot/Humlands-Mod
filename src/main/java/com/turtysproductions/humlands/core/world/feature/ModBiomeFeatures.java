@@ -53,5 +53,21 @@ public class ModBiomeFeatures {
 								new SimpleBlockPlacer())).tries(64).func_227317_b_().build())
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(8))));
 	}
+	
+	public static void addPonds(Biome biome, int chance) 
+	{
+	biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+	new RubberForestPondFeature(NoFeatureConfig::deserialize)
+	.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+	.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
+	}
+	
+	public static void addLumberMills(Biome biome, int chance) 
+	{
+	biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+	new LumberMillFeature(NoFeatureConfig::deserialize)
+	.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+	.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
+	}
 
 }

@@ -55,6 +55,7 @@ public class HumlandsMod {
 		BlockInit.BLOCKS.register(bus);
 		BiomeInit.BIOMES.register(bus);
 		ItemInit.ITEMS.register(bus);
+		EntityTypesInit.ENTITY_TYPES.register(bus);
 		FluidInit.FLUIDS.register(bus);
 		FluidInit.BLOCKS.register(bus);
 		ParticleInit.PARTICLES.register(bus);
