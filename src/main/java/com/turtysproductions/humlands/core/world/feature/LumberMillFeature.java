@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.core.world.features;
+package com.turtysproductions.humlands.core.world.feature;
 
 
 
