@@ -20,28 +20,17 @@ import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
 
 public class ModBiomeFeatures {
-	private static final BlockState RUBBER_LEAVES = BlockInit.RUBBER_LEAVES.get().getDefaultState();
-	private static final BlockState RUBBER_WOOD_LOG = BlockInit.RUBBER_WOOD_LOG.get().getDefaultState();
-	private static final BlockState RUBBER_STREAMING_RUBBER_WOOD_LOG = BlockInit.RUBBER_STREAMING_RUBBER_WOOD_LOG.get()
-			.getDefaultState();
 
-	public static final TreeFeatureConfig RUBBER_TREE_CONFIG = (new TreeFeatureConfig.Builder(
-			new SimpleBlockStateProvider(RUBBER_WOOD_LOG), new SimpleBlockStateProvider(RUBBER_LEAVES),
-			new BlobFoliagePlacer(2, 0))).baseHeight(5).heightRandA(2).foliageHeight(3).ignoreVines().build();
-	public static final TreeFeatureConfig RUBBER_STREAMING_TREE_CONFIG = (new TreeFeatureConfig.Builder(
-			new SimpleBlockStateProvider(RUBBER_STREAMING_RUBBER_WOOD_LOG), new SimpleBlockStateProvider(RUBBER_LEAVES),
-			new BlobFoliagePlacer(2, 0))).baseHeight(5).heightRandA(2).foliageHeight(3).ignoreVines().build();
-
-	public static void addRubberTrees(Biome biomeIn) {
+	public static void addRubberTrees(Biome biomeIn, int steam_chance) {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
-				Feature.NORMAL_TREE.withConfiguration(RUBBER_TREE_CONFIG).withPlacement(
-						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(5, 0.1F, 1))));
-	}
-
-	public static void addRubberStreamingRubberTrees(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
-				Feature.NORMAL_TREE.withConfiguration(RUBBER_STREAMING_TREE_CONFIG).withPlacement(
-						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(5, 0.1F, 1))));
+				new HumlandsRubberTreeFeature(TreeFeatureConfig::func_227338_a_, steam_chance)
+						.withConfiguration((new TreeFeatureConfig.Builder(
+								new SimpleBlockStateProvider(BlockInit.RUBBER_WOOD_LOG.get().getDefaultState()),
+								new SimpleBlockStateProvider(BlockInit.RUBBER_LEAVES.get().getDefaultState()),
+								new BlobFoliagePlacer(2, 0))).baseHeight(5).heightRandA(2).foliageHeight(3)
+										.ignoreVines().build())
+						.withPlacement(
+								Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(5, 0.1F, 1))));
 	}
 
 	public static void addOvergroundFossils(Biome biome, int chance) {

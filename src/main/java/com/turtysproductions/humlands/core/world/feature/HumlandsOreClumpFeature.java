@@ -13,8 +13,8 @@ import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 
 public class HumlandsOreClumpFeature extends Feature<BlockClusterFeatureConfig> {
-	public HumlandsOreClumpFeature(Function<Dynamic<?>, ? extends BlockClusterFeatureConfig> p_i225816_1_) {
-		super(p_i225816_1_);
+	public HumlandsOreClumpFeature(Function<Dynamic<?>, ? extends BlockClusterFeatureConfig> config) {
+		super(config);
 	}
 
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
