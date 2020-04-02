@@ -29,15 +29,13 @@ public class RubberForestPondFeature extends Feature<NoFeatureConfig>
 	
 	private static final ResourceLocation STRUCTURE_POND_1 = new ResourceLocation("humlands:pond/pond_1");
 	private static final ResourceLocation STRUCTURE_POND_2 = new ResourceLocation("humlands:pond/pond_2");
-	//private static final ResourceLocation STRUCTURE_POND_3 = new ResourceLocation("humlands:pond/pond_3");
-	//private static final ResourceLocation STRUCTURE_POND_4 = new ResourceLocation("humlands:pond/pond_4");
+	
 	
 	private static final ResourceLocation[] PONDS = new ResourceLocation[] 
 			{ 
 					STRUCTURE_POND_1,
 					STRUCTURE_POND_2,
-			        //STRUCTURE_POND_3, 
-			        //STRUCTURE_POND_4 
+			       
 			};
 	
 
