@@ -22,6 +22,7 @@ import com.turtysproductions.humlands.common.blocks.SifterBlock;
 import com.turtysproductions.humlands.common.blocks.TimeCapsule;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.LogBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -137,4 +138,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> TIME_CAPSULE = BLOCKS.register("time_capsule",
 			() -> new TimeCapsule(Block.Properties.create(Material.IRON).hardnessAndResistance(3.0f, 3.0f)
 					.sound(SoundType.METAL).harvestTool(ToolType.PICKAXE)));
+  	
+  public static final RegistryObject<Block> DEAD_WOOD_LOG = BLOCKS.register("dead_wood_log", 
+     () -> new LogBlock(MaterialColor.WOOD, Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F)
+          .sound(SoundType.WOOD)));
+
 }
