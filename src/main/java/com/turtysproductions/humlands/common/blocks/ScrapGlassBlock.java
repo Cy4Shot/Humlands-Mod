@@ -34,5 +34,4 @@ public class ScrapGlassBlock extends Block {
 	public boolean canEntitySpawn(BlockState state, IBlockReader worldIn, BlockPos pos, EntityType<?> type) {
 		return false;
 	}
-
 }

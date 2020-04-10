@@ -15,12 +15,11 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = HumlandsMod.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
-public class ClientEventBusSubscriber 
-{
-   @SubscribeEvent
-   public static void clientSetup(FMLClientSetupEvent event)
-   {
-	  ScreenManager.registerFactory(ContainerTypesInit.TIME_CAPSULE_CONTAINER.get(), TimeCapsuleScreen::new);
-	  RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.HUMADILLO.get(), HumadilloRender::new);
-   }
+public class ClientEventBusSubscriber {
+	
+	@SubscribeEvent
+	public static void clientSetup(FMLClientSetupEvent event) {
+		ScreenManager.registerFactory(ContainerTypesInit.TIME_CAPSULE_CONTAINER.get(), TimeCapsuleScreen::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.HUMADILLO.get(), HumadilloRender::new);
+	}
 }

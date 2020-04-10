@@ -102,7 +102,7 @@ public class BiomeInit {
 		BiomeDictionary.addTypes(RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 	}
 
-	@SuppressWarnings({ "unchecked", "deprecation" })
+	@SuppressWarnings("deprecation")
 	private static <C extends ISurfaceBuilderConfig, F extends SurfaceBuilder<C>> F register(String key, F builderIn) {
 		return (F) (Registry.<SurfaceBuilder<?>>register(Registry.SURFACE_BUILDER, key, builderIn));
 	}

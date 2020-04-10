@@ -20,6 +20,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.IPlantable;
 
 public class ShaperBlock extends Block {
+	
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 
 	public static final VoxelShape SHAPE_N = Stream.of(Block.makeCuboidShape(6, 15, 7, 10, 17, 11),
@@ -101,9 +102,10 @@ public class ShaperBlock extends Block {
 	protected void fillStateContainer(Builder<Block, BlockState> builder) {
 		builder.add(FACING);
 	}
-	
+
 	@Override
-	public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, IPlantable plantable) {
+	public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing,
+			IPlantable plantable) {
 		return false;
 	}
 }

@@ -18,7 +18,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class FluidInit {
-	
+
 	public static final FluidFlux FLUIDFLUX_FLOWING_FLUX = null;
 	public static final FluidFlux FLUIDFLUX_FLUX = null;
 
@@ -47,5 +47,4 @@ public class FluidInit {
 	public static final ForgeFlowingFluid.Properties flux_fluid_properties = new ForgeFlowingFluid.Properties(
 			FLUX_FLUID, FLUX_FLOWING, FluidAttributes.builder(FLUX_STILL, FLUX_FLOWING_L)).bucket(ItemInit.FULL_VIAL)
 					.block(FLUX_BLOCK);
-
 }

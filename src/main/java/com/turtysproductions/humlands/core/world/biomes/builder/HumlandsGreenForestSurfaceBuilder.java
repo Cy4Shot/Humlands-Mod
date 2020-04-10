@@ -14,14 +14,17 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class HumlandsGreenForestSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
-	public HumlandsGreenForestSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> p_i51311_1_) {
-		super(p_i51311_1_);
+
+	public HumlandsGreenForestSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> config) {
+		super(config);
 	}
 
 	@Override
 	public void buildSurface(Random random, IChunk chunkIn, Biome biomeIn, int x, int z, int startHeight, double noise,
 			BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig config) {
 		SurfaceBuilder.DEFAULT.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
-				defaultFluid, seaLevel, seed, new SurfaceBuilderConfig(BlockInit.GREEN_FOREST_GRASS_BLOCK.get().getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState()));
+				defaultFluid, seaLevel, seed,
+				new SurfaceBuilderConfig(BlockInit.GREEN_FOREST_GRASS_BLOCK.get().getDefaultState(),
+						Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState()));
 	}
 }

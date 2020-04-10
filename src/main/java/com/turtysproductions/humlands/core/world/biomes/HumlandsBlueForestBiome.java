@@ -14,11 +14,11 @@ public class HumlandsBlueForestBiome extends Biome {
 
 	@OnlyIn(Dist.CLIENT)
 	public int getFoliageColor() {
-		return 203212166;
+		return 0xFFC586;
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	public int getGrassColor(double posX, double posZ) {
-		return 9470285;
+		return 0x90814D;
 	}
 }

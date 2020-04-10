@@ -21,6 +21,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraftforge.fluids.FluidAttributes;
 
 public abstract class FluidFlux extends FlowingFluid {
+	
 	@Override
 	public Fluid getFlowingFluid() {
 		return FluidInit.FLUX_FLOWING.get();
@@ -39,7 +40,7 @@ public abstract class FluidFlux extends FlowingFluid {
 	@Override
 	protected void beforeReplacingBlock(IWorld worldIn, BlockPos pos, BlockState state) {
 
-	} 
+	}
 
 	@Override
 	protected int getSlopeFindDistance(IWorldReader worldIn) {
@@ -56,7 +57,8 @@ public abstract class FluidFlux extends FlowingFluid {
 		return ItemInit.FULL_VIAL.get();
 	}
 
-	protected boolean setDirection(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid, Direction direction) {
+	protected boolean setDirection(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid,
+			Direction direction) {
 		return direction == Direction.DOWN && !fluid.isIn(FluidInit.Tags.FLUX);
 	}
 
@@ -101,7 +103,8 @@ public abstract class FluidFlux extends FlowingFluid {
 		}
 
 		@Override
-		protected boolean canDisplace(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid,Direction direction) {
+		protected boolean canDisplace(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid,
+				Direction direction) {
 			return false;
 		}
 
@@ -124,9 +127,9 @@ public abstract class FluidFlux extends FlowingFluid {
 		}
 
 		@Override
-		protected boolean canDisplace(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid, Direction direction) {
+		protected boolean canDisplace(IFluidState state, IBlockReader world, BlockPos pos, Fluid fluid,
+				Direction direction) {
 			return false;
 		}
-
 	}
 }

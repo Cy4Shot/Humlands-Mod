@@ -2,6 +2,7 @@ package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.particles.rubber.DrippingRubberParticle;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleType;
@@ -14,25 +15,23 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(modid = HumlandsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ParticleInit 
-{
-    public static final DeferredRegister<ParticleType<?>> PARTICLES = new DeferredRegister<>(ForgeRegistries.PARTICLE_TYPES, HumlandsMod.MOD_ID);
-    
-    public static final RegistryObject<BasicParticleType> DRIPPING_RUBBER = PARTICLES.register("dripping_rubber", () -> new BasicParticleType(false));
+public class ParticleInit {
+	
+	public static final DeferredRegister<ParticleType<?>> PARTICLES = new DeferredRegister<>(
+			ForgeRegistries.PARTICLE_TYPES, HumlandsMod.MOD_ID);
 
+	public static final RegistryObject<BasicParticleType> DRIPPING_RUBBER = PARTICLES.register("dripping_rubber",
+			() -> new BasicParticleType(false));
 
-    
-    
-    
-    //Used to register the particle factories, created in the particle class (Client only)
+	// Used to register the particle factories, created in the particle class
+	// (Client only)
 	@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = HumlandsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class FactoryHandler 
-    {
-        @SubscribeEvent
-        public static void registerFactories(ParticleFactoryRegisterEvent event) 
-        {
-            Minecraft.getInstance().particles.registerFactory(ParticleInit.DRIPPING_RUBBER.get(), DrippingRubberParticle.FACTORY::new);            
-        }
-        
+	public static class FactoryHandler {
+		@SuppressWarnings("resource")
+		@SubscribeEvent
+		public static void registerFactories(ParticleFactoryRegisterEvent event) {
+			Minecraft.getInstance().particles.registerFactory(ParticleInit.DRIPPING_RUBBER.get(),
+					DrippingRubberParticle.FACTORY::new);
+		}
 	}
 }
