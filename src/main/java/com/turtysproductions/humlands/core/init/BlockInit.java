@@ -22,6 +22,7 @@ import com.turtysproductions.humlands.common.blocks.RubberStreamingRubberWoodLog
 import com.turtysproductions.humlands.common.blocks.TimeCapsule;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.LogBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
