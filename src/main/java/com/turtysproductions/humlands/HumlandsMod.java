@@ -6,12 +6,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.google.common.base.Preconditions;
-import com.turtysproductions.humlands.core.init.ParticleInit;
 import com.turtysproductions.humlands.core.init.BiomeInit;
 import com.turtysproductions.humlands.core.init.BlockInit;
+import com.turtysproductions.humlands.core.init.ContainerTypesInit;
 import com.turtysproductions.humlands.core.init.DimensionInit;
+import com.turtysproductions.humlands.core.init.EntityTypesInit;
 import com.turtysproductions.humlands.core.init.FluidInit;
 import com.turtysproductions.humlands.core.init.ItemInit;
+import com.turtysproductions.humlands.core.init.ParticleInit;
+import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
 
 import net.minecraft.client.renderer.RenderType;
@@ -51,14 +54,15 @@ public class HumlandsMod {
 		bus.addListener(this::processIMC);
 		bus.addListener(this::doClientStuff);
 
-		
-		BlockInit.BLOCKS.register(bus);
-		BiomeInit.BIOMES.register(bus);
-		ItemInit.ITEMS.register(bus);
-		EntityTypesInit.ENTITY_TYPES.register(bus);
-		FluidInit.FLUIDS.register(bus);
-		FluidInit.BLOCKS.register(bus);
-		ParticleInit.PARTICLES.register(bus);
+        BlockInit.BLOCKS.register(bus);
+        ItemInit.ITEMS.register(bus);
+        TileEntityTypesInit.TILE_ENTITY_TYPES.register(bus);
+        ContainerTypesInit.CONTAINER_TYPES.register(bus);
+        EntityTypesInit.ENTITY_TYPES.register(bus);
+        ParticleInit.PARTICLES.register(bus);
+        FluidInit.FLUIDS.register(bus);
+        FluidInit.BLOCKS.register(bus);
+        BiomeInit.BIOMES.register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -70,7 +74,6 @@ public class HumlandsMod {
 	private void doClientStuff(final FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(BlockInit.SCRAP_GLASS.get(), RenderType.getTranslucent());
 		LOGGER.debug("RenderLayers set!");
-
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event) {

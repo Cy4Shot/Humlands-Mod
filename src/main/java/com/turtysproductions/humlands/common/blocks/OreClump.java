@@ -26,6 +26,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraftforge.common.IPlantable;
 
 public class OreClump extends Block {
+	
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 
 	public OreClump(Properties properties) {
@@ -97,8 +98,10 @@ public class OreClump extends Block {
 	@Override
 	@Nullable
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		BlockState blockstate = this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
-		if (blockstate.isValidPosition(context.getWorld(), context.getPos())) return blockstate;
+		BlockState blockstate = this.getDefaultState().with(FACING,
+				context.getPlacementHorizontalFacing().getOpposite());
+		if (blockstate.isValidPosition(context.getWorld(), context.getPos()))
+			return blockstate;
 		return null;
 	}
 

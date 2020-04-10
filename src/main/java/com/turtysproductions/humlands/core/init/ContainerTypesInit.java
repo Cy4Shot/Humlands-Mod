@@ -9,11 +9,10 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class ContainerTypesInit 
-{
-	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = new DeferredRegister<>(ForgeRegistries.CONTAINERS, HumlandsMod.MOD_ID);
-	
-	public static final RegistryObject<ContainerType<TimeCapsuleContainer>> TIME_CAPSULE_CONTAINER = CONTAINER_TYPES
-	.register("time_capsule", () -> IForgeContainerType.create(TimeCapsuleContainer::new));
+public class ContainerTypesInit {
+	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = new DeferredRegister<>(
+			ForgeRegistries.CONTAINERS, HumlandsMod.MOD_ID);
 
+	public static final RegistryObject<ContainerType<TimeCapsuleContainer>> TIME_CAPSULE_CONTAINER = CONTAINER_TYPES
+			.register("time_capsule", () -> IForgeContainerType.create(TimeCapsuleContainer::new));
 }

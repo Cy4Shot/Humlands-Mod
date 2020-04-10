@@ -200,5 +200,4 @@ public class FluxVial extends Item {
 	public Fluid getFluid() {
 		return fluidSupplier.get();
 	}
-
 }
