@@ -4,7 +4,7 @@ import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.items.CraftingReuseItem;
 import com.turtysproductions.humlands.common.items.FluxVial;
 import com.turtysproductions.humlands.common.items.GlintingItem;
-import com.turtysproductions.humlands.common.items.HumadilloSpawnEgg;
+import com.turtysproductions.humlands.common.items.ModSpawnEgg;
 import com.turtysproductions.humlands.common.items.RubberExtractor;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
 
@@ -19,7 +19,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ItemInit {
-	
+
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS,
 			HumlandsMod.MOD_ID);
 
@@ -120,5 +120,6 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS).maxStackSize(64)));
 
 	public static final RegistryObject<Item> HUMADILLO_SPAWN_EGG = ITEMS.register("humadillo_spawn_egg",
-			() -> new HumadilloSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS),
+					() -> EntityTypesInit.HUMADILLO.get()));
 }
