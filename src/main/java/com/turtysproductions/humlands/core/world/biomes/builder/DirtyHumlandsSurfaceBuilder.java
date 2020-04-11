@@ -14,8 +14,8 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class DirtyHumlandsSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 
-	public DirtyHumlandsSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> p_i51311_1_) {
-		super(p_i51311_1_);
+	public DirtyHumlandsSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> config) {
+		super(config);
 	}
 
 	@Override
@@ -31,8 +31,7 @@ public class DirtyHumlandsSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderCo
 			SurfaceBuilder.DEFAULT.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 					defaultFluid, seaLevel, seed,
 					new SurfaceBuilderConfig(
-							i == 1 ? Blocks.DIRT.getDefaultState()
-									: Blocks.BROWN_CONCRETE_POWDER.getDefaultState(),
+							i == 1 ? Blocks.DIRT.getDefaultState() : Blocks.BROWN_CONCRETE_POWDER.getDefaultState(),
 							Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState()));
 	}
 }

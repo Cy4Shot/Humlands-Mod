@@ -1,6 +1,7 @@
 package com.turtysproductions.humlands.core.world.generator;
 
 public class VoronoiGenerator {
+	
 	static final int X_NOISE_GEN = 1619;
 	static final int Y_NOISE_GEN = 31337;
 	static final int Z_NOISE_GEN = 6971;
@@ -62,7 +63,8 @@ public class VoronoiGenerator {
 			double yDist = yCandidate - y;
 			double zDist = zCandidate - z;
 			value = (Math.sqrt(xDist * xDist + yDist * yDist + zDist * zDist)) * SQRT_3 - 1.0;
-		} else value = 0.0;
+		} else
+			value = 0.0;
 		return value + (displacement * (double) ValueNoise3D((int) (Math.floor(xCandidate)),
 				(int) (Math.floor(yCandidate)), (int) (Math.floor(zCandidate)), seed));
 	}

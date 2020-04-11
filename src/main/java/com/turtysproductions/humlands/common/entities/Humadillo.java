@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.core.entities;
+package com.turtysproductions.humlands.common.entities;
 
 import javax.annotation.Nullable;
 

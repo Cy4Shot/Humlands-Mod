@@ -24,6 +24,7 @@ import net.minecraft.world.spawner.PhantomSpawner;
 import net.minecraft.world.spawner.WorldEntitySpawner;
 
 public class HumlandsChunkGenerator extends NoiseChunkGenerator<HumlandsGenSettings> {
+	
 	private static final float[] field_222576_h = Util.make(new float[25], (p_222575_0_) -> {
 		for (int i = -2; i <= 2; ++i) {
 			for (int j = -2; j <= 2; ++j) {

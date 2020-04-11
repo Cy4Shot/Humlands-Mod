@@ -6,7 +6,6 @@ public class CustomSlab extends SlabBlock {
 
 	public CustomSlab(Properties properties) {
 		super(properties);
-		
-	}
 
+	}
 }

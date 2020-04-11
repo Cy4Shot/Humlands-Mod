@@ -1,9 +1,6 @@
 {
-   "parent": "item/generated",
-   "textures": 
-   {
-   "textures": {
-
-       "layer0": "humlands:items/gold_wire"
-   }
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "humlands:items/gold_wire"
+	}
 }

@@ -6,24 +6,15 @@ import net.minecraft.world.biome.Biome;
 
 public class RubberWoodForestBiome extends Biome {
 
-	public RubberWoodForestBiome(Builder biomeBuilder) 
-	{
-	        //The higher the number, the rarer the feature will be
+	public RubberWoodForestBiome(Builder biomeBuilder) {
 		super(biomeBuilder);
 		ModBiomeFeatures.addPonds(this, 70);
 		ModBiomeFeatures.addRubberTrees(this, 40);
 		ModBiomeFeatures.addLumberMills(this, 200);
-                
-          
-          
-           
-	   } 
-	    //Selects sky color, returns the hex color
-	    @Override
-	    public int getSkyColor() 
-	    {
-	    return 0xaa9aee;
-	    }
-	    
+	}
+
+	@Override
+	public int getSkyColor() {
+		return 0x0AA9AE;
 	}
 }

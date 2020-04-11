@@ -24,6 +24,7 @@ import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.server.ServerWorld;
 
 public class HumlandsFossilFeature extends Feature<NoFeatureConfig> {
+	
 	private static final ResourceLocation STRUCTURE_SPINE_01 = new ResourceLocation("fossil/spine_1");
 	private static final ResourceLocation STRUCTURE_SPINE_02 = new ResourceLocation("fossil/spine_2");
 	private static final ResourceLocation STRUCTURE_SPINE_03 = new ResourceLocation("fossil/spine_3");

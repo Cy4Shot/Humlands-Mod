@@ -1,9 +1,6 @@
 {
-	
-	//Tabs
-        "itemGroup.humlands": "Humlands",
-	
-	//Blocks
+	"itemGroup.humlands": "Humlands",
+
 	"block.humlands.flux": "Flux",
 	"block.humlands.iron_ore_clump": "Iron Ore Clump",
 	"block.humlands.gold_ore_clump": "Gold Ore Clump",
@@ -21,21 +18,23 @@
 	"block.humlands.shaper": "Shaper",
 	"block.humlands.test_block": "Test Block",
 	"block.humlands.rubber_wood_planks": "Rubber Wood Planks",
-        "block.humlands.rubber_wood_log": "Rubber Wood Log",
-        "block.humlands.rubber_wood_stairs": "Rubber Wood Stairs",
-        "block.humlands.rubber_wood_button": "Rubber Wood Button",
-        "block.humlands.rubber_wood_slab": "Rubber Wood Slab",
-        "block.humlands.rubber_wood_fence_gate": "Rubber Wood Gate",
-        "block.humlands.rubber_wood_fence": "Rubber Wood Fence",
-        "block.humlands.rubber_wood_trapdoor": "Rubber Wood Trapdoor",
-        "block.humlands.stripped_rubber_wood_log": "Stripped Rubber Wood Log",
-        "block.humlands.rubber_streaming_rubber_wood_log": "Rubber Streaming Rubber Wood Log",
-        "block.humlands.rubber_wood_door": "Rubber Wood Door",
-        "block.humlands.rubber_leaves": "Rubber Leaves",
+	"block.humlands.rubber_wood_log": "Rubber Wood Log",
+	"block.humlands.rubber_wood_stairs": "Rubber Wood Stairs",
+	"block.humlands.rubber_wood_button": "Rubber Wood Button",
+	"block.humlands.rubber_wood_pressure_plate": "Rubber Wood Pressure Plate",
+	"block.humlands.rubber_wood_slab": "Rubber Wood Slab",
+	"block.humlands.rubber_wood_fence_gate": "Rubber Wood Gate",
+	"block.humlands.rubber_wood_fence": "Rubber Wood Fence",
+	"block.humlands.rubber_wood_trapdoor": "Rubber Wood Trapdoor",
+	"block.humlands.stripped_rubber_wood_log": "Stripped Rubber Wood Log",
+	"block.humlands.rubber_streaming_rubber_wood_log": "Streaming Rubber Wood Log",
+	"block.humlands.rubber_wood_door": "Rubber Wood Door",
+	"block.humlands.rubber_leaves": "Rubber Leaves",
 	"block.humlands.rubber_wood_forest_grass": "Rubber Wood Forest Grass",
-        "block.humlands.rubber_wood_forest_dirt": "Rubber Wood Forest Dirt",
-	
-	//Items
+	"block.humlands.rubber_wood_forest_dirt": "Rubber Wood Forest Dirt",
+	"block.humlands.time_capsule": "Time Capsule",
+	"block.humlands.dead_wood_log": "Dead Wood Log",
+
 	"item.humlands.carbon_sheet": "Carbon Sheet",
 	"item.humlands.carbon_tube": "Carbon Tube",
 	"item.humlands.diamond_encrusted_bone": "Diamond Encrusted Bone",
@@ -55,23 +54,23 @@
 	"item.humlands.mechanical_arm": "Mechanical Arm",
 	"item.humlands.metal_sheet": "Metal Sheet",
 	"item.humlands.powered_sifter_body": "Powered Sifter Body",
+	"item.humlands.unpowered_sifter_body": "Unpowered Sifter Body",
 	"item.humlands.royal_flan_raw": "Raw Royal Flan",
 	"item.humlands.royal_flan": "Royal Flan",
 	"item.humlands.royal_slime": "Royal Slime",
 	"item.humlands.super_royal_flan_raw": "Super Raw Royal Flan",
 	"item.humlands.super_royal_flan": "Super Royal Flan",
 	"item.humlands.super_royal_slime": "Super Royal Slime",
-  	"item.humlands.wirecutters": "Wirecutters",
-  	"item.humlands.hammer": "Hammer",
+	"item.humlands.wirecutters": "Wirecutters",
+	"item.humlands.hammer": "Hammer",
 	"item.humlands.rubber_extractor": "Rubber Extractor",
-        "item.humlands.rubber": "Rubber",
-	
-	//Biomes
+	"item.humlands.rubber": "Rubber",
+	"item.humlands.humadillo_spawn_egg": "Humadillo Spawn Egg",
+
 	"biome.humlands.rubber_wood_forest": "Rubber Wood Forest",
-        "biome.humlands.rubber_streaming_rubber_wood_forest": "Rubber Streaming Rubber Wood Forest",
+	"biome.humlands.rubber_streaming_rubber_wood_forest": "Rubber Streaming Rubber Wood Forest",
 	"biome.humlands.far_humlands": "Far Humlands",
-	"biome.humlands.dirty_humlands": "Dirty Humlands"
-	
-	
-	
+	"biome.humlands.dirty_humlands": "Dirty Humlands",
+
+	"container.time_capsule": "Time Capsule"
 }
