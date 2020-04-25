@@ -40,6 +40,12 @@ public class ModBiomeFeatures {
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
 	}
 
+	public static void addMonsterRooms(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+				new MobRoomFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(8))));
+	}
+
 	public static void addCustomRocks(Biome biomeIn, BlockState block, int frequency) {
 		biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS,
 				Feature.FOREST_ROCK.withConfiguration(new BlockBlobConfig(block, 0))

@@ -3,6 +3,7 @@ package com.turtysproductions.humlands.core.world.biomes;
 import com.turtysproductions.humlands.core.world.feature.ModBiomeFeatures;
 
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.DefaultBiomeFeatures;
 
 public class RubberWoodForestBiome extends Biome {
 
@@ -11,6 +12,7 @@ public class RubberWoodForestBiome extends Biome {
 		ModBiomeFeatures.addPonds(this, 70);
 		ModBiomeFeatures.addRubberTrees(this, 40);
 		ModBiomeFeatures.addLumberMills(this, 200);
+		DefaultBiomeFeatures.addGrass(this);
 	}
 
 	@Override
