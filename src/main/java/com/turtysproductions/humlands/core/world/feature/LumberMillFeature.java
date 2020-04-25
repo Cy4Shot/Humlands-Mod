@@ -17,7 +17,6 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.template.BlockIgnoreStructureProcessor;
-import net.minecraft.world.gen.feature.template.GravityStructureProcessor;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.server.ServerWorld;
@@ -55,8 +54,7 @@ public class LumberMillFeature extends Feature<NoFeatureConfig> {
 				(new PlacementSettings()).setRotation(rotation)
 						.setBoundingBox(
 								new MutableBoundingBox((0 - 25600), (0 - 25600), (0 - 25600), 25600, 256, 25600))
-						.setRandom(random).addProcessor(BlockIgnoreStructureProcessor.AIR_AND_STRUCTURE_BLOCK)
-						.addProcessor(new GravityStructureProcessor(Heightmap.Type.WORLD_SURFACE_WG, 0)),
+						.setRandom(random).addProcessor(BlockIgnoreStructureProcessor.AIR_AND_STRUCTURE_BLOCK),
 				4);
 		return true;
 
