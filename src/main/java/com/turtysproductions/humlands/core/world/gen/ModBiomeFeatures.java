@@ -1,6 +1,12 @@
-package com.turtysproductions.humlands.core.world.feature;
+package com.turtysproductions.humlands.core.world.gen;
 
 import com.turtysproductions.humlands.core.init.BlockInit;
+import com.turtysproductions.humlands.core.world.gen.feature.HumlandsFossilFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.HumlandsOreClumpFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.HumlandsRubberTreeFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.LumberMillFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.MobRoomFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.RubberForestPondFeature;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.world.biome.Biome;

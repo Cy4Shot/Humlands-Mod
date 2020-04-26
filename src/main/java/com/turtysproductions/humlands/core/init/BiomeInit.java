@@ -4,7 +4,7 @@ import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.world.biomes.DirtyHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.RubberWoodForestBiome;
-import com.turtysproductions.humlands.core.world.biomes.builder.DirtyHumlandsSurfaceBuilder;
+import com.turtysproductions.humlands.core.world.gen.builder.DirtyHumlandsSurfaceBuilder;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;

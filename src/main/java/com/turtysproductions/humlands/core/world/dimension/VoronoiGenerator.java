@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.core.world.generator;
+package com.turtysproductions.humlands.core.world.dimension;
 
 public class VoronoiGenerator {
 	

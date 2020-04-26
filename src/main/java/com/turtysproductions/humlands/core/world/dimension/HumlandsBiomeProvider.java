@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 import com.turtysproductions.humlands.core.init.BiomeInit;
-import com.turtysproductions.humlands.core.world.generator.VoronoiGenerator;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;

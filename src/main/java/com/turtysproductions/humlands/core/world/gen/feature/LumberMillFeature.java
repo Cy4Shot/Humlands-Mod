@@ -1,9 +1,12 @@
-package com.turtysproductions.humlands.core.world.feature;
+package com.turtysproductions.humlands.core.world.gen.feature;
 
 import java.util.Random;
 import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
+import com.turtysproductions.humlands.HumlandsMod;
+import com.turtysproductions.humlands.core.init.BlockInit;
+import com.turtysproductions.humlands.core.world.gen.processor.BaseStrucureProcessor;
 
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -17,38 +20,43 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.template.BlockIgnoreStructureProcessor;
-import net.minecraft.world.gen.feature.template.GravityStructureProcessor;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.server.ServerWorld;
 
-public class RubberForestPondFeature extends Feature<NoFeatureConfig> {
+public class LumberMillFeature extends Feature<NoFeatureConfig> {
 
-	private static final ResourceLocation STRUCTURE_POND_1 = new ResourceLocation("humlands:pond/pond_1");
-	private static final ResourceLocation STRUCTURE_POND_2 = new ResourceLocation("humlands:pond/pond_2");
+	private static final ResourceLocation STRUCTURE_LUMBER_MILL_1 = new ResourceLocation(
+			"humlands:lumbermill/lumber_mill");
 
-	private static final ResourceLocation[] PONDS = new ResourceLocation[] { STRUCTURE_POND_1, STRUCTURE_POND_2,
+	private static final ResourceLocation[] LUMBER_MILLS = new ResourceLocation[] { STRUCTURE_LUMBER_MILL_1 };
 
-	};
-
-	public RubberForestPondFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49873_1_) {
+	public LumberMillFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49873_1_) {
 		super(p_i49873_1_);
 	}
 
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
+		HumlandsMod.LOGGER.debug(pos);
 		Random random = worldIn.getRandom();
-		Rotation[] arotation = Rotation.values();
-		Rotation rotation = arotation[random.nextInt(arotation.length)];
+		Rotation rotation = Rotation.values()[random.nextInt(Rotation.values().length)];
 		Template template = ((ServerWorld) worldIn.getWorld()).getSaveHandler().getStructureTemplateManager()
-				.getTemplateDefaulted(PONDS[random.nextInt(PONDS.length)]);
+				.getTemplateDefaulted(LUMBER_MILLS[random.nextInt(LUMBER_MILLS.length)]);
 		BlockPos blockpos = template.transformedSize(rotation);
-		int j = random.nextInt(20 - 0);
-		int k = random.nextInt(20 - 0);
+		int j = random.nextInt(32 - 0);
+		int k = random.nextInt(32 - 0);
 		int l = 256;
 		for (int i1 = 0; i1 < blockpos.getX(); ++i1) {
 			for (int j1 = 0; j1 < blockpos.getZ(); ++j1) {
 				l = Math.min(l, worldIn.getHeight(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ()));
+				for (int el = 16; el > 1; --el) {
+					BlockPos blockpos1 = new BlockPos(pos.getX() + i1, el, pos.getZ() + j1);
+					if (!worldIn.isAirBlock(blockpos1) && !worldIn.getBlockState(blockpos1).getMaterial().isLiquid()) {
+						break;
+					}
+
+					worldIn.setBlockState(blockpos1, BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(), 2);
+				}
 			}
 		}
 		template.addBlocksToWorld(worldIn,
@@ -58,7 +66,8 @@ public class RubberForestPondFeature extends Feature<NoFeatureConfig> {
 						.setBoundingBox(
 								new MutableBoundingBox((0 - 25600), (0 - 25600), (0 - 25600), 25600, 256, 25600))
 						.setRandom(random).addProcessor(BlockIgnoreStructureProcessor.AIR_AND_STRUCTURE_BLOCK)
-						.addProcessor(new GravityStructureProcessor(Heightmap.Type.WORLD_SURFACE_WG, 0)),
+						.addProcessor(
+								new BaseStrucureProcessor(BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState())),
 				4);
 		return true;
 

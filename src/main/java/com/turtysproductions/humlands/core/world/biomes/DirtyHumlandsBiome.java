@@ -1,7 +1,7 @@
 package com.turtysproductions.humlands.core.world.biomes;
 
 import com.turtysproductions.humlands.core.init.BlockInit;
-import com.turtysproductions.humlands.core.world.feature.ModBiomeFeatures;
+import com.turtysproductions.humlands.core.world.gen.ModBiomeFeatures;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;

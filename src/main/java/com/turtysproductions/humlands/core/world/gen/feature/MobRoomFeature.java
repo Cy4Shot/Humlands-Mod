@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.core.world.feature;
+package com.turtysproductions.humlands.core.world.gen.feature;
 
 import java.util.Random;
 import java.util.function.Function;
@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.mojang.datafixers.Dynamic;
-import com.turtysproductions.humlands.HumlandsMod;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -39,10 +38,10 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
-		HumlandsMod.LOGGER.debug(pos);
-		
-		pos = new BlockPos(pos.getX(), worldIn.getHeight(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ()), pos.getZ());
-		
+
+		pos = new BlockPos(pos.getX(), worldIn.getHeight(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ()),
+				pos.getZ());
+
 		int j = rand.nextInt(2) + 2;
 		int k1 = rand.nextInt(2) + 2;
 
@@ -77,15 +76,14 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 					int j3 = 0;
 
 					for (Direction direction : Direction.Plane.HORIZONTAL) {
-						if (worldIn.getBlockState(blockpos2.offset(direction)).getMaterial().isSolid()) ++j3;
+						if (worldIn.getBlockState(blockpos2.offset(direction)).getMaterial().isSolid())
+							++j3;
 					}
 
 					if (j3 == 1) {
 						worldIn.setBlockState(blockpos2,
-								StructurePiece.func_197528_a(worldIn, blockpos2, Blocks.CHEST.getDefaultState()),
-								2);
-						LockableLootTileEntity.setLootTable(worldIn, rand, blockpos2,
-								LootTables.CHESTS_SIMPLE_DUNGEON);
+								StructurePiece.func_197528_a(worldIn, blockpos2, Blocks.CHEST.getDefaultState()), 2);
+						LockableLootTileEntity.setLootTable(worldIn, rand, blockpos2, LootTables.CHESTS_SIMPLE_DUNGEON);
 						break;
 					}
 				}
@@ -97,10 +95,9 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 		if (tileentity instanceof MobSpawnerTileEntity) {
 			((MobSpawnerTileEntity) tileentity).getSpawnerBaseLogic()
 					.setEntityType(SPAWNERTYPES[rand.nextInt(SPAWNERTYPES.length)]);
-		} else {
+		} else
 			LOGGER.error("Failed to fetch mob spawner entity at ({}, {}, {})", pos.getX(), pos.getY(), pos.getZ());
-		}
-		
-		return true;	
+
+		return true;
 	}
 }
