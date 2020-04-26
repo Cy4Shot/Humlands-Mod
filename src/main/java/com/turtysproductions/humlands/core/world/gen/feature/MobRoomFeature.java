@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.mojang.datafixers.Dynamic;
+import com.turtysproductions.humlands.core.init.EntityTypesInit;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -27,8 +28,7 @@ import net.minecraft.world.storage.loot.LootTables;
 
 public class MobRoomFeature extends Feature<NoFeatureConfig> {
 	private static final Logger LOGGER = LogManager.getLogger();
-	private static final EntityType<?>[] SPAWNERTYPES = new EntityType[] { EntityType.SKELETON, EntityType.ZOMBIE,
-			EntityType.ZOMBIE, EntityType.SPIDER };
+	private static final EntityType<?>[] SPAWNERTYPES = new EntityType[] { EntityTypesInit.HUMADILLO.get() };
 	private static final BlockState CAVE_AIR = Blocks.AIR.getDefaultState();
 
 	public MobRoomFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> config) {
@@ -55,8 +55,7 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 					} else if (blockpos1.getY() >= 0
 							&& !worldIn.getBlockState(blockpos1.down()).getMaterial().isSolid())
 						worldIn.setBlockState(blockpos1, CAVE_AIR, 2);
-					else if (worldIn.getBlockState(blockpos1).getMaterial().isSolid()
-							&& worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST) {
+					else if (worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST) {
 						if (i4 == -1 && rand.nextInt(4) != 0)
 							worldIn.setBlockState(blockpos1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
 						else
@@ -68,17 +67,14 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 
 		for (int l3 = 0; l3 < 2; ++l3) {
 			for (int j4 = 0; j4 < 3; ++j4) {
-				int l4 = pos.getX() + rand.nextInt(j * 2 + 1) - j;
-				int i5 = pos.getY();
-				int j5 = pos.getZ() + rand.nextInt(k1 * 2 + 1) - k1;
-				BlockPos blockpos2 = new BlockPos(l4, i5, j5);
+				BlockPos blockpos2 = new BlockPos(pos.getX() + rand.nextInt(j * 2 + 1) - j, pos.getY(),
+						pos.getZ() + rand.nextInt(k1 * 2 + 1) - k1);
 				if (worldIn.isAirBlock(blockpos2)) {
 					int j3 = 0;
 
-					for (Direction direction : Direction.Plane.HORIZONTAL) {
+					for (Direction direction : Direction.Plane.HORIZONTAL)
 						if (worldIn.getBlockState(blockpos2.offset(direction)).getMaterial().isSolid())
 							++j3;
-					}
 
 					if (j3 == 1) {
 						worldIn.setBlockState(blockpos2,
@@ -97,7 +93,6 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 					.setEntityType(SPAWNERTYPES[rand.nextInt(SPAWNERTYPES.length)]);
 		} else
 			LOGGER.error("Failed to fetch mob spawner entity at ({}, {}, {})", pos.getX(), pos.getY(), pos.getZ());
-
 		return true;
 	}
 }
