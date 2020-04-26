@@ -5,8 +5,6 @@ import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.core.init.BlockInit;
-import com.turtysproductions.humlands.core.world.gen.processor.BaseStrucureProcessor;
 
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -48,26 +46,17 @@ public class LumberMillFeature extends Feature<NoFeatureConfig> {
 		int l = 256;
 		for (int i1 = 0; i1 < blockpos.getX(); ++i1) {
 			for (int j1 = 0; j1 < blockpos.getZ(); ++j1) {
-				l = Math.min(l, worldIn.getHeight(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ()));
-				for (int el = 16; el > 1; --el) {
-					BlockPos blockpos1 = new BlockPos(pos.getX() + i1, el, pos.getZ() + j1);
-					if (!worldIn.isAirBlock(blockpos1) && !worldIn.getBlockState(blockpos1).getMaterial().isLiquid()) {
-						break;
-					}
-
-					worldIn.setBlockState(blockpos1, BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(), 2);
-				}
+				l = Math.min(l,
+						worldIn.getHeight(Heightmap.Type.WORLD_SURFACE_WG, pos.getX() + i1 + j, pos.getZ() + j1 + k));
 			}
 		}
 		template.addBlocksToWorld(worldIn,
-				template.getZeroPositionWithTransform(new BlockPos(pos.add(j, 0, k).getX(), l, pos.add(j, 0, k).getZ()),
-						Mirror.NONE, rotation),
+				template.getZeroPositionWithTransform(new BlockPos(pos.getX() + j, l, pos.getZ() + k), Mirror.NONE,
+						rotation),
 				(new PlacementSettings()).setRotation(rotation)
 						.setBoundingBox(
 								new MutableBoundingBox((0 - 25600), (0 - 25600), (0 - 25600), 25600, 256, 25600))
-						.setRandom(random).addProcessor(BlockIgnoreStructureProcessor.AIR_AND_STRUCTURE_BLOCK)
-						.addProcessor(
-								new BaseStrucureProcessor(BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState())),
+						.setRandom(random).addProcessor(BlockIgnoreStructureProcessor.AIR_AND_STRUCTURE_BLOCK),
 				4);
 		return true;
 

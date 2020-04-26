@@ -67,14 +67,14 @@ public class ModBiomeFeatures {
 	}
 
 	public static void addPonds(Biome biome, int chance) {
-		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+		biome.addFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION,
 				new RubberForestPondFeature(NoFeatureConfig::deserialize)
 						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
 	}
 
 	public static void addLumberMills(Biome biome, int chance) {
-		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+		biome.addFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION,
 				new LumberMillFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
 	}
