@@ -3,15 +3,11 @@ package com.turtysproductions.humlands.core.world.gen.feature;
 import java.util.Random;
 import java.util.function.Function;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.mojang.datafixers.Dynamic;
+import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.init.EntityTypesInit;
 
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityType;
 import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.tileentity.MobSpawnerTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -27,9 +23,6 @@ import net.minecraft.world.gen.feature.structure.StructurePiece;
 import net.minecraft.world.storage.loot.LootTables;
 
 public class MobRoomFeature extends Feature<NoFeatureConfig> {
-	private static final Logger LOGGER = LogManager.getLogger();
-	private static final EntityType<?>[] SPAWNERTYPES = new EntityType[] { EntityTypesInit.HUMADILLO.get() };
-	private static final BlockState CAVE_AIR = Blocks.AIR.getDefaultState();
 
 	public MobRoomFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> config) {
 		super(config);
@@ -51,10 +44,10 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 					BlockPos blockpos1 = pos.add(k3, i4, k4);
 					if (k3 != -j - 1 && i4 != -1 && k4 != -k1 - 1 && k3 != j + 1 && i4 != 4 && k4 != k1 + 1) {
 						if (worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST)
-							worldIn.setBlockState(blockpos1, CAVE_AIR, 2);
+							worldIn.setBlockState(blockpos1, Blocks.AIR.getDefaultState(), 2);
 					} else if (blockpos1.getY() >= 0
 							&& !worldIn.getBlockState(blockpos1.down()).getMaterial().isSolid())
-						worldIn.setBlockState(blockpos1, CAVE_AIR, 2);
+						worldIn.setBlockState(blockpos1, Blocks.AIR.getDefaultState(), 2);
 					else if (worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST) {
 						if (i4 == -1 && rand.nextInt(4) != 0)
 							worldIn.setBlockState(blockpos1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
@@ -90,9 +83,9 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 		TileEntity tileentity = worldIn.getTileEntity(pos);
 		if (tileentity instanceof MobSpawnerTileEntity) {
 			((MobSpawnerTileEntity) tileentity).getSpawnerBaseLogic()
-					.setEntityType(SPAWNERTYPES[rand.nextInt(SPAWNERTYPES.length)]);
+					.setEntityType(EntityTypesInit.HUMADILLO.get());
 		} else
-			LOGGER.error("Failed to fetch mob spawner entity at ({}, {}, {})", pos.getX(), pos.getY(), pos.getZ());
+			HumlandsMod.LOGGER.error("Failed to fetch mob spawner entity at ({}, {}, {})", pos.getX(), pos.getY(), pos.getZ());
 		return true;
 	}
 }
