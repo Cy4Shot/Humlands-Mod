@@ -1,0 +1,83 @@
+{
+	"pools": 
+	[
+		{
+			"rolls": 
+			{
+				"min": 0,
+				"max": 3
+			},
+
+			"bonus_rolls": 
+			{
+				"min": 0,
+				"max": 2
+			},
+
+			"entries": 
+			[
+				{
+					"type": "item",
+					"weight": 5,
+					"name": "minecraft:coal",
+					"functions": 
+					[
+						{
+							"function": "set_count",
+							"count": 
+							{
+								"min": 1,
+								"max": 2
+							}
+						}
+					]
+				},
+
+				{
+					"type": "item",
+					"weight": 1,
+					"name": "minecraft:diamond_sword",
+					"quality": 20,
+					"functions": 
+					[
+						{
+							"function": "enchant_randomly",
+							"enchantments": 
+							[
+								"looting",
+								"sharpness",
+								"mending"
+							],
+
+							"conditions": 
+							[
+								{
+									"condition": "random_chance",
+									"chance": 0.1
+								}
+							]
+						}
+					]
+				},
+
+				{
+					"type": "item",
+					"weight": 2,
+					"name": "minecraft:iron_nugget",
+					"quality": 5,
+					"functions": 
+					[
+						{
+							"function": "set_count",
+							"count": 
+							{
+								"min": 0,
+								"max": 3
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

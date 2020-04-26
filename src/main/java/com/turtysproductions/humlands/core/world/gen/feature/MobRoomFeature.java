@@ -6,6 +6,7 @@ import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.init.EntityTypesInit;
+import com.turtysproductions.humlands.core.init.LootTableInit;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.tileentity.LockableLootTileEntity;
@@ -20,7 +21,6 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.StructurePiece;
-import net.minecraft.world.storage.loot.LootTables;
 
 public class MobRoomFeature extends Feature<NoFeatureConfig> {
 
@@ -72,7 +72,7 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 					if (j3 == 1) {
 						worldIn.setBlockState(blockpos2,
 								StructurePiece.func_197528_a(worldIn, blockpos2, Blocks.CHEST.getDefaultState()), 2);
-						LockableLootTileEntity.setLootTable(worldIn, rand, blockpos2, LootTables.CHESTS_SIMPLE_DUNGEON);
+						LockableLootTileEntity.setLootTable(worldIn, rand, blockpos2, LootTableInit.MOB_ROOM_CHEST);
 						break;
 					}
 				}
