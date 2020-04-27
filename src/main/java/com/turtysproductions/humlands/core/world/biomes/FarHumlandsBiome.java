@@ -1,5 +1,7 @@
 package com.turtysproductions.humlands.core.world.biomes;
 
+import com.turtysproductions.humlands.core.world.gen.ModBiomeFeatures;
+
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraftforge.api.distmarker.Dist;
@@ -12,6 +14,7 @@ public class FarHumlandsBiome extends Biome {
 		DefaultBiomeFeatures.addStoneVariants(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		DefaultBiomeFeatures.addGrassAndDeadBushes(this);
+		ModBiomeFeatures.addMonsterRooms(this);
 	}
 
 	@OnlyIn(Dist.CLIENT)

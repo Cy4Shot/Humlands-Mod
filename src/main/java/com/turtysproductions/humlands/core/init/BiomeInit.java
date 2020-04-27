@@ -3,12 +3,8 @@ package com.turtysproductions.humlands.core.init;
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.world.biomes.DirtyHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
-import com.turtysproductions.humlands.core.world.biomes.HumlandsBlueForestBiome;
-import com.turtysproductions.humlands.core.world.biomes.HumlandsGreenForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.RubberWoodForestBiome;
-import com.turtysproductions.humlands.core.world.biomes.builder.DirtyHumlandsSurfaceBuilder;
-import com.turtysproductions.humlands.core.world.biomes.builder.HumlandsBlueForestSurfaceBuilder;
-import com.turtysproductions.humlands.core.world.biomes.builder.HumlandsGreenForestSurfaceBuilder;
+import com.turtysproductions.humlands.core.world.gen.builder.DirtyHumlandsSurfaceBuilder;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
@@ -65,44 +61,16 @@ public class BiomeInit {
 									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
 					.category(Category.FOREST).depth(0.125f).downfall(0.0f).parent((String) null)));
 
-	public static final RegistryObject<Biome> BLUE_HUMLANDS_FOREST = BIOMES
-			.register("blue_humlands_forest",
-					() -> new HumlandsBlueForestBiome(
-							new Biome.Builder()
-									.surfaceBuilder(new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
-											register("blue_humlands_forest_surface",
-													new HumlandsBlueForestSurfaceBuilder(
-															SurfaceBuilderConfig::deserialize)),
-											null))
-									.precipitation(Biome.RainType.RAIN).category(Biome.Category.DESERT).depth(0.125F)
-									.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
-									.waterFogColor(329011).parent((String) null)));
-
-	public static final RegistryObject<Biome> GREEN_HUMLANDS_FOREST = BIOMES
-			.register("green_humlands_forest",
-					() -> new HumlandsGreenForestBiome(
-							new Biome.Builder()
-									.surfaceBuilder(new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
-											register("green_humlands_forest_surface",
-													new HumlandsGreenForestSurfaceBuilder(
-															SurfaceBuilderConfig::deserialize)),
-											null))
-									.precipitation(Biome.RainType.RAIN).category(Biome.Category.DESERT).depth(0.125F)
-									.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
-									.waterFogColor(329011).parent((String) null)));
-
 	public static final BiomeDictionary.Type HUMLANDS = BiomeDictionary.Type.getType("HUMLANDS");
 
 	public static void addBiomeTypes() {
 
 		BiomeDictionary.addTypes(FAR_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.HILLS);
 		BiomeDictionary.addTypes(DIRTY_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.HILLS);
-		BiomeDictionary.addTypes(BLUE_HUMLANDS_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(GREEN_HUMLANDS_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 		BiomeDictionary.addTypes(RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 	}
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "unchecked" })
 	private static <C extends ISurfaceBuilderConfig, F extends SurfaceBuilder<C>> F register(String key, F builderIn) {
 		return (F) (Registry.<SurfaceBuilder<?>>register(Registry.SURFACE_BUILDER, key, builderIn));
 	}

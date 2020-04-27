@@ -1,6 +1,12 @@
-package com.turtysproductions.humlands.core.world.feature;
+package com.turtysproductions.humlands.core.world.gen;
 
 import com.turtysproductions.humlands.core.init.BlockInit;
+import com.turtysproductions.humlands.core.world.gen.feature.HumlandsFossilFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.HumlandsOreClumpFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.HumlandsRubberTreeFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.LumberMillFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.MobRoomFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.RubberForestPondFeature;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.world.biome.Biome;
@@ -40,6 +46,12 @@ public class ModBiomeFeatures {
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
 	}
 
+	public static void addMonsterRooms(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+				new MobRoomFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(8))));
+	}
+
 	public static void addCustomRocks(Biome biomeIn, BlockState block, int frequency) {
 		biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS,
 				Feature.FOREST_ROCK.withConfiguration(new BlockBlobConfig(block, 0))
@@ -55,14 +67,14 @@ public class ModBiomeFeatures {
 	}
 
 	public static void addPonds(Biome biome, int chance) {
-		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+		biome.addFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION,
 				new RubberForestPondFeature(NoFeatureConfig::deserialize)
 						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
 	}
 
 	public static void addLumberMills(Biome biome, int chance) {
-		biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+		biome.addFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION,
 				new LumberMillFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
 	}

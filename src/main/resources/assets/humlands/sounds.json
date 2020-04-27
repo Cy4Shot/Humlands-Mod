@@ -1,0 +1,22 @@
+{
+	"entity.humadillo.hurt": {
+		"categotry": "entity",
+		"subtitle": "entity.humadillo.hurt",
+		"sounds": [
+			{
+				"name": "humlands:entity/humadillo/hurt",
+				"stream": true
+			}
+		]
+	},
+	"entity.humadillo.death": {
+		"categotry": "entity",
+		"subtitle": "entity.humadillo.death",
+		"sounds": [
+			{
+				"name": "humlands:entity/humadillo/death",
+				"stream": true
+			}
+		]
+	}
+}

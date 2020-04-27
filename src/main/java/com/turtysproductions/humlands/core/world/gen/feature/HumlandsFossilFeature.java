@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.core.world.feature;
+package com.turtysproductions.humlands.core.world.gen.feature;
 
 import java.util.Random;
 import java.util.function.Function;
