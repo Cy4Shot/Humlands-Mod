@@ -14,6 +14,7 @@ import com.turtysproductions.humlands.core.init.EntityTypesInit;
 import com.turtysproductions.humlands.core.init.FluidInit;
 import com.turtysproductions.humlands.core.init.ItemInit;
 import com.turtysproductions.humlands.core.init.ParticleInit;
+import com.turtysproductions.humlands.core.init.SoundInit;
 import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
 
@@ -54,6 +55,7 @@ public class HumlandsMod {
 		bus.addListener(this::processIMC);
 		bus.addListener(this::doClientStuff);
 
+		SoundInit.SOUNDS.register(bus);
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         TileEntityTypesInit.TILE_ENTITY_TYPES.register(bus);

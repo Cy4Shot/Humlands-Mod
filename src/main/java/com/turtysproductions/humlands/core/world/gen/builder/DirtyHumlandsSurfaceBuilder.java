@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.core.world.biomes.builder;
+package com.turtysproductions.humlands.core.world.gen.builder;
 
 import java.util.Random;
 import java.util.function.Function;
