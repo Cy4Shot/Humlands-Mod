@@ -2,6 +2,8 @@ package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.entities.Humadillo;
+import com.turtysproductions.humlands.common.entities.Humahog;
+import com.turtysproductions.humlands.common.entities.RubberBallEntity;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
