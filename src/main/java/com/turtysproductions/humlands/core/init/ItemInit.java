@@ -122,4 +122,9 @@ public class ItemInit {
 	public static final RegistryObject<Item> HUMADILLO_SPAWN_EGG = ITEMS.register("humadillo_spawn_egg",
 			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS),
 					() -> EntityTypesInit.HUMADILLO.get()));
+	
+	public static final RegistryObject<Item> RUBBER_BALL = ITEMS.register("rubber_ball",
+			() -> new Item
+		        (new Item.Properties().group(ItemGroup.MISC)));
+	                                
 }
