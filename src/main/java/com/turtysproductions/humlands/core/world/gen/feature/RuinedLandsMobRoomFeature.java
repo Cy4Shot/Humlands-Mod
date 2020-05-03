@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.function.Function;
 
 import com.mojang.datafixers.Dynamic;
-import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.init.EntityTypesInit;
 import com.turtysproductions.humlands.core.init.LootTableInit;
 
@@ -22,9 +21,9 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.StructurePiece;
 
-public class MobRoomFeature extends Feature<NoFeatureConfig> {
+public class RuinedLandsMobRoomFeature extends Feature<NoFeatureConfig> {
 
-	public MobRoomFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> config) {
+	public RuinedLandsMobRoomFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> config) {
 		super(config);
 	}
 
@@ -35,25 +34,24 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 		pos = new BlockPos(pos.getX(), worldIn.getHeight(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ()),
 				pos.getZ());
 
-		int j = rand.nextInt(2) + 2;
-		int k1 = rand.nextInt(2) + 2;
+		int height = 8;
+		int j = rand.nextInt(2) + 5;
+		int k1 = rand.nextInt(2) + 5;
 
 		for (int k3 = -j - 1; k3 <= j + 1l; ++k3) {
-			for (int i4 = 3; i4 >= -1; --i4) {
+			for (int i4 = height; i4 >= -1; --i4) {
 				for (int k4 = -k1 - 1; k4 <= k1 + 1; ++k4) {
 					BlockPos blockpos1 = pos.add(k3, i4, k4);
-					if (k3 != -j - 1 && i4 != -1 && k4 != -k1 - 1 && k3 != j + 1 && i4 != 4 && k4 != k1 + 1) {
-						if (worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST)
-							worldIn.setBlockState(blockpos1, Blocks.AIR.getDefaultState(), 2);
-					} else if (blockpos1.getY() >= 0
-							&& !worldIn.getBlockState(blockpos1.down()).getMaterial().isSolid())
+					if (!(k3 != -j - 1 && i4 != -1 && k4 != -k1 - 1 && k3 != j + 1 && i4 != height && k4 != k1 + 1)) {
+						if (worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST) {
+							if (rand.nextInt(2) != 0)
+								worldIn.setBlockState(blockpos1, Blocks.SANDSTONE.getDefaultState(), 2);
+							else
+								worldIn.setBlockState(blockpos1, Blocks.SMOOTH_SANDSTONE.getDefaultState(), 2);
+						}
+					} else if (worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST
+							&& worldIn.getBlockState(blockpos1).getBlock() != Blocks.TORCH)
 						worldIn.setBlockState(blockpos1, Blocks.AIR.getDefaultState(), 2);
-					else if (worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST) {
-						if (i4 == -1 && rand.nextInt(4) != 0)
-							worldIn.setBlockState(blockpos1, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
-						else
-							worldIn.setBlockState(blockpos1, Blocks.COBBLESTONE.getDefaultState(), 2);
-					}
 				}
 			}
 		}
@@ -79,13 +77,11 @@ public class MobRoomFeature extends Feature<NoFeatureConfig> {
 			}
 		}
 
-		worldIn.setBlockState(pos, Blocks.SPAWNER.getDefaultState(), 2);
-		TileEntity tileentity = worldIn.getTileEntity(pos);
-		if (tileentity instanceof MobSpawnerTileEntity) {
-			((MobSpawnerTileEntity) tileentity).getSpawnerBaseLogic()
-					.setEntityType(EntityTypesInit.HUMADILLO.get());
-		} else
-			HumlandsMod.LOGGER.error("Failed to fetch mob spawner entity at ({}, {}, {})", pos.getX(), pos.getY(), pos.getZ());
+		worldIn.setBlockState(pos, Blocks.TORCH.getDefaultState(), 2);
+		worldIn.setBlockState(pos.down(1), Blocks.SPAWNER.getDefaultState(), 2);
+		TileEntity tileentity = worldIn.getTileEntity(pos.down(1));
+		if (tileentity instanceof MobSpawnerTileEntity)
+			((MobSpawnerTileEntity) tileentity).getSpawnerBaseLogic().setEntityType(EntityTypesInit.MUMMY.get());
 		return true;
 	}
 }
