@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class HumadilloRender extends MobRenderer<Humadillo, HumadilloModel<Humadillo>>
 {
-   protected static final ResourceLocation HUMADILLO_TEXTURE = new ResourceLocation(HumlandsMod.MOD_ID, "textures/entities/humadillo.png");
+   protected static final ResourceLocation HUMADILLO_TEXTURE = new ResourceLocation(HumlandsMod.MOD_ID, "textures/entities/humadillo/humadillo.png");
    
    public HumadilloRender(EntityRendererManager renderManagerIn)
    {
