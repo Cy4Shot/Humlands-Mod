@@ -3,6 +3,7 @@ package com.turtysproductions.humlands.core.util;
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.client.gui.TimeCapsuleScreen;
 import com.turtysproductions.humlands.common.entities.render.HumadilloRender;
+import com.turtysproductions.humlands.common.entities.render.HumbleweedRender;
 import com.turtysproductions.humlands.common.entities.render.MummyRender;
 import com.turtysproductions.humlands.core.init.BlockInit;
 import com.turtysproductions.humlands.core.init.ContainerTypesInit;
@@ -26,6 +27,7 @@ public class ClientEventBusSubscriber {
 		ScreenManager.registerFactory(ContainerTypesInit.TIME_CAPSULE_CONTAINER.get(), TimeCapsuleScreen::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.HUMADILLO.get(), HumadilloRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MUMMY.get(), MummyRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.HUMBLEWEED.get(), HumbleweedRender::new);
 		RenderTypeLookup.setRenderLayer(BlockInit.RUBBER_WOOD_TRAPDOOR.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.RUBBER_WOOD_DOOR.get(), RenderType.getCutout());
 	}

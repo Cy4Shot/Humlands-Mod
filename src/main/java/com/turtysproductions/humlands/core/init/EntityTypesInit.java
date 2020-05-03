@@ -2,6 +2,7 @@ package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.entities.Humadillo;
+import com.turtysproductions.humlands.common.entities.Humbleweed;
 import com.turtysproductions.humlands.common.entities.Mummy;
 
 import net.minecraft.entity.EntityClassification;
@@ -22,4 +23,8 @@ public class EntityTypesInit {
 	public static final RegistryObject<EntityType<Mummy>> MUMMY = ENTITY_TYPES.register("mummy",
 			() -> EntityType.Builder.<Mummy>create(Mummy::new, EntityClassification.MISC).size(0.9f, 2.0f)
 					.build(new ResourceLocation(HumlandsMod.MOD_ID, "mummy").toString()));
+	
+	public static final RegistryObject<EntityType<Humbleweed>> HUMBLEWEED = ENTITY_TYPES.register("humbleweed",
+			() -> EntityType.Builder.<Humbleweed>create(Humbleweed::new, EntityClassification.AMBIENT).size(0.9f, 0.9f)
+					.build(new ResourceLocation(HumlandsMod.MOD_ID, "humbleweed").toString()));
 }
