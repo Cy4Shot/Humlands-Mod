@@ -4,7 +4,9 @@ import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.world.biomes.DirtyHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.RubberWoodForestBiome;
+import com.turtysproductions.humlands.core.world.biomes.RuinedLandsBiome;
 import com.turtysproductions.humlands.core.world.gen.builder.DirtyHumlandsSurfaceBuilder;
+import com.turtysproductions.humlands.core.world.gen.builder.RuinedLandsSurfaceBuilder;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
@@ -51,6 +53,22 @@ public class BiomeInit {
 									.precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.125F)
 									.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
 									.waterFogColor(329011).parent((String) null)));
+	
+	public static final RegistryObject<Biome> RUINED_LANDS = BIOMES
+			.register("ruined_lands",
+					() -> new RuinedLandsBiome(
+							new Biome.Builder()
+									.surfaceBuilder(
+											new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
+													register("ruined_lands_surface",
+															new RuinedLandsSurfaceBuilder(
+																	SurfaceBuilderConfig::deserialize)),
+													new SurfaceBuilderConfig(Blocks.SAND.getDefaultState(),
+															Blocks.SAND.getDefaultState(),
+															Blocks.SANDSTONE.getDefaultState())))
+									.precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.125F)
+									.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
+									.waterFogColor(329011).parent((String) null)));
 
 	public static final RegistryObject<Biome> RUBBER_WOOD_FOREST = BIOMES.register("rubber_wood_forest",
 			() -> new RubberWoodForestBiome(new Biome.Builder().precipitation(RainType.NONE).scale(0.2f)
@@ -65,9 +83,10 @@ public class BiomeInit {
 
 	public static void addBiomeTypes() {
 
-		BiomeDictionary.addTypes(FAR_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.HILLS);
-		BiomeDictionary.addTypes(DIRTY_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.HILLS);
+		BiomeDictionary.addTypes(FAR_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.HOT);
+		BiomeDictionary.addTypes(DIRTY_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.PLAINS);
 		BiomeDictionary.addTypes(RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
+		BiomeDictionary.addTypes(RUINED_LANDS.get(), HUMLANDS, BiomeDictionary.Type.HOT);
 	}
 
 	@SuppressWarnings({ "deprecation", "unchecked" })
