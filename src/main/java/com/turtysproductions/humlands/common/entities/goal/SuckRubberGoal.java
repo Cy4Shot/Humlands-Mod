@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.entities.ai;
+package com.turtysproductions.humlands.common.entities.goal;
 
 import java.util.EnumSet;
 import java.util.function.Predicate;

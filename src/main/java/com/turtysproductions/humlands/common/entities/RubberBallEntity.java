@@ -22,70 +22,58 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class RubberBallEntity extends ProjectileItemEntity
-{
-	public RubberBallEntity(EntityType<? extends RubberBallEntity> entity, World world) 
-	   {
-	      super(entity, world);
-	   }
+public class RubberBallEntity extends ProjectileItemEntity {
+	public RubberBallEntity(EntityType<? extends RubberBallEntity> entity, World world) {
+		super(entity, world);
+	}
 
-	   public RubberBallEntity(World worldIn, LivingEntity throwerIn) 
-	   {
-	      super(EntityTypesInit.RUBBER_BALL_ENTITY.get(), throwerIn, worldIn);
-	   }
+	public RubberBallEntity(World worldIn, LivingEntity throwerIn) {
+		super(EntityTypesInit.RUBBER_BALL_ENTITY.get(), throwerIn, worldIn);
+	}
 
-	   public RubberBallEntity(World worldIn, double x, double y, double z) 
-	   {
-	      super(EntityTypesInit.RUBBER_BALL_ENTITY.get(), x, y, z, worldIn);
-	   }
+	public RubberBallEntity(World worldIn, double x, double y, double z) {
+		super(EntityTypesInit.RUBBER_BALL_ENTITY.get(), x, y, z, worldIn);
+	}
 
-	   protected Item getDefaultItem() 
-	   {
-	      return ItemInit.RUBBER_BALL.get();
-	   }
-	   
-	   @Override
-	    public IPacket<?> createSpawnPacket()
-	    {
-	        return NetworkHooks.getEntitySpawningPacket(this);
-	    }
+	protected Item getDefaultItem() {
+		return ItemInit.RUBBER_BALL.get();
+	}
 
-	   @OnlyIn(Dist.CLIENT)
-	   private IParticleData makeParticle() 
-	   {
-	      ItemStack itemstack = this.func_213882_k();
-	      return (IParticleData)(itemstack.isEmpty() ? ParticleInit.DRIPPING_RUBBER : new ItemParticleData(ParticleTypes.ITEM, itemstack));
-	   }
+	@Override
+	public IPacket<?> createSpawnPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
+	}
 
+	@OnlyIn(Dist.CLIENT)
+	private IParticleData makeParticle() {
+		ItemStack itemstack = this.func_213882_k();
+		return (IParticleData) (itemstack.isEmpty() ? ParticleInit.DRIPPING_RUBBER
+				: new ItemParticleData(ParticleTypes.ITEM, itemstack));
+	}
 
-	   
-	   
-	   
-	   @OnlyIn(Dist.CLIENT)
-	   public void handleStatusUpdate(byte id) {
-	      if (id == 3) {
-	         IParticleData iparticledata = this.makeParticle();
+	@OnlyIn(Dist.CLIENT)
+	public void handleStatusUpdate(byte id) {
+		if (id == 3) {
+			IParticleData iparticledata = this.makeParticle();
 
-	         for(int i = 0; i < 8; ++i) {
-	            this.world.addParticle(iparticledata, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0D, 0.0D, 0.0D);
-	         }
-	      }
+			for (int i = 0; i < 8; ++i) {
+				this.world.addParticle(iparticledata, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0D, 0.0D, 0.0D);
+			}
+		}
 
-	   }
+	}
 
-	   
-	   
-	   protected void onImpact(RayTraceResult result) {
-	      if (result.getType() == RayTraceResult.Type.ENTITY) {
-	         Entity entity = ((EntityRayTraceResult)result).getEntity();
-	         int i = 6;
-	         entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
-	      }
+	protected void onImpact(RayTraceResult result) {
+		if (result.getType() == RayTraceResult.Type.ENTITY) {
+			Entity entity = ((EntityRayTraceResult) result).getEntity();
+			int i = 6;
+			entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float) i);
+		}
 
-	      if (!this.world.isRemote) {
-	         this.world.setEntityState(this, (byte)3);
-	         this.remove();
-	      }
+		if (!this.world.isRemote) {
+			this.world.setEntityState(this, (byte) 3);
+			this.remove();
+		}
 
-	   }
+	}
 }

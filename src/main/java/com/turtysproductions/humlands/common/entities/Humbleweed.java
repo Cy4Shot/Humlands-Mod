@@ -1,47 +1,74 @@
 package com.turtysproductions.humlands.common.entities;
 
+import java.util.Random;
+
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.passive.AmbientEntity;
-import net.minecraft.potion.Effects;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ForgeHooks;
 
 public class Humbleweed extends AmbientEntity {
+	private double nextBounce;
+	private static double gfs;
 
 	public Humbleweed(EntityType<? extends AmbientEntity> type, World world) {
 		super(type, world);
+		nextBounce = 0;
+		gfs = 0.1d;
+	}
+
+	@Override
+	public ILivingEntityData onInitialSpawn(IWorld worldIn, DifficultyInstance difficultyIn, SpawnReason reason,
+			ILivingEntityData spawnDataIn, CompoundNBT dataTag) {
+		this.setMotion(((new Random()).nextFloat() * 2) - 1, this.getMotion().y, ((new Random()).nextFloat() * 2) - 1);
+		return super.onInitialSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
 	}
 
 	@Override
 	public void livingTick() {
 		super.livingTick();
-		Vec3d vec3d = this.getMotion();
-		if (!this.onGround && vec3d.y < 0.0D)
-			this.setMotion(vec3d.mul(1.0D, 0.6D, 1.0D));
+		if (!this.onGround)
+			this.setMotion(this.getMotion().x, this.getMotion().y - gfs, this.getMotion().z);
+		if (this.getMotion().y < 0.0D)
+			this.setMotion(this.getMotion().mul(1.0D, 0.8D, 1.0D));
+		if (nextBounce > 0) {
+			this.setMotion(this.getMotion().x, Math.sqrt(nextBounce) / Math.PI, this.getMotion().z);
+			nextBounce = 0;
+		}
+
 	}
 
 	@Override
 	public boolean onLivingFall(float distance, float damageMultiplier) {
-		boolean flag = super.onLivingFall(distance, damageMultiplier);
-		if (distance > 1.0f)
-			this.setMotion(this.getMotion().getX(), Math.sqrt(distance), this.getMotion().getZ());
-		this.setMoveVertical((float) Math.sqrt(distance));
-		float f = this.getJumpUpwardsMotion();
-		if (this.isPotionActive(Effects.JUMP_BOOST)) {
-			f += 0.1F * (float) (this.getActivePotionEffect(Effects.JUMP_BOOST).getAmplifier() + 1);
-		}
-
-		Vec3d vec3d = this.getMotion();
-		this.setMotion(vec3d.x, (double) f, vec3d.z);
-		if (this.isSprinting()) {
-			float f1 = this.rotationYaw * ((float) Math.PI / 180F);
-			this.setMotion(this.getMotion().add((double) (-MathHelper.sin(f1) * 0.2F), 0.0D,
-					(double) (MathHelper.cos(f1) * 0.2F)));
-		}
-
-		this.isAirBorne = true;
-		net.minecraftforge.common.ForgeHooks.onLivingJump(this);
-		return flag;
+		nextBounce = Math.abs(distance) > 1 ? Math.abs(distance) : 0;
+		return net.minecraftforge.common.ForgeHooks.onLivingFall(this, distance, damageMultiplier) == null ? false
+				: true;
 	}
+
+	@OnlyIn(Dist.CLIENT)
+	@Override
+	public void performHurtAnimation() {
+	}
+
+	@Override
+	public boolean isInvulnerableTo(DamageSource source) {
+		return super.isInvulnerableTo(source) || source.equals(DamageSource.FALL);
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (ForgeHooks.onLivingAttack(this, source, amount))
+			return false;
+		else
+			return super.attackEntityFrom(source, amount);
+	}
+
 }

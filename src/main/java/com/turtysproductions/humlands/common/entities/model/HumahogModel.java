@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.util.math.MathHelper;
 
-
 public class HumahogModel<T extends Humahog> extends EntityModel<T> {
 	private final ModelRenderer body;
 	private final ModelRenderer hair;
@@ -74,8 +73,8 @@ public class HumahogModel<T extends Humahog> extends EntityModel<T> {
 	}
 
 	@Override
-	public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) 
-	{
+	public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn,
+			float red, float green, float blue, float alpha) {
 		body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 		hair.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 		hair2.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
@@ -86,29 +85,28 @@ public class HumahogModel<T extends Humahog> extends EntityModel<T> {
 		leg2.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 		leg3.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 		leg4.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
-		
+
 	}
+
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
 	}
-	
+
 	@Override
-	public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick) 
-	{
+	public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick) {
 		this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-	    this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
-	    
-	    this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-	    this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
-		
+		this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount * 0.5F;
+
+		this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
+		this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount * 0.5F;
+
 	}
-	
+
 	@Override
-	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) 
-	{
-		
-		
+	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
+			float netHeadYaw, float headPitch) {
+
 	}
 }
