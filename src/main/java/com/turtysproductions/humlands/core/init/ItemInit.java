@@ -1,7 +1,6 @@
 package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.common.items.CraftingReuseItem;
 import com.turtysproductions.humlands.common.items.FluxVial;
 import com.turtysproductions.humlands.common.items.GlintingItem;
 import com.turtysproductions.humlands.common.items.ModSpawnEgg;
@@ -102,10 +101,10 @@ public class ItemInit {
 							.effect(new EffectInstance(Effects.HEALTH_BOOST), 1).build())));
 
 	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",
-			() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 
 	public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer",
-			() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 
 	public static final RegistryObject<Item> SUPER_ROYAL_FLAN_RAW = ITEMS.register("super_royal_flan_raw",
 			() -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC)));
