@@ -17,6 +17,7 @@ import com.turtysproductions.humlands.core.init.ParticleInit;
 import com.turtysproductions.humlands.core.init.SoundInit;
 import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
+import com.turtysproductions.humlands.core.world.gen.BiomeEntityAdder;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -41,6 +42,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
+@SuppressWarnings("deprecation")
 @Mod("humlands")
 public class HumlandsMod {
 
@@ -54,13 +56,13 @@ public class HumlandsMod {
 		bus.addListener(this::enqueueIMC);
 		bus.addListener(this::processIMC);
 		bus.addListener(this::doClientStuff);
-
+		
 		SoundInit.SOUNDS.register(bus);
+		EntityTypesInit.ENTITY_TYPES.register(bus);
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         TileEntityTypesInit.TILE_ENTITY_TYPES.register(bus);
         ContainerTypesInit.CONTAINER_TYPES.register(bus);
-        EntityTypesInit.ENTITY_TYPES.register(bus);
         ParticleInit.PARTICLES.register(bus);
         FluidInit.FLUIDS.register(bus);
         FluidInit.BLOCKS.register(bus);
@@ -70,7 +72,7 @@ public class HumlandsMod {
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
-
+		net.minecraftforge.fml.DeferredWorkQueue.runLater(BiomeEntityAdder::addEntitiesToBiomes);
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {

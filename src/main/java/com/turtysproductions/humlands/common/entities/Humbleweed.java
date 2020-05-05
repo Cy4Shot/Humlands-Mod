@@ -11,9 +11,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.common.ForgeHooks;
 
 public class Humbleweed extends AmbientEntity {
 	private double nextBounce;
@@ -53,22 +50,8 @@ public class Humbleweed extends AmbientEntity {
 				: true;
 	}
 
-	@OnlyIn(Dist.CLIENT)
-	@Override
-	public void performHurtAnimation() {
-	}
-
 	@Override
 	public boolean isInvulnerableTo(DamageSource source) {
 		return super.isInvulnerableTo(source) || source.equals(DamageSource.FALL);
 	}
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (ForgeHooks.onLivingAttack(this, source, amount))
-			return false;
-		else
-			return super.attackEntityFrom(source, amount);
-	}
-
 }
