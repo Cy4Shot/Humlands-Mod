@@ -11,6 +11,8 @@ import net.minecraftforge.fml.RegistryObject;
 public class BiomeEntityAdder {
 	public static void addEntitiesToBiomes() {
 		BiomeInit.BIOMES.getEntries().stream().map(RegistryObject::get).forEach(biome -> {
+			//Add new entity spawning here:
+			//Example is shown below
 			if (biome.equals(BiomeInit.RUINED_LANDS.get()))
 				((HumlandsBaseBiome) biome).addCustomSpawn(EntityClassification.AMBIENT,
 						new Biome.SpawnListEntry(EntityTypesInit.HUMBLEWEED.get(), 8, 3, 10));

@@ -32,5 +32,6 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.HUMAHOG.get(), HumahogRender::new);
 		RenderTypeLookup.setRenderLayer(BlockInit.RUBBER_WOOD_TRAPDOOR.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.RUBBER_WOOD_DOOR.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SCRAP_GLASS.get(), RenderType.getTranslucent());
 	}
 }
