@@ -39,7 +39,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
-@SuppressWarnings("deprecation")
 @Mod("humlands")
 public class HumlandsMod {
 
@@ -68,6 +67,7 @@ public class HumlandsMod {
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void setup(final FMLCommonSetupEvent event) {
 		net.minecraftforge.fml.DeferredWorkQueue.runLater(BiomeEntityAdder::addEntitiesToBiomes);
 	}
