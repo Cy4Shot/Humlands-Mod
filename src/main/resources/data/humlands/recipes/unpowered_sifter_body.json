@@ -4,7 +4,7 @@
     "pattern":
     [
         "SSS",
-        "WMW",
+        "WDW",
         "CMC"
     ],
     
@@ -12,7 +12,12 @@
     {
         "M":
         {
-            "item": "humlands:iron_plate"
+            "item": "humlands:gold_plate"
+        },
+        
+        "D":
+        {
+            "item": "humlands:diamond_plate"
         },
         
         "C":

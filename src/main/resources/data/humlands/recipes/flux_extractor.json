@@ -1,0 +1,43 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": 
+	[
+		"WGW",
+		"FDF",
+		"CGC"
+	],
+
+	"key": 
+	{
+		"G": 
+		{
+			"item": "humlands:gold_plate"
+		},
+		
+		"F": 
+		{
+			"item": "minecraft:furnace"
+		},
+		
+		"W": 
+		{
+			"item": "humlands:iron_wire"
+		},
+		
+		"C": 
+		{
+			"item": "humlands:carbon_tube"
+		},
+
+		"D": 
+		{
+			"item": "humlands:diamond_plate"
+		}
+	},
+
+	"result": 
+	{
+		"item": "humlands:flux_extractor",
+		"count": 1
+	}
+}
