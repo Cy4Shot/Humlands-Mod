@@ -72,8 +72,8 @@ public class ItemInit {
 	public static final RegistryObject<Item> IRON_MESH = ITEMS.register("iron_mesh",
 			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 
-	public static final RegistryObject<Item> METAL_SHEET = ITEMS.register("metal_sheet",
-			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	public static final RegistryObject<Item> FLUX_CRYSTAL = ITEMS.register("flux_crystal",
+			() -> new Item(new Item.Properties().maxStackSize(1).group(HumlandsTab.HUMLANDS)));
 
 	public static final RegistryObject<Item> MECHANICAL_ARM = ITEMS.register("mechanical_arm",
 			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
@@ -122,11 +122,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> HUMADILLO_SPAWN_EGG = ITEMS.register("humadillo_spawn_egg",
 			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS),
 					() -> EntityTypesInit.HUMADILLO.get()));
-  
+
 	public static final RegistryObject<Item> RUBBER_BALL = ITEMS.register("rubber_ball",
-			() -> new Item
-		        (new Item.Properties().group(ItemGroup.MISC)));
-	                                
+			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+
 	public static final RegistryObject<Item> MUMMY_SPAWN_EGG = ITEMS.register("mummy_spawn_egg",
 			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS),
 					() -> EntityTypesInit.MUMMY.get()));

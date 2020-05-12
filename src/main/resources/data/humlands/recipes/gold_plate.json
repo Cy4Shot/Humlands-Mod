@@ -3,7 +3,7 @@
 	"ingredients": 
 	[
 		{
-			"item": "humlands:wirecutters"
+			"item": "humlands:hammer"
 		},
 
 		{
@@ -25,7 +25,7 @@
 
 	"result": 
 	{
-		"item": "humlands:gold_wire",
-		"count": 2
+		"item": "humlands:gold_plate",
+		"count": 1
 	}
 }

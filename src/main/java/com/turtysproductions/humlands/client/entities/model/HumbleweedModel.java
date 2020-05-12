@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.entities.model;
+package com.turtysproductions.humlands.client.entities.model;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;

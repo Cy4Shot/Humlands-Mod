@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.entities.model;
+package com.turtysproductions.humlands.client.entities.model;
 
 import com.turtysproductions.humlands.common.entities.Humadillo;
 import com.mojang.blaze3d.matrix.MatrixStack;

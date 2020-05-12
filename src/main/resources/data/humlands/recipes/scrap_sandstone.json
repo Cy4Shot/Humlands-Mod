@@ -1,25 +1,22 @@
 {
-    "type": "minecraft:crafting_shaped",
-    
-    "pattern":
-    [
-        "II ",
-        "II ",
-        "   "
-    ],
-    
-    "key":
-    {
-        "I":
-        {
-            "item": "humlands:scrap_sand"
-        }
-        
-    },
-    
-    "result":
-    {
-        "item":  "humlands:scrap_sandstone",
-        "count": 1
-    }
+	"type": "minecraft:crafting_shaped",
+	"pattern": 
+	[
+		"II",
+		"II"
+	],
+
+	"key": 
+	{
+		"I": 
+		{
+			"item": "humlands:scrap_sand"
+		}
+	},
+
+	"result": 
+	{
+		"item": "humlands:scrap_sandstone",
+		"count": 1
+	}
 }

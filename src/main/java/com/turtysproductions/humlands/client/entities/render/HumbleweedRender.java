@@ -1,10 +1,10 @@
-package com.turtysproductions.humlands.common.entities.render;
+package com.turtysproductions.humlands.client.entities.render;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.turtysproductions.humlands.HumlandsMod;
+import com.turtysproductions.humlands.client.entities.model.HumbleweedModel;
 import com.turtysproductions.humlands.common.entities.Humbleweed;
-import com.turtysproductions.humlands.common.entities.model.HumbleweedModel;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;

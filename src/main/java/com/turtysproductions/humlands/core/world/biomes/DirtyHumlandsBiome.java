@@ -23,6 +23,7 @@ public class DirtyHumlandsBiome extends HumlandsBaseBiome {
 		ModBiomeFeatures.addOreClump(this, BlockInit.GOLD_ORE_CLUMP.get().getDefaultState(), 4);
 		ModBiomeFeatures.addOreClump(this, BlockInit.REDSTONE_ORE_CLUMP.get().getDefaultState(), 3);
 		ModBiomeFeatures.addOreClump(this, BlockInit.LAPIS_ORE_CLUMP.get().getDefaultState(), 3);
+		ModBiomeFeatures.addOreClump(this, BlockInit.FLUX_ORE_CLUMP.get().getDefaultState(), 5);
 	}
 
 	@OnlyIn(Dist.CLIENT)

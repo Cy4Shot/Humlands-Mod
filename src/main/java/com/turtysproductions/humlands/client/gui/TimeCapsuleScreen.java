@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.client.gui;
+package com.turtysproductions.humlands.client.gui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.turtysproductions.humlands.HumlandsMod;

@@ -2,6 +2,6 @@
    "parent": "item/generated",
    "textures": 
    {
-       "layer0": "humlands:items/metal_sheet"
+       "layer0": "humlands:items/flux_crystal"
    }
 }

@@ -1,0 +1,31 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": 
+	[
+		{
+			"item": "humlands:hammer"
+		},
+
+		{
+			"item": "minecraft:diamond_ingot"
+		},
+
+		{
+			"item": "minecraft:diamond_ingot"
+		},
+
+		{
+			"item": "minecraft:diamond_ingot"
+		},
+
+		{
+			"item": "minecraft:diamond_ingot"
+		}
+	],
+
+	"result": 
+	{
+		"item": "humlands:diamond_plate",
+		"count": 1
+	}
+}
