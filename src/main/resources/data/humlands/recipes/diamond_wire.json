@@ -1,0 +1,31 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": 
+	[
+		{
+			"item": "humlands:wirecutters"
+		},
+
+		{
+			"item": "minecraft:diamond"
+		},
+
+		{
+			"item": "minecraft:diamond"
+		},
+
+		{
+			"item": "minecraft:diamond"
+		},
+
+		{
+			"item": "minecraft:diamond"
+		}
+	],
+
+	"result": 
+	{
+		"item": "humlands:diamond_wire",
+		"count": 2
+	}
+}

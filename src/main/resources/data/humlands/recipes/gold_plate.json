@@ -1,0 +1,31 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": 
+	[
+		{
+			"item": "humlands:hammer"
+		},
+
+		{
+			"item": "minecraft:gold_ingot"
+		},
+
+		{
+			"item": "minecraft:gold_ingot"
+		},
+
+		{
+			"item": "minecraft:gold_ingot"
+		},
+
+		{
+			"item": "minecraft:gold_ingot"
+		}
+	],
+
+	"result": 
+	{
+		"item": "humlands:gold_plate",
+		"count": 1
+	}
+}

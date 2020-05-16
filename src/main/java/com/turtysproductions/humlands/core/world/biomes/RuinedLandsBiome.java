@@ -2,10 +2,9 @@ package com.turtysproductions.humlands.core.world.biomes;
 
 import com.turtysproductions.humlands.core.world.gen.ModBiomeFeatures;
 
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 
-public class RuinedLandsBiome extends Biome {
+public class RuinedLandsBiome extends HumlandsBaseBiome {
 
 	public RuinedLandsBiome(Builder biomeBuilder) {
 		super(biomeBuilder);

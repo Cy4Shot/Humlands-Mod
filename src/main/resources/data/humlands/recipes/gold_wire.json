@@ -1,18 +1,31 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    
-    "ingredients":
-    [
-        { "item": "humlands:wirecutters" },
-        { "item": "minecraft:gold_ingot"},
-        { "item": "minecraft:gold_ingot"},
-        { "item": "minecraft:gold_ingot"},
-        { "item": "minecraft:gold_ingot"}
-    ],
-    
-    "result":
-    {
-        "item":  "humlands:gold_wire",
-        "count": 2
-    }
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": 
+	[
+		{
+			"item": "humlands:wirecutters"
+		},
+
+		{
+			"item": "minecraft:gold_ingot"
+		},
+
+		{
+			"item": "minecraft:gold_ingot"
+		},
+
+		{
+			"item": "minecraft:gold_ingot"
+		},
+
+		{
+			"item": "minecraft:gold_ingot"
+		}
+	],
+
+	"result": 
+	{
+		"item": "humlands:gold_wire",
+		"count": 2
+	}
 }

@@ -1,8 +1,8 @@
-package com.turtysproductions.humlands.common.entities.render;
+package com.turtysproductions.humlands.client.entities.render;
 
 import com.turtysproductions.humlands.HumlandsMod;
+import com.turtysproductions.humlands.client.entities.model.HumadilloModel;
 import com.turtysproductions.humlands.common.entities.Humadillo;
-import com.turtysproductions.humlands.common.entities.model.HumadilloModel;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;

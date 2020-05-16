@@ -12,6 +12,7 @@ import com.turtysproductions.humlands.core.world.gen.feature.RuinedLandsHolderFe
 import com.turtysproductions.humlands.core.world.gen.feature.RuinedLandsHouseFeature;
 import com.turtysproductions.humlands.core.world.gen.feature.RuinedLandsLanternFeature;
 import com.turtysproductions.humlands.core.world.gen.feature.RuinedLandsMobRoomFeature;
+import com.turtysproductions.humlands.core.world.gen.feature.RuinedLandsPileFeature;
 import com.turtysproductions.humlands.core.world.gen.feature.RuinedLandsPillarFeature;
 
 import net.minecraft.block.BlockState;
@@ -53,6 +54,7 @@ public class ModBiomeFeatures {
 	}
 	
 	public static void addRuinedLands(Biome b) {
+		addRuinedLandsPile(b);
 		addRuinedLandsMonsterRooms(b);
 		addRuinedLandsAquaduct(b);
 		addRuinedLandsArch(b);
@@ -60,6 +62,12 @@ public class ModBiomeFeatures {
 		addRuinedLandsLantern(b);
 		addRuinedLandsHouse(b);
 		addRuinedLandsPillar(b);
+	}
+	
+	public static void addRuinedLandsPile(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
+				new RuinedLandsPileFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(1))));
 	}
 
 	public static void addRuinedLandsMonsterRooms(Biome biomeIn) {

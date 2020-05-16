@@ -59,12 +59,13 @@ public class RuinedLandsHolderFeature extends Feature<NoFeatureConfig> {
 		}
 		BlockPos blockpos1 = template.getZeroPositionWithTransform(
 				new BlockPos(pos.add(j, 0, 0).getX(), l, pos.add(0, 0, k).getZ()), Mirror.NONE, Rotation.NONE);
-		if (template.addBlocksToWorld(worldIn, blockpos1,
+		template.addBlocksToWorld(worldIn, blockpos1,
 				(new PlacementSettings()).setRotation(Rotation.NONE)
 						.setBoundingBox(new MutableBoundingBox(chunkpos.getXStart(), 0, chunkpos.getZStart(),
 								chunkpos.getXEnd(), 256, chunkpos.getZEnd()))
 						.setRandom(random).addProcessor(BlockIgnoreStructureProcessor.AIR_AND_STRUCTURE_BLOCK),
-				4)) {
+				4);
+		if (!worldIn.getBlockState(blockpos1.up().south().east()).getBlock().equals(Blocks.AIR)) {
 			int r = random.nextInt(4);
 			if (r == 0) {
 				worldIn.setBlockState(blockpos1.up(2).south().east(), Blocks.CHEST.getDefaultState(), 2);

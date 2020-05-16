@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.common.particles.rubber;
+package com.turtysproductions.humlands.client.particles;
 
 import net.minecraft.client.particle.IAnimatedSprite;
 import net.minecraft.client.particle.IParticleFactory;

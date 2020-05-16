@@ -1,36 +1,33 @@
 {
-    "type": "minecraft:crafting_shaped",
-    
-    "pattern":
-    [
-        "SCS",
-        "SWS",
-        "SCS"
-    ],
-    
-    "key":
-    {
-        "S":
-        {
-            "item": "humlands:metal_sheet"
-        },
-        
-        "C":
-        {
-            "item": "humlands:carbon_tube"
-        },
-        
-        "W":
-        {
-            "item": "humlands:gold_wire"
-        }
-        
-        
-    },
-    
-    "result":
-    {
-        "item":  "humlands:mechanical_arm",
-        "count": 1
-    }
+	"type": "minecraft:crafting_shaped",
+	"pattern": 
+	[
+		"SCS",
+		"SWS",
+		"SCS"
+	],
+
+	"key": 
+	{
+		"S": 
+		{
+			"item": "humlands:iron_plate"
+		},
+
+		"C": 
+		{
+			"item": "humlands:carbon_tube"
+		},
+
+		"W": 
+		{
+			"item": "humlands:gold_wire"
+		}
+	},
+
+	"result": 
+	{
+		"item": "humlands:mechanical_arm",
+		"count": 1
+	}
 }
