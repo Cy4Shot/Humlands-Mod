@@ -1,7 +1,8 @@
 {
-  "replace": false,
-  "values": [
-    "humlands:rubber_streaming_rubber_wood_log",
-    "humlands:rubber_wood_log"
-  ]
+	"replace": false,
+	"values": 
+	[
+		"humlands:rubber_streaming_rubber_wood_log",
+		"humlands:rubber_wood_log"
+	]
 }

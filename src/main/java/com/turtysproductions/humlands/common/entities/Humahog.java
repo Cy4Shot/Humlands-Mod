@@ -1,5 +1,6 @@
 package com.turtysproductions.humlands.common.entities;
 
+import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.entities.goal.SuckRubberGoal;
 
 import net.minecraft.entity.EntitySize;
@@ -49,7 +50,7 @@ public class Humahog extends GolemEntity implements IRangedAttackMob {
 	protected void registerGoals() {
 
 		super.registerGoals();
-		if (this.isSucked() == false) {
+		/*if (this.isSucked() == false) {
 			this.goalSelector.addGoal(1, new SuckRubberGoal(this));
 			// this.targetSelector.addGoal(2, new MeleeAttackGoal(this, (double)0.20f,
 			// false));
@@ -64,9 +65,12 @@ public class Humahog extends GolemEntity implements IRangedAttackMob {
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25D, 20, 10.0f));
 			this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0D, 1.0f));
 			this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 6.0f));
-			this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
+			this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));}*/
+		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25D, 20, 10.0f));
+		this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0D, 1.0f));
+		this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 6.0f));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
 
-		}
 
 	}
 
@@ -135,6 +139,7 @@ public class Humahog extends GolemEntity implements IRangedAttackMob {
 	}
 
 	public void attackEntityWithRangedAttack(LivingEntity target, float distanceFactor) {
+		HumlandsMod.LOGGER.debug("shoot");
 		RubberBallEntity rubberball = new RubberBallEntity(this.world, this);
 		double d0 = target.getPosYEye() - (double) 1.1F;
 		double d1 = target.getPosX() - this.getPosX();

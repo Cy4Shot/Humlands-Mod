@@ -34,9 +34,9 @@ public class EntityTypesInit {
 			() -> EntityType.Builder.<Humahog>create(Humahog::new, EntityClassification.MONSTER).size(0.9f, 1.3f)
 					.build(new ResourceLocation(HumlandsMod.MOD_ID, "humahog").toString()));
 
-	public static final RegistryObject<EntityType<RubberBallEntity>> RUBBER_BALL_ENTITY = ENTITY_TYPES
-			.register("rubber_ball_entity",
-					() -> EntityType.Builder.<RubberBallEntity>create(RubberBallEntity::new, EntityClassification.MISC)
-							.size(0.9f, 1.3f)
-							.build(new ResourceLocation(HumlandsMod.MOD_ID, "rubber_ball_entity").toString()));
+	public static final RegistryObject<EntityType<RubberBallEntity>> RUBBER_BALL_ENTITY = ENTITY_TYPES.register(
+			"rubber_ball_entity",
+			() -> EntityType.Builder.<RubberBallEntity>create(RubberBallEntity::new, EntityClassification.MISC)
+					.disableSummoning().size(0.9f, 1.3f)
+					.build(new ResourceLocation(HumlandsMod.MOD_ID, "rubber_ball_entity").toString()));
 }

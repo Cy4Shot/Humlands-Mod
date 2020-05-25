@@ -1,12 +1,6 @@
 {
-	//Fluids
 	"fluid.humlands.flux_fluid": "Flusso",
-	
-	//Tabs
-	"itemGroup.humlands": "Humlands"
-	
-	
-	//Blocks
+	"itemGroup.humlands": "Humlands",
 	"block.humlands.flux": "Flusso",
 	"block.humlands.humlands_portal_block": "Blocco del Portale per le Humlands",
 	"block.humlands.scrap_sand": "Sabbia di Detriti",
@@ -14,23 +8,20 @@
 	"block.humlands.scrap_glass": "Vetro di Detriti",
 	"block.humlands.sifter": "Vaglio Meccanico",
 	"block.humlands.rubber_wood_planks": "Assi di Gommalegno",
-        "block.humlands.rubber_wood_log": "Tronco di Gommalegno",
-        "block.humlands.rubber_wood_stairs": "Scale di Gommalegno",
-        "block.humlands.rubber_wood_button": "Bottone di Gommalegno",
-        "block.humlands.rubber_wood_slab": "Lastra di Gommalegno",
-        "block.humlands.rubber_wood_fence_gate": "Cancelletto di Gommalegno",
-        "block.humlands.rubber_wood_fence": "Recinzione di Gommalegno",
-        "block.humlands.rubber_wood_trapdoor": "Botola di Gommalegno",
-        "block.humlands.stripped_rubber_wood_log": "Tronco di Gommalegno Scortecciato",
-        "block.humlands.rubber_streaming_rubber_wood_log": "Tronco di Gommalegno Grondante di Gomma",
-        "block.humlands.rubber_wood_door": "Porta di Gommalegno",
-        "block.humlands.rubber_wood_sign": "Cartello di Gommalegno",
-        "block.humlands.rubber_leaves": "Foglie di Gomma",
+	"block.humlands.rubber_wood_log": "Tronco di Gommalegno",
+	"block.humlands.rubber_wood_stairs": "Scale di Gommalegno",
+	"block.humlands.rubber_wood_button": "Bottone di Gommalegno",
+	"block.humlands.rubber_wood_slab": "Lastra di Gommalegno",
+	"block.humlands.rubber_wood_fence_gate": "Cancelletto di Gommalegno",
+	"block.humlands.rubber_wood_fence": "Recinzione di Gommalegno",
+	"block.humlands.rubber_wood_trapdoor": "Botola di Gommalegno",
+	"block.humlands.stripped_rubber_wood_log": "Tronco di Gommalegno Scortecciato",
+	"block.humlands.rubber_streaming_rubber_wood_log": "Tronco di Gommalegno Grondante di Gomma",
+	"block.humlands.rubber_wood_door": "Porta di Gommalegno",
+	"block.humlands.rubber_wood_sign": "Cartello di Gommalegno",
+	"block.humlands.rubber_leaves": "Foglie di Gomma",
 	"block.humlands.rubber_wood_forest_grass": "Erba della Foresta di Gommalegno",
 	"block.humlands.rubber_wood_forest_dirt": "Terra della Foresta di Gommalegno",
-	
-	
-	//Items
 	"item.humlands.carbon_sheet": "Lastra di Carbonio",
 	"item.humlands.carbon_tube": "Tubo di Carbonio",
 	"item.humlands.flux_vial": "Fiala per Flusso",
@@ -49,7 +40,7 @@
 	"item.humlands.rubber_extractor": "Estrattore di Gomma",
 	"item.humlands.rubber": "Gomma",
 	"item.humlands.wirecutters": "Tronchese",
-  	"item.humlands.hammer": "Martello",
+	"item.humlands.hammer": "Martello",
 	"item.humlands.iron_bone": "Osso di Ferro",
 	"item.humlands.diamond_plate": "Lamina di Diamante",
 	"item.humlands.gold_plate": "Lamina d'Oro",
@@ -58,12 +49,8 @@
 	"item.humlands.diamond_wire": "Filo di Diamante",
 	"item.humlands.diamond_encrusted_bone": "Osso Incrostato di Diamante",
 	"item.humlands.enchanted_gunpowder": "Polvere da Sparo Incantata",
-	
-
-	//Biomes
 	"biome.humlands.rubber_wood_forest": "Foresta di Gommalegno",
 	"biome.humlands.rubber_streaming_rubber_wood_forest": "Foresta di Gommalegno Grondante di Gomma",
 	"biome.humlands.far_humlands": "Humlands Lontane",
 	"biome.humlands.dirty_humlands": "Humlands Inquinate"
-	
 }

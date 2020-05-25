@@ -1,6 +1,7 @@
 {
-  "replace": false,
-  "values": [
-    "humlands:rubber_leaves"
-  ]
+	"replace": false,
+	"values": 
+	[
+		"humlands:rubber_leaves"
+	]
 }

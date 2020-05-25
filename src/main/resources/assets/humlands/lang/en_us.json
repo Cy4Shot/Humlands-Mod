@@ -1,6 +1,5 @@
 {
 	"itemGroup.humlands": "Humlands",
-
 	"block.humlands.flux": "Flux",
 	"block.humlands.iron_ore_clump": "Iron Ore Clump",
 	"block.humlands.gold_ore_clump": "Gold Ore Clump",
@@ -33,7 +32,6 @@
 	"block.humlands.rubber_wood_forest_dirt": "Rubber Wood Forest Dirt",
 	"block.humlands.time_capsule": "Time Capsule",
 	"block.humlands.dead_wood_log": "Dead Wood Log",
-
 	"item.humlands.carbon_sheet": "Carbon Sheet",
 	"item.humlands.carbon_tube": "Carbon Tube",
 	"item.humlands.diamond_encrusted_bone": "Diamond Encrusted Bone",
@@ -65,11 +63,9 @@
 	"item.humlands.rubber_extractor": "Rubber Extractor",
 	"item.humlands.rubber": "Rubber",
 	"item.humlands.humadillo_spawn_egg": "Humadillo Spawn Egg",
-
 	"biome.humlands.rubber_wood_forest": "Rubber Wood Forest",
 	"biome.humlands.rubber_streaming_rubber_wood_forest": "Rubber Streaming Rubber Wood Forest",
 	"biome.humlands.far_humlands": "Far Humlands",
 	"biome.humlands.dirty_humlands": "Dirty Humlands",
-
 	"container.time_capsule": "Time Capsule"
 }
