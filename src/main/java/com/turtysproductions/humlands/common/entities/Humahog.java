@@ -33,7 +33,6 @@ public class Humahog extends GolemEntity implements IRangedAttackMob {
 
 	public Humahog(EntityType<? extends GolemEntity> type, World worldIn) {
 		super(type, worldIn);
-
 	}
 
 	@Override
@@ -50,27 +49,29 @@ public class Humahog extends GolemEntity implements IRangedAttackMob {
 	protected void registerGoals() {
 
 		super.registerGoals();
-		/*if (this.isSucked() == false) {
-			this.goalSelector.addGoal(1, new SuckRubberGoal(this));
-			// this.targetSelector.addGoal(2, new MeleeAttackGoal(this, (double)0.20f,
-			// false));
-			this.goalSelector.addGoal(3, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-			this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
-			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Humadillo.class, true));
-
-		}
-
-		if (this.isSucked() == true) {
-
-			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25D, 20, 10.0f));
-			this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0D, 1.0f));
-			this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 6.0f));
-			this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));}*/
+		/*
+		 * if (this.isSucked() == false) { this.goalSelector.addGoal(1, new
+		 * SuckRubberGoal(this)); // this.targetSelector.addGoal(2, new
+		 * MeleeAttackGoal(this, (double)0.20f, // false)); this.goalSelector.addGoal(3,
+		 * new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+		 * this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this,
+		 * PlayerEntity.class, true)); this.targetSelector.addGoal(5, new
+		 * NearestAttackableTargetGoal<>(this, Humadillo.class, true));
+		 * 
+		 * }
+		 * 
+		 * if (this.isSucked() == true) {
+		 * 
+		 * this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25D, 20, 10.0f));
+		 * this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0D,
+		 * 1.0f)); this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class,
+		 * 6.0f)); this.targetSelector.addGoal(1, new
+		 * NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));}
+		 */
 		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25D, 20, 10.0f));
 		this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0D, 1.0f));
 		this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 6.0f));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
-
 
 	}
 

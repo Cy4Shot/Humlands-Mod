@@ -2,10 +2,10 @@ package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.entities.Humadillo;
-import com.turtysproductions.humlands.common.entities.Humbleweed;
 import com.turtysproductions.humlands.common.entities.Humahog;
-import com.turtysproductions.humlands.common.entities.RubberBallEntity;
+import com.turtysproductions.humlands.common.entities.Humbleweed;
 import com.turtysproductions.humlands.common.entities.Mummy;
+import com.turtysproductions.humlands.common.entities.RubberBallEntity;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -19,7 +19,7 @@ public class EntityTypesInit {
 			HumlandsMod.MOD_ID);
 
 	public static final RegistryObject<EntityType<Humadillo>> HUMADILLO = ENTITY_TYPES.register("humadillo",
-			() -> EntityType.Builder.<Humadillo>create(Humadillo::new, EntityClassification.CREATURE).size(0.9f, 1.3f)
+			() -> EntityType.Builder.<Humadillo>create(Humadillo::new, EntityClassification.CREATURE).size(0.9f, 0.5f)
 					.build(new ResourceLocation(HumlandsMod.MOD_ID, "humadillo").toString()));
 
 	public static final RegistryObject<EntityType<Mummy>> MUMMY = ENTITY_TYPES.register("mummy",
@@ -31,7 +31,7 @@ public class EntityTypesInit {
 					.build(new ResourceLocation(HumlandsMod.MOD_ID, "humbleweed").toString()));
 
 	public static final RegistryObject<EntityType<Humahog>> HUMAHOG = ENTITY_TYPES.register("humahog",
-			() -> EntityType.Builder.<Humahog>create(Humahog::new, EntityClassification.MONSTER).size(0.9f, 1.3f)
+			() -> EntityType.Builder.<Humahog>create(Humahog::new, EntityClassification.MONSTER).size(0.8f, 0.8f)
 					.build(new ResourceLocation(HumlandsMod.MOD_ID, "humahog").toString()));
 
 	public static final RegistryObject<EntityType<RubberBallEntity>> RUBBER_BALL_ENTITY = ENTITY_TYPES.register(

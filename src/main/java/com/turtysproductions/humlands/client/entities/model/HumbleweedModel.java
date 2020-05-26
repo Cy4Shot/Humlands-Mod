@@ -298,24 +298,20 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 
 		TotY1 = new ModelRenderer(this);
 		TotY1.setRotationPoint(0.0F, 16.0F, 0.0F);
-		
 
 		Y4 = new ModelRenderer(this);
 		Y4.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TotY1.addChild(Y4);
 		setRotationAngle(Y4, 0.0F, 0.0F, 1.5708F);
-		
 
 		X8 = new ModelRenderer(this);
 		X8.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y4.addChild(X8);
 		setRotationAngle(X8, 0.0F, -1.5708F, 0.0F);
-		
 
 		GroupX25 = new ModelRenderer(this);
 		GroupX25.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X8.addChild(GroupX25);
-		
 
 		bone146 = new ModelRenderer(this);
 		bone146.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -338,7 +334,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX26.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X8.addChild(GroupX26);
 		setRotationAngle(GroupX26, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone152 = new ModelRenderer(this);
 		bone152.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -361,7 +356,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX27.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X8.addChild(GroupX27);
 		setRotationAngle(GroupX27, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone158 = new ModelRenderer(this);
 		bone158.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -384,7 +378,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX28.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X8.addChild(GroupX28);
 		setRotationAngle(GroupX28, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone164 = new ModelRenderer(this);
 		bone164.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -406,12 +399,10 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		X9 = new ModelRenderer(this);
 		X9.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y4.addChild(X9);
-		
 
 		GroupX29 = new ModelRenderer(this);
 		GroupX29.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X9.addChild(GroupX29);
-		
 
 		bone170 = new ModelRenderer(this);
 		bone170.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -434,7 +425,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX30.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X9.addChild(GroupX30);
 		setRotationAngle(GroupX30, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone176 = new ModelRenderer(this);
 		bone176.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -457,7 +447,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX31.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X9.addChild(GroupX31);
 		setRotationAngle(GroupX31, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone182 = new ModelRenderer(this);
 		bone182.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -480,7 +469,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX32.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X9.addChild(GroupX32);
 		setRotationAngle(GroupX32, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone188 = new ModelRenderer(this);
 		bone188.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -503,18 +491,15 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		Y2.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TotY1.addChild(Y2);
 		setRotationAngle(Y2, 0.0F, 0.0F, 0.5236F);
-		
 
 		X4 = new ModelRenderer(this);
 		X4.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y2.addChild(X4);
 		setRotationAngle(X4, 0.0F, -1.5708F, 0.0F);
-		
 
 		GroupX9 = new ModelRenderer(this);
 		GroupX9.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X4.addChild(GroupX9);
-		
 
 		bone50 = new ModelRenderer(this);
 		bone50.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -537,7 +522,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX10.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X4.addChild(GroupX10);
 		setRotationAngle(GroupX10, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone56 = new ModelRenderer(this);
 		bone56.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -560,7 +544,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX11.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X4.addChild(GroupX11);
 		setRotationAngle(GroupX11, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone62 = new ModelRenderer(this);
 		bone62.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -583,7 +566,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX12.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X4.addChild(GroupX12);
 		setRotationAngle(GroupX12, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone68 = new ModelRenderer(this);
 		bone68.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -605,12 +587,10 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		X5 = new ModelRenderer(this);
 		X5.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y2.addChild(X5);
-		
 
 		GroupX13 = new ModelRenderer(this);
 		GroupX13.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X5.addChild(GroupX13);
-		
 
 		bone74 = new ModelRenderer(this);
 		bone74.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -633,7 +613,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX14.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X5.addChild(GroupX14);
 		setRotationAngle(GroupX14, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone80 = new ModelRenderer(this);
 		bone80.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -656,7 +635,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX15.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X5.addChild(GroupX15);
 		setRotationAngle(GroupX15, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone86 = new ModelRenderer(this);
 		bone86.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -679,7 +657,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX16.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X5.addChild(GroupX16);
 		setRotationAngle(GroupX16, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone92 = new ModelRenderer(this);
 		bone92.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -702,18 +679,15 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		Y3.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TotY1.addChild(Y3);
 		setRotationAngle(Y3, 0.0F, 0.0F, 1.0472F);
-		
 
 		X6 = new ModelRenderer(this);
 		X6.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y3.addChild(X6);
 		setRotationAngle(X6, 0.0F, -1.5708F, 0.0F);
-		
 
 		GroupX17 = new ModelRenderer(this);
 		GroupX17.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X6.addChild(GroupX17);
-		
 
 		bone98 = new ModelRenderer(this);
 		bone98.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -736,7 +710,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX18.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X6.addChild(GroupX18);
 		setRotationAngle(GroupX18, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone104 = new ModelRenderer(this);
 		bone104.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -759,7 +732,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX19.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X6.addChild(GroupX19);
 		setRotationAngle(GroupX19, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone110 = new ModelRenderer(this);
 		bone110.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -782,7 +754,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX20.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X6.addChild(GroupX20);
 		setRotationAngle(GroupX20, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone116 = new ModelRenderer(this);
 		bone116.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -804,12 +775,10 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		X7 = new ModelRenderer(this);
 		X7.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y3.addChild(X7);
-		
 
 		GroupX21 = new ModelRenderer(this);
 		GroupX21.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X7.addChild(GroupX21);
-		
 
 		bone122 = new ModelRenderer(this);
 		bone122.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -832,7 +801,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX22.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X7.addChild(GroupX22);
 		setRotationAngle(GroupX22, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone128 = new ModelRenderer(this);
 		bone128.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -855,7 +823,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX23.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X7.addChild(GroupX23);
 		setRotationAngle(GroupX23, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone134 = new ModelRenderer(this);
 		bone134.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -878,7 +845,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX24.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X7.addChild(GroupX24);
 		setRotationAngle(GroupX24, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone140 = new ModelRenderer(this);
 		bone140.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -900,18 +866,15 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		Y1 = new ModelRenderer(this);
 		Y1.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TotY1.addChild(Y1);
-		
 
 		X3 = new ModelRenderer(this);
 		X3.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y1.addChild(X3);
 		setRotationAngle(X3, 0.0F, -1.5708F, 0.0F);
-		
 
 		GroupX5 = new ModelRenderer(this);
 		GroupX5.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X3.addChild(GroupX5);
-		
 
 		bone26 = new ModelRenderer(this);
 		bone26.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -934,7 +897,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX6.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X3.addChild(GroupX6);
 		setRotationAngle(GroupX6, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone32 = new ModelRenderer(this);
 		bone32.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -957,7 +919,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX7.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X3.addChild(GroupX7);
 		setRotationAngle(GroupX7, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone38 = new ModelRenderer(this);
 		bone38.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -980,7 +941,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX8.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X3.addChild(GroupX8);
 		setRotationAngle(GroupX8, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone44 = new ModelRenderer(this);
 		bone44.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1002,12 +962,10 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		X2 = new ModelRenderer(this);
 		X2.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y1.addChild(X2);
-		
 
 		GroupX = new ModelRenderer(this);
 		GroupX.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X2.addChild(GroupX);
-		
 
 		bone9 = new ModelRenderer(this);
 		bone9.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1030,7 +988,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX2.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X2.addChild(GroupX2);
 		setRotationAngle(GroupX2, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone4 = new ModelRenderer(this);
 		bone4.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1053,7 +1010,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX3.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X2.addChild(GroupX3);
 		setRotationAngle(GroupX3, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone14 = new ModelRenderer(this);
 		bone14.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1076,7 +1032,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX4.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X2.addChild(GroupX4);
 		setRotationAngle(GroupX4, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone20 = new ModelRenderer(this);
 		bone20.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1097,24 +1052,20 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 
 		TotY2 = new ModelRenderer(this);
 		TotY2.setRotationPoint(0.0F, 16.0F, 0.0F);
-		
 
 		Y5 = new ModelRenderer(this);
 		Y5.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TotY2.addChild(Y5);
 		setRotationAngle(Y5, 0.0F, 0.0F, 1.5708F);
-		
 
 		X10 = new ModelRenderer(this);
 		X10.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y5.addChild(X10);
 		setRotationAngle(X10, 0.0F, -1.5708F, 0.0F);
-		
 
 		GroupX33 = new ModelRenderer(this);
 		GroupX33.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X10.addChild(GroupX33);
-		
 
 		bone2 = new ModelRenderer(this);
 		bone2.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1137,13 +1088,11 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		bone193 = new ModelRenderer(this);
 		bone193.setRotationPoint(6.0F, 2.0F, -6.0F);
 		bone6.addChild(bone193);
-		
 
 		GroupX34 = new ModelRenderer(this);
 		GroupX34.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X10.addChild(GroupX34);
 		setRotationAngle(GroupX34, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone7 = new ModelRenderer(this);
 		bone7.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1166,7 +1115,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX35.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X10.addChild(GroupX35);
 		setRotationAngle(GroupX35, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone13 = new ModelRenderer(this);
 		bone13.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1189,7 +1137,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX36.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X10.addChild(GroupX36);
 		setRotationAngle(GroupX36, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone19 = new ModelRenderer(this);
 		bone19.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1211,12 +1158,10 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		X11 = new ModelRenderer(this);
 		X11.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y5.addChild(X11);
-		
 
 		GroupX37 = new ModelRenderer(this);
 		GroupX37.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X11.addChild(GroupX37);
-		
 
 		bone25 = new ModelRenderer(this);
 		bone25.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1239,7 +1184,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX38.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X11.addChild(GroupX38);
 		setRotationAngle(GroupX38, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone31 = new ModelRenderer(this);
 		bone31.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1262,7 +1206,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX39.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X11.addChild(GroupX39);
 		setRotationAngle(GroupX39, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone37 = new ModelRenderer(this);
 		bone37.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1285,7 +1228,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX40.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X11.addChild(GroupX40);
 		setRotationAngle(GroupX40, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone43 = new ModelRenderer(this);
 		bone43.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1308,18 +1250,15 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		Y6.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TotY2.addChild(Y6);
 		setRotationAngle(Y6, 0.0F, 0.0F, 0.5236F);
-		
 
 		X12 = new ModelRenderer(this);
 		X12.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y6.addChild(X12);
 		setRotationAngle(X12, 0.0F, -1.5708F, 0.0F);
-		
 
 		GroupX41 = new ModelRenderer(this);
 		GroupX41.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X12.addChild(GroupX41);
-		
 
 		bone49 = new ModelRenderer(this);
 		bone49.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1342,7 +1281,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX42.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X12.addChild(GroupX42);
 		setRotationAngle(GroupX42, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone55 = new ModelRenderer(this);
 		bone55.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1365,7 +1303,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX43.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X12.addChild(GroupX43);
 		setRotationAngle(GroupX43, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone61 = new ModelRenderer(this);
 		bone61.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1388,7 +1325,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX44.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X12.addChild(GroupX44);
 		setRotationAngle(GroupX44, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone67 = new ModelRenderer(this);
 		bone67.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1410,12 +1346,10 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		X13 = new ModelRenderer(this);
 		X13.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y6.addChild(X13);
-		
 
 		GroupX45 = new ModelRenderer(this);
 		GroupX45.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X13.addChild(GroupX45);
-		
 
 		bone73 = new ModelRenderer(this);
 		bone73.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1438,7 +1372,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX46.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X13.addChild(GroupX46);
 		setRotationAngle(GroupX46, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone79 = new ModelRenderer(this);
 		bone79.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1461,7 +1394,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX47.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X13.addChild(GroupX47);
 		setRotationAngle(GroupX47, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone85 = new ModelRenderer(this);
 		bone85.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1484,7 +1416,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX48.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X13.addChild(GroupX48);
 		setRotationAngle(GroupX48, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone91 = new ModelRenderer(this);
 		bone91.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1507,18 +1438,15 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		Y7.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TotY2.addChild(Y7);
 		setRotationAngle(Y7, 0.0F, 0.0F, 1.0472F);
-		
 
 		X14 = new ModelRenderer(this);
 		X14.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y7.addChild(X14);
 		setRotationAngle(X14, 0.0F, -1.5708F, 0.0F);
-		
 
 		GroupX49 = new ModelRenderer(this);
 		GroupX49.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X14.addChild(GroupX49);
-		
 
 		bone97 = new ModelRenderer(this);
 		bone97.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1541,7 +1469,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX50.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X14.addChild(GroupX50);
 		setRotationAngle(GroupX50, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone103 = new ModelRenderer(this);
 		bone103.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1564,7 +1491,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX51.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X14.addChild(GroupX51);
 		setRotationAngle(GroupX51, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone109 = new ModelRenderer(this);
 		bone109.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1587,7 +1513,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX52.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X14.addChild(GroupX52);
 		setRotationAngle(GroupX52, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone115 = new ModelRenderer(this);
 		bone115.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1609,12 +1534,10 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		X15 = new ModelRenderer(this);
 		X15.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y7.addChild(X15);
-		
 
 		GroupX53 = new ModelRenderer(this);
 		GroupX53.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X15.addChild(GroupX53);
-		
 
 		bone121 = new ModelRenderer(this);
 		bone121.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1637,7 +1560,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX54.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X15.addChild(GroupX54);
 		setRotationAngle(GroupX54, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone127 = new ModelRenderer(this);
 		bone127.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1660,7 +1582,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX55.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X15.addChild(GroupX55);
 		setRotationAngle(GroupX55, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone133 = new ModelRenderer(this);
 		bone133.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1683,7 +1604,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX56.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X15.addChild(GroupX56);
 		setRotationAngle(GroupX56, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone139 = new ModelRenderer(this);
 		bone139.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1705,18 +1625,15 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		Y8 = new ModelRenderer(this);
 		Y8.setRotationPoint(0.0F, 0.0F, 0.0F);
 		TotY2.addChild(Y8);
-		
 
 		X16 = new ModelRenderer(this);
 		X16.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y8.addChild(X16);
 		setRotationAngle(X16, 0.0F, -1.5708F, 0.0F);
-		
 
 		GroupX57 = new ModelRenderer(this);
 		GroupX57.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X16.addChild(GroupX57);
-		
 
 		bone145 = new ModelRenderer(this);
 		bone145.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1739,7 +1656,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX58.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X16.addChild(GroupX58);
 		setRotationAngle(GroupX58, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone151 = new ModelRenderer(this);
 		bone151.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1762,7 +1678,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX59.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X16.addChild(GroupX59);
 		setRotationAngle(GroupX59, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone157 = new ModelRenderer(this);
 		bone157.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1785,7 +1700,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX60.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X16.addChild(GroupX60);
 		setRotationAngle(GroupX60, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone163 = new ModelRenderer(this);
 		bone163.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1807,12 +1721,10 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		X17 = new ModelRenderer(this);
 		X17.setRotationPoint(0.0F, 8.0F, 0.0F);
 		Y8.addChild(X17);
-		
 
 		GroupX61 = new ModelRenderer(this);
 		GroupX61.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X17.addChild(GroupX61);
-		
 
 		bone169 = new ModelRenderer(this);
 		bone169.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1835,7 +1747,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX62.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X17.addChild(GroupX62);
 		setRotationAngle(GroupX62, 0.0F, -0.5236F, 0.0F);
-		
 
 		bone175 = new ModelRenderer(this);
 		bone175.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1858,7 +1769,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX63.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X17.addChild(GroupX63);
 		setRotationAngle(GroupX63, 0.0F, -1.0472F, 0.0F);
-		
 
 		bone181 = new ModelRenderer(this);
 		bone181.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1881,7 +1791,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 		GroupX64.setRotationPoint(0.0F, -8.0F, 0.0F);
 		X17.addChild(GroupX64);
 		setRotationAngle(GroupX64, 0.0F, -1.5708F, 0.0F);
-		
 
 		bone187 = new ModelRenderer(this);
 		bone187.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -1902,7 +1811,8 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 	}
 
 	@Override
-	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red,
+			float green, float blue, float alpha) {
 		TotY1.render(matrixStack, buffer, packedLight, packedOverlay);
 		TotY2.render(matrixStack, buffer, packedLight, packedOverlay);
 	}
@@ -1917,6 +1827,6 @@ public class HumbleweedModel<T extends Humbleweed> extends EntityModel<T> {
 	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
 			float netHeadYaw, float headPitch) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
