@@ -16,6 +16,6 @@ public class RubberWoodForestBiome extends HumlandsBaseBiome {
 
 	@Override
 	public int getSkyColor() {
-		return 0x0AA9AE;
+		return 0x96E3B7;
 	}
 }
