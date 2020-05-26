@@ -1,12 +1,12 @@
 {
 	"itemGroup.humlands": "Humlands",
-
 	"block.humlands.flux": "Flux",
 	"block.humlands.iron_ore_clump": "Iron Ore Clump",
 	"block.humlands.gold_ore_clump": "Gold Ore Clump",
 	"block.humlands.coal_ore_clump": "Coal Ore Clump",
 	"block.humlands.lapis_ore_clump": "Lapis Ore Clump",
 	"block.humlands.redstone_ore_clump": "Redstone Ore Clump",
+	"block.humlands.flux_ore_clump": "Flux Ore Clump",
 	"fluid.humlands.flux_fluid": "Flux",
 	"block.humlands.humlands_portal_block": "Humlands Portal Block",
 	"block.humlands.scrap_sand": "Scrap Sand",
@@ -32,7 +32,6 @@
 	"block.humlands.rubber_wood_forest_dirt": "Rubber Wood Forest Dirt",
 	"block.humlands.time_capsule": "Time Capsule",
 	"block.humlands.dead_wood_log": "Dead Wood Log",
-
 	"item.humlands.carbon_sheet": "Carbon Sheet",
 	"item.humlands.carbon_tube": "Carbon Tube",
 	"item.humlands.diamond_encrusted_bone": "Diamond Encrusted Bone",
@@ -49,8 +48,8 @@
 	"item.humlands.diamond_plate": "Diamond Plate",
 	"item.humlands.iron_bone": "Iron Bone",
 	"item.humlands.iron_mesh": "Iron Mesh",
+	"item.humlands.flux_crystal": "Flux Crystal",
 	"item.humlands.mechanical_arm": "Mechanical Arm",
-	"item.humlands.metal_sheet": "Metal Sheet",
 	"item.humlands.powered_sifter_body": "Powered Sifter Body",
 	"item.humlands.unpowered_sifter_body": "Unpowered Sifter Body",
 	"item.humlands.royal_flan_raw": "Raw Royal Flan",
@@ -64,11 +63,9 @@
 	"item.humlands.rubber_extractor": "Rubber Extractor",
 	"item.humlands.rubber": "Rubber",
 	"item.humlands.humadillo_spawn_egg": "Humadillo Spawn Egg",
-
 	"biome.humlands.rubber_wood_forest": "Rubber Wood Forest",
 	"biome.humlands.rubber_streaming_rubber_wood_forest": "Rubber Streaming Rubber Wood Forest",
 	"biome.humlands.far_humlands": "Far Humlands",
 	"biome.humlands.dirty_humlands": "Dirty Humlands",
-
 	"container.time_capsule": "Time Capsule"
 }

@@ -30,13 +30,17 @@ public class RuinedLandsMobRoomFeature extends Feature<NoFeatureConfig> {
 	@Override
 	public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand,
 			BlockPos pos, NoFeatureConfig config) {
-
-		pos = new BlockPos(pos.getX(), worldIn.getHeight(Heightmap.Type.WORLD_SURFACE_WG, pos.getX(), pos.getZ()),
-				pos.getZ());
-
+		int l = 256;
 		int height = 8;
 		int j = rand.nextInt(2) + 5;
 		int k1 = rand.nextInt(2) + 5;
+		for (int i1 = 0; i1 < j * 2; ++i1) {
+			for (int j1 = 0; j1 < k1 * 2; ++j1) {
+				l = Math.min(l, worldIn.getHeight(Heightmap.Type.WORLD_SURFACE, pos.getX() + i1 + j * 2,
+						pos.getZ() + j1 + k1 * 2));
+			}
+		}
+		pos = new BlockPos(pos.getX(), l, pos.getZ());
 
 		for (int k3 = -j - 1; k3 <= j + 1l; ++k3) {
 			for (int i4 = height; i4 >= -1; --i4) {

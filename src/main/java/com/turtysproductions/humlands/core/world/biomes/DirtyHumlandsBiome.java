@@ -4,12 +4,11 @@ import com.turtysproductions.humlands.core.init.BlockInit;
 import com.turtysproductions.humlands.core.world.gen.ModBiomeFeatures;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class DirtyHumlandsBiome extends Biome {
+public class DirtyHumlandsBiome extends HumlandsBaseBiome {
 	
 	public DirtyHumlandsBiome(Builder props) {
 		super(props);
@@ -24,6 +23,7 @@ public class DirtyHumlandsBiome extends Biome {
 		ModBiomeFeatures.addOreClump(this, BlockInit.GOLD_ORE_CLUMP.get().getDefaultState(), 4);
 		ModBiomeFeatures.addOreClump(this, BlockInit.REDSTONE_ORE_CLUMP.get().getDefaultState(), 3);
 		ModBiomeFeatures.addOreClump(this, BlockInit.LAPIS_ORE_CLUMP.get().getDefaultState(), 3);
+		ModBiomeFeatures.addOreClump(this, BlockInit.FLUX_ORE_CLUMP.get().getDefaultState(), 5);
 	}
 
 	@OnlyIn(Dist.CLIENT)

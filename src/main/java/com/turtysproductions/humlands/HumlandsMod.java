@@ -17,9 +17,8 @@ import com.turtysproductions.humlands.core.init.ParticleInit;
 import com.turtysproductions.humlands.core.init.SoundInit;
 import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
+import com.turtysproductions.humlands.core.world.gen.BiomeEntityAdder;
 
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -33,7 +32,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -53,14 +51,14 @@ public class HumlandsMod {
 		bus.addListener(this::setup);
 		bus.addListener(this::enqueueIMC);
 		bus.addListener(this::processIMC);
-		bus.addListener(this::doClientStuff);
-
+		//bus.addListener(this::doClientStuff); !!! See ClientEventBusSubsriber instead
+		
 		SoundInit.SOUNDS.register(bus);
+		EntityTypesInit.ENTITY_TYPES.register(bus);
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         TileEntityTypesInit.TILE_ENTITY_TYPES.register(bus);
         ContainerTypesInit.CONTAINER_TYPES.register(bus);
-        EntityTypesInit.ENTITY_TYPES.register(bus);
         ParticleInit.PARTICLES.register(bus);
         FluidInit.FLUIDS.register(bus);
         FluidInit.BLOCKS.register(bus);
@@ -69,13 +67,9 @@ public class HumlandsMod {
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void setup(final FMLCommonSetupEvent event) {
-
-	}
-
-	private void doClientStuff(final FMLClientSetupEvent event) {
-		RenderTypeLookup.setRenderLayer(BlockInit.SCRAP_GLASS.get(), RenderType.getTranslucent());
-		LOGGER.debug("RenderLayers set!");
+		net.minecraftforge.fml.DeferredWorkQueue.runLater(BiomeEntityAdder::addEntitiesToBiomes);
 	}
 
 	private void enqueueIMC(final InterModEnqueueEvent event) {

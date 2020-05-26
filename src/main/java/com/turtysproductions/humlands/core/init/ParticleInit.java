@@ -1,7 +1,7 @@
 package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.common.particles.rubber.DrippingRubberParticle;
+import com.turtysproductions.humlands.client.particles.DrippingRubberParticle;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.particles.BasicParticleType;

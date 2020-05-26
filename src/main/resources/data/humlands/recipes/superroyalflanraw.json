@@ -1,21 +1,31 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "AA",
-    "BC"
-  ],
-    "key": {
-    "A": {
-      "item": "minecraft:sugar"
-    },
-    "B": {
-      "item": "humlands:super_royal_slime"
-    },
-    "C": {
-      "item": "minecraft:egg"
-    }
-  },
-  "result": {
-    "item": "humlands:super_royal_flan_raw"
-  }
+	"type": "minecraft:crafting_shaped",
+	"pattern": 
+	[
+		"AA",
+		"BC"
+	],
+
+	"key": 
+	{
+		"A": 
+		{
+			"item": "minecraft:sugar"
+		},
+
+		"B": 
+		{
+			"item": "humlands:super_royal_slime"
+		},
+
+		"C": 
+		{
+			"item": "minecraft:egg"
+		}
+	},
+
+	"result": 
+	{
+		"item": "humlands:super_royal_flan_raw"
+	}
 }

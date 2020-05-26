@@ -1,7 +1,6 @@
 package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
-import com.turtysproductions.humlands.common.items.CraftingReuseItem;
 import com.turtysproductions.humlands.common.items.FluxVial;
 import com.turtysproductions.humlands.common.items.GlintingItem;
 import com.turtysproductions.humlands.common.items.ModSpawnEgg;
@@ -11,6 +10,7 @@ import com.turtysproductions.humlands.core.tab.HumlandsTab;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Rarity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -72,8 +72,8 @@ public class ItemInit {
 	public static final RegistryObject<Item> IRON_MESH = ITEMS.register("iron_mesh",
 			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 
-	public static final RegistryObject<Item> METAL_SHEET = ITEMS.register("metal_sheet",
-			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+	public static final RegistryObject<Item> FLUX_CRYSTAL = ITEMS.register("flux_crystal",
+			() -> new Item(new Item.Properties().maxStackSize(1).group(HumlandsTab.HUMLANDS)));
 
 	public static final RegistryObject<Item> MECHANICAL_ARM = ITEMS.register("mechanical_arm",
 			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
@@ -101,10 +101,10 @@ public class ItemInit {
 							.effect(new EffectInstance(Effects.HEALTH_BOOST), 1).build())));
 
 	public static final RegistryObject<Item> WIRECUTTERS = ITEMS.register("wirecutters",
-			() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 
 	public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer",
-			() -> new CraftingReuseItem(new Item.Properties().group(HumlandsTab.HUMLANDS)));
+			() -> new Item(new Item.Properties().group(HumlandsTab.HUMLANDS)));
 
 	public static final RegistryObject<Item> SUPER_ROYAL_FLAN_RAW = ITEMS.register("super_royal_flan_raw",
 			() -> new GlintingItem(new Item.Properties().group(HumlandsTab.HUMLANDS).rarity(Rarity.EPIC)));
@@ -122,11 +122,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> HUMADILLO_SPAWN_EGG = ITEMS.register("humadillo_spawn_egg",
 			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS),
 					() -> EntityTypesInit.HUMADILLO.get()));
-  
+
 	public static final RegistryObject<Item> RUBBER_BALL = ITEMS.register("rubber_ball",
-			() -> new Item
-		        (new Item.Properties().group(ItemGroup.MISC)));
-	                                
+			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+
 	public static final RegistryObject<Item> MUMMY_SPAWN_EGG = ITEMS.register("mummy_spawn_egg",
 			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS),
 					() -> EntityTypesInit.MUMMY.get()));

@@ -1,6 +1,7 @@
 {
 	"replace": false,
-	"values": [
+	"values": 
+	[
 		"humlands:flux",
 		"humlands:flowing_flux"
 	]

@@ -12,6 +12,7 @@ import com.turtysproductions.humlands.common.blocks.CustomSlab;
 import com.turtysproductions.humlands.common.blocks.CustomStairs;
 import com.turtysproductions.humlands.common.blocks.CustomTrapdoor;
 import com.turtysproductions.humlands.common.blocks.CustomWoodButton;
+import com.turtysproductions.humlands.common.blocks.FluxExtractor;
 import com.turtysproductions.humlands.common.blocks.OreClump;
 import com.turtysproductions.humlands.common.blocks.RubberStreamingRubberWoodLog;
 import com.turtysproductions.humlands.common.blocks.RubberWoodLog;
@@ -51,6 +52,12 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> REDSTONE_ORE_CLUMP = BLOCKS.register("redstone_ore_clump",
 			() -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
+	
+	public static final RegistryObject<Block> FLUX_ORE_CLUMP = BLOCKS.register("flux_ore_clump",
+			() -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));
+	
+	public static final RegistryObject<Block> FLUX_EXTRACTOR = BLOCKS.register("flux_extractor",
+			() -> new FluxExtractor(PropertyInit.MACHINE_PROPERTY));
 
 	public static final RegistryObject<Block> HUMLANDS_PORTAL_BLOCK = BLOCKS.register("humlands_portal_block",
 			() -> new Block(PropertyInit.PORTAL_PROPERTY));

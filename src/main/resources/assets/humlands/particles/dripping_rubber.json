@@ -1,9 +1,9 @@
 {
-  "textures":
-   [
-    "humlands:dripping_rubber_1",
-    "humlands:dripping_rubber_2",
-    "humlands:dripping_rubber_3",
-    "humlands:dripping_rubber_4"
-  ]
+	"textures": 
+	[
+		"humlands:dripping_rubber_1",
+		"humlands:dripping_rubber_2",
+		"humlands:dripping_rubber_3",
+		"humlands:dripping_rubber_4"
+	]
 }
