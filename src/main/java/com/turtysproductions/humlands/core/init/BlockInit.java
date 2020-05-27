@@ -75,7 +75,7 @@ public class BlockInit {
 			() -> new SifterBlock(PropertyInit.MACHINE_PROPERTY.notSolid().variableOpacity()));
 
 	public static final RegistryObject<Block> SHAPER = BLOCKS.register("shaper",
-			() -> new ShaperBlock(PropertyInit.MACHINE_PROPERTY.notSolid().variableOpacity()));
+			() -> new ShaperBlock(PropertyInit.MACHINE_PROPERTY.notSolid()));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_LOG = BLOCKS.register("rubber_wood_log",
 			() -> new RubberWoodLog(MaterialColor.WOOD,

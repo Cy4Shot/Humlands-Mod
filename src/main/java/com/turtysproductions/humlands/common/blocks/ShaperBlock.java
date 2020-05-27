@@ -4,6 +4,10 @@ import java.util.stream.Stream;
 
 import javax.annotation.Nullable;
 
+import com.turtysproductions.humlands.HumlandsMod;
+import com.turtysproductions.humlands.common.tileentities.ShaperTileEntity;
+import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -19,10 +23,13 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -106,6 +113,7 @@ public class ShaperBlock extends Block {
 	}
 
 	@SuppressWarnings("deprecation")
+	@Override
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
 			BlockPos currentPos, BlockPos facingPos) {
 		DoubleBlockHalf doubleblockhalf = stateIn.get(HALF);
@@ -121,6 +129,7 @@ public class ShaperBlock extends Block {
 		}
 	}
 
+	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
 		worldIn.setBlockState(pos.up(),
 				state.with(HALF, DoubleBlockHalf.UPPER).with(FACING, worldIn.getBlockState(pos).get(FACING)), 3);
@@ -128,6 +137,7 @@ public class ShaperBlock extends Block {
 	}
 
 	@Nullable
+	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
 		if (context.getPos().getY() < 255
 				&& context.getWorld().getBlockState(context.getPos().up()).isReplaceable(context))
@@ -138,6 +148,7 @@ public class ShaperBlock extends Block {
 	}
 
 	@SuppressWarnings("deprecation")
+	@Override
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		if (state.get(HALF) != DoubleBlockHalf.UPPER)
 			return super.isValidPosition(state, worldIn, pos);
@@ -149,11 +160,34 @@ public class ShaperBlock extends Block {
 		}
 	}
 
+	@Override
 	public void harvestBlock(World worldIn, PlayerEntity player, BlockPos pos, BlockState state,
 			@Nullable TileEntity te, ItemStack stack) {
 		super.harvestBlock(worldIn, player, pos, Blocks.AIR.getDefaultState(), te, stack);
 	}
 
+	@Override
+	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
+			Hand handIn, BlockRayTraceResult p_225533_6_) {
+		if (worldIn.isRemote)
+			return ActionResultType.PASS;
+		ShaperTileEntity tileEntity = (ShaperTileEntity) worldIn.getTileEntity(pos);
+		HumlandsMod.LOGGER.debug(tileEntity);
+		int slot = state.get(HALF) == DoubleBlockHalf.UPPER ? 1 : 0;
+
+		if (player.getHeldItem(handIn).isEmpty() && !tileEntity.getInventory().get(slot).isEmpty())
+			tileEntity.removeInv(slot, player);
+		else {
+			if (slot == 1)
+				tileEntity.addTool(player.getHeldItem(handIn));
+			else
+				tileEntity.addItem(player.getHeldItem(handIn), 200);
+		}
+
+		return ActionResultType.SUCCESS;
+	}
+
+	@Override
 	public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
 		BlockPos blockpos = state.get(HALF) == DoubleBlockHalf.LOWER ? pos.up() : pos.down();
 		BlockState blockstate = worldIn.getBlockState(blockpos);
@@ -189,7 +223,19 @@ public class ShaperBlock extends Block {
 		return false;
 	}
 
+	@Override
 	public PushReaction getPushReaction(BlockState state) {
 		return PushReaction.DESTROY;
+	}
+	
+	@Override
+	public boolean hasTileEntity(BlockState state) {
+		return true;
+	}
+
+	@Override
+	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
+		HumlandsMod.LOGGER.debug("Init Enitty");
+		return TileEntityTypesInit.SHAPER_TILE_ENTITY.get().create();
 	}
 }
