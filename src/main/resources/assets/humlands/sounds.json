@@ -18,5 +18,45 @@
 				"stream": true
 			}
 		]
+	},
+	"dirty_humlands": {
+		"categotry": "music",
+		"subtitle": "music.humlands.dirty_humlands",
+		"sounds": [
+			{
+				"name": "humlands:music/humlands/dirty_humlands",
+				"stream": true
+			}
+		]
+	},
+	"far_humlands": {
+		"categotry": "music",
+		"subtitle": "music.humlands.far_humlands",
+		"sounds": [
+			{
+				"name": "humlands:music/humlands/far_humlands",
+				"stream": true
+			}
+		]
+	},
+	"ruined_lands": {
+		"categotry": "music",
+		"subtitle": "music.humlands.ruined_lands",
+		"sounds": [
+			{
+				"name": "humlands:music/humlands/ruined_lands",
+				"stream": true
+			}
+		]
+	},
+	"rubber_forest": {
+		"categotry": "music",
+		"subtitle": "music.humlands.rubber_forest",
+		"sounds": [
+			{
+				"name": "humlands:music/humlands/rubber_forest",
+				"stream": true
+			}
+		]
 	}
 }

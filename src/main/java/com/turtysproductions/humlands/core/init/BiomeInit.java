@@ -6,6 +6,7 @@ import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.RubberWoodForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.RuinedLandsBiome;
 import com.turtysproductions.humlands.core.world.gen.builder.DirtyHumlandsSurfaceBuilder;
+import com.turtysproductions.humlands.core.world.gen.builder.FarHumlandsSurfaceBuilder;
 import com.turtysproductions.humlands.core.world.gen.builder.RuinedLandsSurfaceBuilder;
 
 import net.minecraft.block.Blocks;
@@ -32,8 +33,14 @@ public class BiomeInit {
 
 	public static final RegistryObject<Biome> FAR_HUMLANDS = BIOMES.register("far_humlands",
 			() -> new FarHumlandsBiome(new Biome.Builder()
-					.surfaceBuilder(new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(SurfaceBuilder.DEFAULT,
-							FAR_HUMLANDS_SURFACE))
+					.surfaceBuilder(
+							new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
+									register("far_humlands_surface",
+											new FarHumlandsSurfaceBuilder(
+													SurfaceBuilderConfig::deserialize)),
+									new SurfaceBuilderConfig(Blocks.RED_SAND.getDefaultState(),
+											Blocks.RED_SAND.getDefaultState(),
+											Blocks.RED_SANDSTONE.getDefaultState())))
 					.precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.125F).scale(0.05F)
 					.temperature(1000.8F).downfall(0.4F).waterColor(4159204).waterFogColor(329011)
 					.parent((String) null)));

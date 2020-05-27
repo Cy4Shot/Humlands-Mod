@@ -1,5 +1,6 @@
 package com.turtysproductions.humlands.core.world.dimension;
 
+import net.minecraft.client.audio.MusicTicker.MusicType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -72,11 +73,20 @@ public class HumlandsDimension extends Dimension {
 
 	@Override
 	public SleepResult canSleepAt(PlayerEntity player, BlockPos pos) {
-		return SleepResult.ALLOW;
+		return SleepResult.DENY;
 	}
 
 	@Override
 	public int getActualHeight() {
 		return 256;
+	}
+
+	// I have to use this music type.
+	// To stop delay between the songs.
+	// It won't player end boss music though.
+	// I override that in the MusicEvents.java class.
+	@Override
+	public MusicType getMusicType() {
+		return MusicType.END_BOSS;
 	}
 }

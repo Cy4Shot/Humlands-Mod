@@ -2,12 +2,23 @@ package com.turtysproductions.humlands.common.blocks;
 
 import java.util.stream.Stream;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.material.PushReaction;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.StateContainer.Builder;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.StateContainer;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.DoubleBlockHalf;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
@@ -17,11 +28,16 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 
 public class ShaperBlock extends Block {
-	
-	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
+
+	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF; // Double block
+																										// half
+	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING; // Direction facing
 
 	public static final VoxelShape SHAPE_N = Stream.of(Block.makeCuboidShape(6, 15, 7, 10, 17, 11),
 			Block.makeCuboidShape(0, 0, 0, 16, 4, 16), Block.makeCuboidShape(0, 28, 0, 16, 32, 16),
@@ -64,12 +80,18 @@ public class ShaperBlock extends Block {
 
 	public ShaperBlock(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
+		this.setDefaultState(
+				this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(HALF, DoubleBlockHalf.LOWER));
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		switch (state.get(FACING)) {
+		return state.get(HALF) == DoubleBlockHalf.UPPER ? selectShape(state.get(FACING)).withOffset(0d, -1d, 0d)
+				: selectShape(state.get(FACING));
+	}
+
+	private VoxelShape selectShape(Direction dir) {
+		switch (dir) {
 		case NORTH:
 			return SHAPE_N;
 		case SOUTH:
@@ -83,9 +105,72 @@ public class ShaperBlock extends Block {
 		}
 	}
 
-	@Override
+	@SuppressWarnings("deprecation")
+	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
+			BlockPos currentPos, BlockPos facingPos) {
+		DoubleBlockHalf doubleblockhalf = stateIn.get(HALF);
+		if (facing.getAxis() == Direction.Axis.Y
+				&& doubleblockhalf == DoubleBlockHalf.LOWER == (facing == Direction.UP)) {
+			return facingState.getBlock() == this && facingState.get(HALF) != doubleblockhalf
+					? stateIn.with(FACING, facingState.get(FACING))
+					: Blocks.AIR.getDefaultState();
+		} else {
+			return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN
+					&& !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState()
+							: super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+		}
+	}
+
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
+		worldIn.setBlockState(pos.up(),
+				state.with(HALF, DoubleBlockHalf.UPPER).with(FACING, worldIn.getBlockState(pos).get(FACING)), 3);
+		super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
+	}
+
+	@Nullable
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+		if (context.getPos().getY() < 255
+				&& context.getWorld().getBlockState(context.getPos().up()).isReplaceable(context))
+			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite()).with(HALF,
+					DoubleBlockHalf.LOWER);
+		else
+			return null;
+	}
+
+	@SuppressWarnings("deprecation")
+	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+		if (state.get(HALF) != DoubleBlockHalf.UPPER)
+			return super.isValidPosition(state, worldIn, pos);
+		else {
+			if (state.getBlock() != this)
+				return super.isValidPosition(state, worldIn, pos);
+			return worldIn.getBlockState(pos.down()).getBlock() == this
+					&& worldIn.getBlockState(pos.down()).get(HALF) == DoubleBlockHalf.LOWER;
+		}
+	}
+
+	public void harvestBlock(World worldIn, PlayerEntity player, BlockPos pos, BlockState state,
+			@Nullable TileEntity te, ItemStack stack) {
+		super.harvestBlock(worldIn, player, pos, Blocks.AIR.getDefaultState(), te, stack);
+	}
+
+	public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+		BlockPos blockpos = state.get(HALF) == DoubleBlockHalf.LOWER ? pos.up() : pos.down();
+		BlockState blockstate = worldIn.getBlockState(blockpos);
+		if (blockstate.getBlock() == this && blockstate.get(HALF) != state.get(HALF)) {
+			worldIn.setBlockState(blockpos, Blocks.AIR.getDefaultState(), 35);
+			worldIn.playEvent(player, 2001, blockpos, Block.getStateId(blockstate));
+			if (!worldIn.isRemote && !player.isCreative()) {
+				spawnDrops(state, worldIn, pos, (TileEntity) null, player, player.getHeldItemMainhand());
+				spawnDrops(blockstate, worldIn, blockpos, (TileEntity) null, player, player.getHeldItemMainhand());
+			}
+		}
+
+		super.onBlockHarvested(worldIn, pos, state, player);
+	}
+
+	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+		builder.add(FACING, HALF);
 	}
 
 	@Override
@@ -99,13 +184,12 @@ public class ShaperBlock extends Block {
 	}
 
 	@Override
-	protected void fillStateContainer(Builder<Block, BlockState> builder) {
-		builder.add(FACING);
-	}
-
-	@Override
 	public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing,
 			IPlantable plantable) {
 		return false;
+	}
+
+	public PushReaction getPushReaction(BlockState state) {
+		return PushReaction.DESTROY;
 	}
 }

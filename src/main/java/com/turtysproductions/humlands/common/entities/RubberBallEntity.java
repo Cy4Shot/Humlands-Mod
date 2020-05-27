@@ -47,14 +47,16 @@ public class RubberBallEntity extends ProjectileItemEntity {
 	public void handleStatusUpdate(byte id) {
 		if (id == 3) {
 			for (int i = 0; i < 8; ++i) {
-				this.world.addParticle(this.makeParticle(), this.getPosX(), this.getPosY(), this.getPosZ(), 0.0D, 0.0D, 0.0D);
+				this.world.addParticle(this.makeParticle(), this.getPosX(), this.getPosY(), this.getPosZ(), 0.0D, 0.0D,
+						0.0D);
 			}
 		}
 	}
 
 	protected void onImpact(RayTraceResult result) {
 		if (result.getType() == RayTraceResult.Type.ENTITY)
-			((EntityRayTraceResult) result).getEntity().attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 6.0f);
+			((EntityRayTraceResult) result).getEntity()
+					.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 6.0f);
 
 		if (!this.world.isRemote) {
 			this.world.setEntityState(this, (byte) 3);

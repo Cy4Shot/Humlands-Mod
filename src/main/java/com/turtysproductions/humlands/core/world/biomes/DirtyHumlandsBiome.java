@@ -35,4 +35,9 @@ public class DirtyHumlandsBiome extends HumlandsBaseBiome {
 	public int getGrassColor(double posX, double posZ) {
 		return 0x90814D;
 	}
+	
+	@Override
+	public int getSkyColor() {
+		return 0xB9A382;
+	}
 }
