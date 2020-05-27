@@ -10,7 +10,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 15,
+          "weight": 25,
           "name": "minecraft:golden_apple"
         },
         {
@@ -20,18 +20,18 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
-          "name": "minecraft:golden_horse_armor"
+          "weight": 8,
+          "name": "minecraft:gold_ingot"
         },
         {
           "type": "minecraft:item",
           "weight": 15,
-          "name": "minecraft:iron_horse_armor"
+          "name": "minecraft:iron_ingot"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "minecraft:diamond_horse_armor"
+          "weight": 4,
+          "name": "minecraft:diamond"
         },
         {
           "type": "minecraft:item",
@@ -65,11 +65,11 @@
               }
             }
           ],
-          "name": "minecraft:iron_nugget"
+          "name": "minecraft:iron_ingot"
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -80,7 +80,7 @@
               }
             }
           ],
-          "name": "minecraft:gold_nugget"
+          "name": "minecraft:gold_ingot"
         },
         {
           "type": "minecraft:item",
