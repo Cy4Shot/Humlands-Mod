@@ -59,64 +59,57 @@ public class HumadilloModel<T extends Humadillo> extends EntityModel<T> {
 		leg3.setRotationPoint(4.0F, -4.0F, 5.0F);
 		body.addChild(leg3);
 		leg3.setTextureOffset(28, 28).addBox(-1.0f, 0.0f, -1.0f, 2, 4, 2, 0.0f, false);
-        leg4 = new ModelRenderer(this);
+		leg4 = new ModelRenderer(this);
 		leg4.setRotationPoint(-4.0F, -4.0F, 5.0F);
 		body.addChild(leg4);
 		leg4.setTextureOffset(22, 24).addBox(-1.0f, 0.0f, -1.0f, 2, 4, 2, 0.0f, false);
 	}
-	
-	
-	public ModelRenderer getBody() 
-	{
+
+	public ModelRenderer getBody() {
 		return body;
 	}
-	public ModelRenderer getHead() 
-	{
+
+	public ModelRenderer getHead() {
 		return head;
 	}
-	public ModelRenderer getLeg1() 
-	{
+
+	public ModelRenderer getLeg1() {
 		return leg1;
 	}
-	public ModelRenderer getLeg2() 
-	{
+
+	public ModelRenderer getLeg2() {
 		return leg2;
 	}
-	public ModelRenderer getLeg3() 
-	{
+
+	public ModelRenderer getLeg3() {
 		return leg3;
 	}
-	public ModelRenderer getLeg4() 
-	{
+
+	public ModelRenderer getLeg4() {
 		return leg4;
 	}
-	public ModelRenderer getTail() 
-	{
+
+	public ModelRenderer getTail() {
 		return tail;
 	}
-	public ModelRenderer getTail2() 
-	{
-		return tail2;
-		
-	}
-	
 
-	
-	
-	
-    @Override
-    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) 
-    {
-	body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
-	
-    }
-    
-   
-    
+	public ModelRenderer getTail2() {
+		return tail2;
+
+	}
+
 	@Override
-	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) 
-	{
-		if(entityIn.isClosed() == true);
+	public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn,
+			float red, float green, float blue, float alpha) {
+		body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
+
+	}
+
+	@Override
+	public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
+			float netHeadYaw, float headPitch) {
+		if (entityIn.isClosed() == true)
+			;
 		{
 			leg1.rotateAngleX = -180;
 			leg2.rotateAngleX = -180;
@@ -125,10 +118,9 @@ public class HumadilloModel<T extends Humadillo> extends EntityModel<T> {
 			head.showModel = false;
 			tail2.showModel = false;
 			tail.rotateAngleX = 19;
-		}	
-		
-		if(entityIn.isClosed() == false)
-		{
+		}
+
+		if (entityIn.isClosed() == false) {
 			leg1.rotateAngleX = 0;
 			leg2.rotateAngleX = 0;
 			leg3.rotateAngleX = 0;
@@ -136,34 +128,32 @@ public class HumadilloModel<T extends Humadillo> extends EntityModel<T> {
 			head.showModel = true;
 			tail.rotateAngleX = 0;
 			tail2.showModel = true;
-			
-			this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-		    this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
-		    
-		    this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-		    this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
-		    
-		    this.tail2.rotateAngleY = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;    
-		}
-		
 
-		
-		
+			this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
+			this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount
+					* 0.5F;
+
+			this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
+			this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount
+					* 0.5F;
+
+			this.tail2.rotateAngleY = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
+		}
+
 	}
-	
+
 	@Override
-	public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick) 
-	{
-		
-		
+	public void setLivingAnimations(T entityIn, float limbSwing, float limbSwingAmount, float partialTick) {
+
 		this.leg2.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-	    this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
-	    
-	    this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-	    this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount * 0.5F;
-	    
-	    this.tail2.rotateAngleY = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;    
+		this.leg3.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount * 0.5F;
+
+		this.leg1.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
+		this.leg4.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount * 0.5F;
+
+		this.tail2.rotateAngleY = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
 	}
+
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;

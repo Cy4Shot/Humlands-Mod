@@ -11,6 +11,7 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Pose;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.LookAtGoal;
@@ -49,7 +50,11 @@ public class Humadillo extends TameableEntity {
 
 	public Humadillo(EntityType<? extends TameableEntity> type, World worldIn) {
 		super(type, worldIn);
+	}
 
+	@Override
+	public EntitySize getSize(Pose poseIn) {
+		return this.size;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -91,7 +96,7 @@ public class Humadillo extends TameableEntity {
 			this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 			this.setHealth(20.0F);
 		} else {
-			this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+			this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(12.0D);
 		}
 
 		this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
@@ -104,10 +109,11 @@ public class Humadillo extends TameableEntity {
 	@Override
 	protected void damageEntity(DamageSource damageSrc, float damageAmount) {
 
-		this.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 400, 1, false, false));
+		super.damageEntity(damageSrc, damageAmount);
+		this.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 140, 20, false, false));
 		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.0f);
 		this.setClosed(true);
-		timer = 400;
+		timer = 140;
 	}
 
 	public void tick() {
@@ -256,10 +262,7 @@ public class Humadillo extends TameableEntity {
 
 	// Sets the height at which the player will be when he's riding.
 	public double getMountedYOffset() {
-
-		{
-			return (double) this.size.height * 0.50D;
-		}
+		return (double) this.size.height * 0.50D;
 	}
 
 	class AvoidEntityGoal<T extends LivingEntity> extends net.minecraft.entity.ai.goal.AvoidEntityGoal<T> {

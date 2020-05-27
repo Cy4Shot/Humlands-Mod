@@ -1,8 +1,12 @@
 {
     "variants": {
-        "facing=north": { "model": "humlands:block/shaper" },
-        "facing=south": { "model": "humlands:block/shaper", "y": 180 },
-        "facing=east":  { "model": "humlands:block/shaper", "y": 90 },
-        "facing=west":  { "model": "humlands:block/shaper", "y": 270 }
+        "facing=north,half=lower": { "model": "humlands:block/shaper" },
+        "facing=south,half=lower": { "model": "humlands:block/shaper", "y": 180 },
+        "facing=east,half=lower":  { "model": "humlands:block/shaper", "y": 90 },
+        "facing=west,half=lower":  { "model": "humlands:block/shaper", "y": 270 },
+        "facing=north,half=upper": { "model": "block/air"},
+        "facing=south,half=upper": { "model": "block/air"},
+        "facing=east,half=upper":  { "model": "block/air"},
+        "facing=west,half=upper":  { "model": "block/air"}
     }
 }
