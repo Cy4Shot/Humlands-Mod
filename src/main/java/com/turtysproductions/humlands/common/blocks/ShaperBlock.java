@@ -4,12 +4,11 @@ import java.util.stream.Stream;
 
 import javax.annotation.Nullable;
 
-import com.turtysproductions.humlands.core.init.BlockInit;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
@@ -40,7 +39,7 @@ public class ShaperBlock extends Block {
 																										// half
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING; // Direction facing
 
-	public static final VoxelShape SHAPE_N_B = Stream.of(Block.makeCuboidShape(6, 15, 7, 10, 17, 11),
+	public static final VoxelShape SHAPE_N = Stream.of(Block.makeCuboidShape(6, 15, 7, 10, 17, 11),
 			Block.makeCuboidShape(0, 0, 0, 16, 4, 16), Block.makeCuboidShape(0, 28, 0, 16, 32, 16),
 			Block.makeCuboidShape(5, 4, 11, 11, 28, 15), Block.makeCuboidShape(2, 27, 2, 14, 28, 9),
 			Block.makeCuboidShape(2, 4, 2, 14, 5, 9), Block.makeCuboidShape(5, 15, 1, 11, 17, 3),
@@ -50,7 +49,7 @@ public class ShaperBlock extends Block {
 			.reduce((v1, v2) -> {
 				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
 			}).get();
-	public static final VoxelShape SHAPE_S_B = Stream.of(Block.makeCuboidShape(6, 15, 5, 10, 17, 9),
+	public static final VoxelShape SHAPE_S = Stream.of(Block.makeCuboidShape(6, 15, 5, 10, 17, 9),
 			Block.makeCuboidShape(0, 0, 0, 16, 4, 16), Block.makeCuboidShape(0, 28, 0, 16, 32, 16),
 			Block.makeCuboidShape(5, 4, 1, 11, 28, 5), Block.makeCuboidShape(2, 27, 7, 14, 28, 14),
 			Block.makeCuboidShape(2, 4, 7, 14, 5, 14), Block.makeCuboidShape(5, 15, 13, 11, 17, 15),
@@ -59,7 +58,7 @@ public class ShaperBlock extends Block {
 			Block.makeCuboidShape(5, 15, 8, 6, 17, 9), Block.makeCuboidShape(4, 15, 9, 6, 17, 13)).reduce((v1, v2) -> {
 				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
 			}).get();
-	public static final VoxelShape SHAPE_W_B = Stream.of(Block.makeCuboidShape(7, 15, 6, 11, 17, 10),
+	public static final VoxelShape SHAPE_W = Stream.of(Block.makeCuboidShape(7, 15, 6, 11, 17, 10),
 			Block.makeCuboidShape(0, 0, 0, 16, 4, 16), Block.makeCuboidShape(0, 28, 0, 16, 32, 16),
 			Block.makeCuboidShape(11, 4, 5, 15, 28, 11), Block.makeCuboidShape(2, 27, 2, 9, 28, 14),
 			Block.makeCuboidShape(2, 4, 2, 9, 5, 14), Block.makeCuboidShape(1, 15, 5, 3, 17, 11),
@@ -68,7 +67,7 @@ public class ShaperBlock extends Block {
 			Block.makeCuboidShape(7, 15, 5, 8, 17, 6), Block.makeCuboidShape(3, 15, 4, 7, 17, 6)).reduce((v1, v2) -> {
 				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
 			}).get();
-	public static final VoxelShape SHAPE_E_B = Stream.of(Block.makeCuboidShape(5, 15, 6, 9, 17, 10),
+	public static final VoxelShape SHAPE_E = Stream.of(Block.makeCuboidShape(5, 15, 6, 9, 17, 10),
 			Block.makeCuboidShape(0, 0, 0, 16, 4, 16), Block.makeCuboidShape(0, 28, 0, 16, 32, 16),
 			Block.makeCuboidShape(1, 4, 5, 5, 28, 11), Block.makeCuboidShape(7, 27, 2, 14, 28, 14),
 			Block.makeCuboidShape(7, 4, 2, 14, 5, 14), Block.makeCuboidShape(13, 15, 5, 15, 17, 11),
@@ -87,57 +86,55 @@ public class ShaperBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		VoxelShape a;
-		switch (state.get(FACING)) {
-		case SOUTH:
-			a = SHAPE_S_B;
-		case EAST:
-			a = SHAPE_E_B;
-		case WEST:
-			a = SHAPE_W_B;
-		default:
-			a = SHAPE_N_B;
-		}
+		return state.get(HALF) == DoubleBlockHalf.UPPER ? selectShape(state.get(FACING)).withOffset(0d, -1d, 0d)
+				: selectShape(state.get(FACING));
+	}
 
-		if (state.get(HALF).equals(DoubleBlockHalf.UPPER))
-			a = a.withOffset(0d, -1d, 0d);
-		return a;
+	private VoxelShape selectShape(Direction dir) {
+		switch (dir) {
+		case NORTH:
+			return SHAPE_N;
+		case SOUTH:
+			return SHAPE_S;
+		case EAST:
+			return SHAPE_E;
+		case WEST:
+			return SHAPE_W;
+		default:
+			return SHAPE_N;
+		}
 	}
 
 	@SuppressWarnings("deprecation")
 	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
 			BlockPos currentPos, BlockPos facingPos) {
 		DoubleBlockHalf doubleblockhalf = stateIn.get(HALF);
-		if (doubleblockhalf == DoubleBlockHalf.UPPER) {
-			if (worldIn.getBlockState(currentPos.down()).getBlock().equals(BlockInit.SHAPER.get()))
-				return stateIn.with(FACING, worldIn.getBlockState(currentPos.down()).get(FACING));
-			else
-				return Blocks.AIR.getDefaultState();
+		if (facing.getAxis() == Direction.Axis.Y
+				&& doubleblockhalf == DoubleBlockHalf.LOWER == (facing == Direction.UP)) {
+			return facingState.getBlock() == this && facingState.get(HALF) != doubleblockhalf
+					? stateIn.with(FACING, facingState.get(FACING))
+					: Blocks.AIR.getDefaultState();
 		} else {
-			if (facing.getAxis() != Direction.Axis.Y
-					|| doubleblockhalf == DoubleBlockHalf.LOWER != (facing == Direction.UP)
-					|| facingState.getBlock() == this && facingState.get(HALF) != doubleblockhalf) {
-				return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN
-						&& !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState()
-								: super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos,
-										facingPos);
-			} else
-				return Blocks.AIR.getDefaultState();
+			return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN
+					&& !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState()
+							: super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 		}
 	}
 
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
 		worldIn.setBlockState(pos.up(),
-				this.getDefaultState().with(HALF, DoubleBlockHalf.UPPER).with(FACING, state.get(FACING)), 3);
+				state.with(HALF, DoubleBlockHalf.UPPER).with(FACING, worldIn.getBlockState(pos).get(FACING)), 3);
 		super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
 	}
 
 	@Nullable
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return context.getPos().getY() < context.getWorld().getDimension().getHeight() - 1
-				&& context.getWorld().getBlockState(context.getPos().up()).isReplaceable(context)
-						? this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite())
-						: null;
+		if (context.getPos().getY() < 255
+				&& context.getWorld().getBlockState(context.getPos().up()).isReplaceable(context))
+			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite()).with(HALF,
+					DoubleBlockHalf.LOWER);
+		else
+			return null;
 	}
 
 	@SuppressWarnings("deprecation")
@@ -150,11 +147,6 @@ public class ShaperBlock extends Block {
 			return worldIn.getBlockState(pos.down()).getBlock() == this
 					&& worldIn.getBlockState(pos.down()).get(HALF) == DoubleBlockHalf.LOWER;
 		}
-	}
-
-	public void placeAt(IWorld worldIn, BlockPos pos, int flags) {
-		worldIn.setBlockState(pos, this.getDefaultState().with(HALF, DoubleBlockHalf.LOWER), flags);
-		worldIn.setBlockState(pos.up(), this.getDefaultState().with(HALF, DoubleBlockHalf.UPPER), flags);
 	}
 
 	public void harvestBlock(World worldIn, PlayerEntity player, BlockPos pos, BlockState state,
@@ -195,5 +187,9 @@ public class ShaperBlock extends Block {
 	public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing,
 			IPlantable plantable) {
 		return false;
+	}
+
+	public PushReaction getPushReaction(BlockState state) {
+		return PushReaction.DESTROY;
 	}
 }
