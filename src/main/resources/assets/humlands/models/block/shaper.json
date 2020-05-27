@@ -1,8 +1,8 @@
 {
 	"textures": {
-		"0": "humlands:blocks/sifterbody",
+		"0": "block/white_concrete",
 		"1": "block/stone",
-		"particle": "humlands:blocks/sifterbody"
+		"particle": "block/white_concrete"
 	},
 	"elements": [
 		{
