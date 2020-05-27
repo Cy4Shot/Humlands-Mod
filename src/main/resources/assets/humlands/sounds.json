@@ -19,42 +19,42 @@
 			}
 		]
 	},
-	"ambient.humlands.dirty_humlands": {
-		"categotry": "ambient",
-		"subtitle": "ambient.humlands.dirty_humlands",
+	"dirty_humlands": {
+		"categotry": "music",
+		"subtitle": "music.humlands.dirty_humlands",
 		"sounds": [
 			{
-				"name": "humlands:ambient/humlands/dirty_humlands",
+				"name": "humlands:music/humlands/dirty_humlands",
 				"stream": true
 			}
 		]
 	},
-	"ambient.humlands.far_humlands": {
-		"categotry": "ambient",
-		"subtitle": "ambient.humlands.far_humlands",
+	"far_humlands": {
+		"categotry": "music",
+		"subtitle": "music.humlands.far_humlands",
 		"sounds": [
 			{
-				"name": "humlands:ambient/humlands/far_humlands",
+				"name": "humlands:music/humlands/far_humlands",
 				"stream": true
 			}
 		]
 	},
-	"ambient.humlands.ruined_lands": {
-		"categotry": "ambient",
-		"subtitle": "ambient.humlands.ruined_lands",
+	"ruined_lands": {
+		"categotry": "music",
+		"subtitle": "music.humlands.ruined_lands",
 		"sounds": [
 			{
-				"name": "humlands:ambient/humlands/ruined_lands",
+				"name": "humlands:music/humlands/ruined_lands",
 				"stream": true
 			}
 		]
 	},
-	"ambient.humlands.rubber_forest": {
-		"categotry": "ambient",
-		"subtitle": "ambient.humlands.rubber_forest",
+	"rubber_forest": {
+		"categotry": "music",
+		"subtitle": "music.humlands.rubber_forest",
 		"sounds": [
 			{
-				"name": "humlands:ambient/humlands/rubber_forest",
+				"name": "humlands:music/humlands/rubber_forest",
 				"stream": true
 			}
 		]
