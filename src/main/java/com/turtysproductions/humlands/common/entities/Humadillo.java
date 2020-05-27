@@ -16,7 +16,6 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
-import net.minecraft.entity.monster.CreeperEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -59,7 +58,7 @@ public class Humadillo extends TameableEntity {
 
 		super.registerGoals();
 
-		this.goalSelector.addGoal(1, new Humadillo.AvoidEntityGoal(this, CreeperEntity.class, 24.0F, 1.5D, 1.5D));
+		this.goalSelector.addGoal(1, new Humadillo.AvoidEntityGoal(this, Humahog.class, 24.0F, 1.5D, 1.5D));
 		this.goalSelector.addGoal(2, new TemptGoal(this, 1.0D, false, TEMPTATION_ITEMS));
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
 		this.goalSelector.addGoal(4, new LookAtGoal(this, PlayerEntity.class, 5.0f));
@@ -70,7 +69,7 @@ public class Humadillo extends TameableEntity {
 	protected void registerAttributes() {
 
 		super.registerAttributes();
-		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double) 0.3F);
+		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double) 0.3f);
 		if (this.isTamed()) {
 			this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 		} else {
