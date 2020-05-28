@@ -171,7 +171,9 @@ public class ShaperBlock extends Block {
 			Hand handIn, BlockRayTraceResult p_225533_6_) {
 		if (worldIn.isRemote)
 			return ActionResultType.PASS;
-		ShaperTileEntity tileEntity = (ShaperTileEntity) worldIn.getTileEntity(pos);
+		BlockPos newPos = pos;
+		if(state.get(HALF) == DoubleBlockHalf.UPPER) newPos = pos.down();
+		ShaperTileEntity tileEntity = (ShaperTileEntity) worldIn.getTileEntity(newPos);
 		HumlandsMod.LOGGER.debug(tileEntity);
 		int slot = state.get(HALF) == DoubleBlockHalf.UPPER ? 1 : 0;
 
@@ -230,7 +232,7 @@ public class ShaperBlock extends Block {
 	
 	@Override
 	public boolean hasTileEntity(BlockState state) {
-		return true;
+		return state.get(HALF) == DoubleBlockHalf.LOWER;
 	}
 
 	@Override

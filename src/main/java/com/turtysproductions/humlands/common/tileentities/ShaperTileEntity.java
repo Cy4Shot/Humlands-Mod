@@ -1,7 +1,5 @@
 package com.turtysproductions.humlands.common.tileentities;
 
-import javax.annotation.Nullable;
-
 import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +11,7 @@ import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -87,17 +86,6 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 		return compound;
 	}
 
-	@Nullable
-	@Override
-	public SUpdateTileEntityPacket getUpdatePacket() {
-		return new SUpdateTileEntityPacket(this.pos, 1, write(new CompoundNBT()));
-	}
-
-	@Override
-	public CompoundNBT getUpdateTag() {
-		return this.writeItems(new CompoundNBT());
-	}
-
 	public boolean addItem(ItemStack itemStackIn, int cookTime) {
 		if (this.inventory.get(0).isEmpty()) {
 			this.cookingTotalTime = cookTime;
@@ -130,11 +118,6 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 		return false;
 	}
 
-	private void inventoryChanged() {
-		this.markDirty();
-		this.getWorld().notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(), 3);
-	}
-
 	@Override
 	public void clear() {
 		this.inventory.clear();
@@ -146,6 +129,28 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 		}
 
 		this.inventoryChanged();
+	}
+	
+	private void inventoryChanged() {
+		this.markDirty();
+		this.getWorld().notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(), 3);
+	}
+
+	@Override
+	public SUpdateTileEntityPacket getUpdatePacket() {
+		CompoundNBT nbt = new CompoundNBT();
+		this.write(nbt);
+		return new SUpdateTileEntityPacket(this.getPos(), 1, nbt);
+	}
+
+	@Override
+	public CompoundNBT getUpdateTag() {
+		return this.write(new CompoundNBT());
+	}
+
+	@Override
+	public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket packet) {
+		this.read(packet.getNbtCompound());
 	}
 
 }
