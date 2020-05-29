@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class MummyRender extends MobRenderer<Mummy, MummyModel<Mummy>> {
 	protected static final ResourceLocation MUMMY_TEXTURE = new ResourceLocation(HumlandsMod.MOD_ID,
-			"textures/entities/mummy.png");
+			"textures/entities/mummy/mummy.png");
 
 	public MummyRender(EntityRendererManager renderManagerIn) {
 		super(renderManagerIn, new MummyModel<Mummy>(), 0.5f);
