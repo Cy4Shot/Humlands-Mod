@@ -73,7 +73,7 @@ public class RuinedLandsMobRoomFeature extends Feature<NoFeatureConfig> {
 
 					if (j3 == 1) {
 						worldIn.setBlockState(blockpos2,
-								StructurePiece.func_197528_a(worldIn, blockpos2, Blocks.CHEST.getDefaultState()), 2);
+								StructurePiece.correctFacing(worldIn, blockpos2, Blocks.CHEST.getDefaultState()), 2);
 						LockableLootTileEntity.setLootTable(worldIn, rand, blockpos2, LootTableInit.MOB_ROOM_CHEST);
 						break;
 					}

@@ -55,7 +55,7 @@ public class RuinedLandsAquaductFeature extends Feature<NoFeatureConfig> {
 		IntegrityProcessor integrityprocessor = new IntegrityProcessor(0.9F);
 		placementsettings.clearProcessors().addProcessor(integrityprocessor);
 		template.addBlocksToWorld(worldIn, blockpos1, placementsettings, 4);
-		placementsettings.func_215220_b(integrityprocessor);
+		placementsettings.removeProcessor(integrityprocessor);
 		return true;
 	}
 }

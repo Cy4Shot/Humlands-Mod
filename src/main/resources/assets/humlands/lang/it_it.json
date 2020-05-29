@@ -52,5 +52,8 @@
 	"biome.humlands.rubber_wood_forest": "Foresta di Gommalegno",
 	"biome.humlands.rubber_streaming_rubber_wood_forest": "Foresta di Gommalegno Grondante di Gomma",
 	"biome.humlands.far_humlands": "Humlands Lontane",
-	"biome.humlands.dirty_humlands": "Humlands Inquinate"
+	"biome.humlands.dirty_humlands": "Humlands Inquinate",
+	"entity.humlands.centipede": "Scolopendra",
+	"entity.humlands.humahog": "Humahog",
+	"entity.humlands.humadillo": "Humadillo"
 }
