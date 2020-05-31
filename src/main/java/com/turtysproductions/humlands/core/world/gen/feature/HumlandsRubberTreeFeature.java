@@ -59,13 +59,4 @@ public class HumlandsRubberTreeFeature extends AbstractSmallTreeFeature<TreeFeat
 			return true;
 		}
 	}
-
-	@Override
-	protected boolean place(IWorldGenerationReader generationReader, Random rand, BlockPos positionIn,
-			Set<BlockPos> p_225557_4_, Set<BlockPos> p_225557_5_, MutableBoundingBox boundingBoxIn,
-			TreeFeatureConfig configIn) 
-	{
-		
-		return false;
-	}
 }

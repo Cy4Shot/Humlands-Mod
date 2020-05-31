@@ -59,7 +59,7 @@ public class RuinedLandsArchFeature extends Feature<NoFeatureConfig> {
 		IntegrityProcessor integrityprocessor = new IntegrityProcessor(0.9F);
 		placementsettings.clearProcessors().addProcessor(integrityprocessor);
 		template.addBlocksToWorld(worldIn, blockpos1, placementsettings, 4);
-		placementsettings.removeProcessor(integrityprocessor);
+		placementsettings.func_215220_b(integrityprocessor);
 		return true;
 	}
 }

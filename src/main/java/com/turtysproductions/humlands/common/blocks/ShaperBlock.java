@@ -172,7 +172,8 @@ public class ShaperBlock extends Block {
 		if (worldIn.isRemote)
 			return ActionResultType.PASS;
 		BlockPos newPos = pos;
-		if(state.get(HALF) == DoubleBlockHalf.UPPER) newPos = pos.down();
+		if (state.get(HALF) == DoubleBlockHalf.UPPER)
+			newPos = pos.down();
 		ShaperTileEntity tileEntity = (ShaperTileEntity) worldIn.getTileEntity(newPos);
 		HumlandsMod.LOGGER.debug(tileEntity);
 		int slot = state.get(HALF) == DoubleBlockHalf.UPPER ? 1 : 0;
@@ -181,9 +182,9 @@ public class ShaperBlock extends Block {
 			tileEntity.removeInv(slot, player);
 		else {
 			if (slot == 1)
-				tileEntity.addTool(player.getHeldItem(handIn));
+				tileEntity.addTool(player.getHeldItemMainhand());
 			else
-				tileEntity.addItem(player.getHeldItem(handIn), 200);
+				tileEntity.addItem(player.getHeldItemMainhand());
 		}
 
 		return ActionResultType.SUCCESS;
@@ -229,7 +230,7 @@ public class ShaperBlock extends Block {
 	public PushReaction getPushReaction(BlockState state) {
 		return PushReaction.DESTROY;
 	}
-	
+
 	@Override
 	public boolean hasTileEntity(BlockState state) {
 		return state.get(HALF) == DoubleBlockHalf.LOWER;
@@ -237,7 +238,6 @@ public class ShaperBlock extends Block {
 
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-		HumlandsMod.LOGGER.debug("Init Enitty");
 		return TileEntityTypesInit.SHAPER_TILE_ENTITY.get().create();
 	}
 }

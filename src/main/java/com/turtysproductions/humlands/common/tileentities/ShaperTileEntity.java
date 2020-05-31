@@ -1,15 +1,14 @@
 package com.turtysproductions.humlands.common.tileentities;
 
+import com.turtysproductions.humlands.HumlandsMod;
+import com.turtysproductions.humlands.common.recipe.ShaperRecipe;
 import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.IClearable;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
@@ -22,38 +21,36 @@ import net.minecraft.util.math.BlockPos;
 public class ShaperTileEntity extends TileEntity implements IClearable, ITickableTileEntity {
 
 	private final NonNullList<ItemStack> inventory = NonNullList.withSize(2, ItemStack.EMPTY);
-	private int cookingTime = 0;
-	private int cookingTotalTime = 0;
+	private int cookingTime;
+	private int cookingTotalTime = 200;
+	public ShaperRecipe recipeHandler;
+	public boolean isCooking;
 
 	public ShaperTileEntity() {
-		super(TileEntityTypesInit.SHAPER_TILE_ENTITY.get());
+		this(TileEntityTypesInit.SHAPER_TILE_ENTITY.get());
 	}
-	
+
 	public ShaperTileEntity(TileEntityType<?> typeIn) {
 		super(typeIn);
+		recipeHandler = new ShaperRecipe();
+		cookingTotalTime = 200;
 	}
 
 	@Override
 	public void tick() {
-		if (!this.world.isRemote)
-			this.cookAndDrop();
-	}
-
-	private void cookAndDrop() {
-		ItemStack itemstack = this.inventory.get(0);
-		if (!itemstack.isEmpty()) {
-			++this.cookingTime;
-			if (this.cookingTime >= this.cookingTotalTime) {
-				IInventory iinventory = new Inventory(itemstack);
-				ItemStack itemstack1 = this.world.getRecipeManager()
-						.getRecipe(IRecipeType.CAMPFIRE_COOKING, iinventory, this.world).map((p_213979_1_) -> {
-							return p_213979_1_.getCraftingResult(iinventory);
-						}).orElse(itemstack);
-				BlockPos blockpos = this.getPos();
-				InventoryHelper.spawnItemStack(this.world, (double) blockpos.getX(), (double) blockpos.getY(),
-						(double) blockpos.getZ(), itemstack1);
-				this.inventory.set(0, ItemStack.EMPTY);
-				this.inventoryChanged();
+		if (!this.world.isRemote) {
+			ItemStack itemstack = this.inventory.get(0);
+			if (!itemstack.isEmpty() && !this.inventory.get(1).isEmpty()) {
+				this.cookingTime++;
+				HumlandsMod.LOGGER.debug(this.cookingTime);
+				if (this.cookingTime >= this.cookingTotalTime) {
+					ItemStack itemstack1 = recipeHandler.getShaperResult(itemstack, this.inventory.get(1));
+					BlockPos blockpos = this.getPos();
+					InventoryHelper.spawnItemStack(this.world, (double) blockpos.getX(), (double) blockpos.getY(),
+							(double) blockpos.getZ(), itemstack1);
+					this.inventory.set(0, ItemStack.EMPTY);
+					this.inventoryChanged();
+				}
 			}
 		}
 	}
@@ -69,6 +66,7 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 		ItemStackHelper.loadAllItems(compound, this.inventory);
 		this.cookingTime = compound.getInt("CookingTime");
 		this.cookingTotalTime = compound.getInt("CookingTotalTime");
+		this.isCooking = compound.getBoolean("IsCooking");
 
 	}
 
@@ -77,6 +75,7 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 		this.writeItems(compound);
 		compound.putInt("CookingTime", this.cookingTime);
 		compound.putInt("CookingTotalTime", this.cookingTotalTime);
+		compound.putBoolean("IsCooking", this.isCooking);
 		return compound;
 	}
 
@@ -86,9 +85,8 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 		return compound;
 	}
 
-	public boolean addItem(ItemStack itemStackIn, int cookTime) {
+	public boolean addItem(ItemStack itemStackIn) {
 		if (this.inventory.get(0).isEmpty()) {
-			this.cookingTotalTime = cookTime;
 			this.cookingTime = 0;
 			this.inventory.set(0, itemStackIn.split(1));
 			this.inventoryChanged();
@@ -108,7 +106,6 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 
 	public boolean removeInv(int slot, PlayerEntity player) {
 		if (!this.inventory.get(slot).isEmpty()) {
-			this.cookingTotalTime = 0;
 			this.cookingTime = 0;
 			player.inventory.addItemStackToInventory(this.inventory.get(slot));
 			this.inventory.set(0, ItemStack.EMPTY);
@@ -130,7 +127,7 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 
 		this.inventoryChanged();
 	}
-	
+
 	private void inventoryChanged() {
 		this.markDirty();
 		this.getWorld().notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(), 3);

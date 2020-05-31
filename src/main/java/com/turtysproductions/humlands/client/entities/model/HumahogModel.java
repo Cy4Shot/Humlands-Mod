@@ -1,8 +1,8 @@
 package com.turtysproductions.humlands.client.entities.model;
 
-import com.turtysproductions.humlands.common.entities.Humahog;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
+import com.turtysproductions.humlands.common.entities.Humahog;
 
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
