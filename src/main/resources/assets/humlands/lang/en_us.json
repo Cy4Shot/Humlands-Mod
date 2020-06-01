@@ -67,5 +67,8 @@
 	"biome.humlands.rubber_streaming_rubber_wood_forest": "Rubber Streaming Rubber Wood Forest",
 	"biome.humlands.far_humlands": "Far Humlands",
 	"biome.humlands.dirty_humlands": "Dirty Humlands",
-	"container.time_capsule": "Time Capsule"
+	"container.time_capsule": "Time Capsule",
+	"entity.humlands.centipede": "Centipede",
+	"entity.humlands.humahog": "Humahog",
+	"entity.humlands.humadillo": "Humadillo"
 }

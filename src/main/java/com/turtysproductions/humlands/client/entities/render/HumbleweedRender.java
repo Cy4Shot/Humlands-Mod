@@ -23,7 +23,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class HumbleweedRender extends MobRenderer<Humbleweed, HumbleweedModel<Humbleweed>> {
 	protected static final ResourceLocation HUMBLEWEED_TEXTURE = new ResourceLocation(HumlandsMod.MOD_ID,
-			"textures/entities/humbleweed.png");
+			"textures/entities/humbleweed/humbleweed.png");
 
 	public HumbleweedRender(EntityRendererManager renderManagerIn) {
 		super(renderManagerIn, new HumbleweedModel<Humbleweed>(), 0.7f);

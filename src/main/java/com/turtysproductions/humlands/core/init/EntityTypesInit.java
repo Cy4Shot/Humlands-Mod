@@ -1,6 +1,7 @@
 package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
+import com.turtysproductions.humlands.common.entities.Centipede;
 import com.turtysproductions.humlands.common.entities.Humadillo;
 import com.turtysproductions.humlands.common.entities.Humahog;
 import com.turtysproductions.humlands.common.entities.Humbleweed;
@@ -39,4 +40,8 @@ public class EntityTypesInit {
 			() -> EntityType.Builder.<RubberBallEntity>create(RubberBallEntity::new, EntityClassification.MISC)
 					.disableSummoning().size(0.9f, 1.3f)
 					.build(new ResourceLocation(HumlandsMod.MOD_ID, "rubber_ball_entity").toString()));
+	
+	public static final RegistryObject<EntityType<Centipede>> CENTIPEDE = ENTITY_TYPES.register("centipede",
+			() -> EntityType.Builder.<Centipede>create(Centipede::new, EntityClassification.CREATURE).size(2.5f, 0.5f)
+					.build(new ResourceLocation(HumlandsMod.MOD_ID, "centipede").toString()));
 }

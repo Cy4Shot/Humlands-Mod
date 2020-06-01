@@ -64,4 +64,6 @@ public class RubberBallEntity extends ProjectileItemEntity {
 		}
 
 	}
+	
+	
 }

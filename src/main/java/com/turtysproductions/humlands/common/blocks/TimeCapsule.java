@@ -2,8 +2,8 @@ package com.turtysproductions.humlands.common.blocks;
 
 import java.util.stream.Stream;
 
-import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 import com.turtysproductions.humlands.common.tileentities.TimeCapsuleTileEntity;
+import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

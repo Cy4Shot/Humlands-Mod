@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": 
+	[
+		"PP ",
+		"PP ",
+		"PP "
+	],
+
+	"key": 
+	{
+		"L": 
+		{
+			"item": "humlands:rubber_wood_planks"
+		}
+	},
+
+	"result": 
+	{
+		"item": "humlands:rubber_wood_door",
+		"count": 3
+	}
+}

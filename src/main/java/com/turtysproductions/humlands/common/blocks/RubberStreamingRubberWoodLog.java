@@ -3,6 +3,7 @@ package com.turtysproductions.humlands.common.blocks;
 import java.util.Random;
 
 import com.turtysproductions.humlands.core.init.ParticleInit;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.material.MaterialColor;
