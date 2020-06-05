@@ -79,8 +79,7 @@ public class BlockInit {
 			() -> new ShaperBlock(PropertyInit.MACHINE_PROPERTY.notSolid()));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_LOG = BLOCKS.register("rubber_wood_log",
-			() -> new RubberWoodLog(MaterialColor.WOOD,
-					Block.Properties.from(Blocks.OAK_LOG))); // Experimental
+			() -> new RubberWoodLog(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 
 	public static final RegistryObject<Block> STRIPPED_RUBBER_WOOD_LOG = BLOCKS.register("stripped_rubber_wood_log",
 			() -> new CustomLogBlock(MaterialColor.WOOD,
@@ -95,8 +94,7 @@ public class BlockInit {
 			() -> new CustomLeaves(Block.Properties.from(Blocks.OAK_LEAVES)));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_PLANKS = BLOCKS.register("rubber_wood_planks",
-			() -> new Block(
-					Block.Properties.from(Blocks.OAK_PLANKS)));
+			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> RUBBER_WOOD_STAIRS = BLOCKS.register("rubber_wood_stairs",
 			() -> new CustomStairs(RUBBER_WOOD_PLANKS.get().getDefaultState(),
 					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
