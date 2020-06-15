@@ -25,6 +25,7 @@ import com.turtysproductions.humlands.common.test.MultiblockController;
 import com.turtysproductions.humlands.common.test.MultiblockPart;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.SoundType;
@@ -90,55 +91,52 @@ public class BlockInit {
 			() -> new ShaperBlock(PropertyInit.MACHINE_PROPERTY.notSolid()));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_LOG = BLOCKS.register("rubber_wood_log",
-			() -> new RubberWoodLog(MaterialColor.WOOD,
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+			() -> new RubberWoodLog(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 
 	public static final RegistryObject<Block> STRIPPED_RUBBER_WOOD_LOG = BLOCKS.register("stripped_rubber_wood_log",
 			() -> new CustomLogBlock(MaterialColor.WOOD,
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0f).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> RUBBER_STREAMING_RUBBER_WOOD_LOG = BLOCKS.register(
 			"rubber_streaming_rubber_wood_log",
-			() -> new RubberStreamingRubberWoodLog(MaterialColor.WOOD, Block.Properties.create(Material.ORGANIC)
-					.hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD).harvestTool(ToolType.AXE)));
+			() -> new RubberStreamingRubberWoodLog(MaterialColor.WOOD, Block.Properties.create(Material.WOOD)
+					.hardnessAndResistance(2.0f).sound(SoundType.WOOD).harvestTool(ToolType.AXE)));
 
 	public static final RegistryObject<Block> RUBBER_LEAVES = BLOCKS.register("rubber_leaves",
-			() -> new CustomLeaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(3.0F, 3.0F)
-					.sound(SoundType.PLANT).notSolid()));
+			() -> new CustomLeaves(Block.Properties.from(Blocks.OAK_LEAVES)));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_PLANKS = BLOCKS.register("rubber_wood_planks",
-			() -> new Block(
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> RUBBER_WOOD_STAIRS = BLOCKS.register("rubber_wood_stairs",
 			() -> new CustomStairs(RUBBER_WOOD_PLANKS.get().getDefaultState(),
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_BUTTON = BLOCKS.register("rubber_wood_button",
 			() -> new CustomWoodButton(
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_SLAB = BLOCKS.register("rubber_wood_slab",
 			() -> new CustomSlab(
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_FENCE_GATE = BLOCKS.register("rubber_wood_fence_gate",
 			() -> new CustomFenceGate(
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_FENCE = BLOCKS.register("rubber_wood_fence",
 			() -> new CustomFence(
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_PRESSURE_PLATE = BLOCKS.register("rubber_wood_pressure_plate",
 			() -> new CustomPressurePlate(Sensitivity.EVERYTHING,
-					Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_TRAPDOOR = BLOCKS.register("rubber_wood_trapdoor",
-			() -> new CustomTrapdoor(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F)
+			() -> new CustomTrapdoor(Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F)
 					.sound(SoundType.WOOD).notSolid()));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_DOOR = BLOCKS.register("rubber_wood_door",
-			() -> new CustomDoor(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(3.0F, 3.0F)
+			() -> new CustomDoor(Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F)
 					.sound(SoundType.WOOD).notSolid()));
 
 	public static final RegistryObject<Block> RUBBER_WOOD_FOREST_GRASS = BLOCKS.register("rubber_wood_forest_grass",
