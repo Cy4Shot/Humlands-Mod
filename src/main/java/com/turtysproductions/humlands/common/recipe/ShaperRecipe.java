@@ -1,11 +1,11 @@
 package com.turtysproductions.humlands.common.recipe;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
+import com.google.common.collect.Table.Cell;
+import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.core.init.ItemInit;
 
 import net.minecraft.item.Item;
@@ -13,19 +13,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
 public class ShaperRecipe {
-	private static final ShaperRecipe INSTANCE = new ShaperRecipe();
-	private final Table<ItemStack, ItemStack, ItemStack> smeltingList = HashBasedTable
-			.<ItemStack, ItemStack, ItemStack>create();
-
+	private final Table<ItemStack, ItemStack, ItemStack> smeltingList = HashBasedTable.create();
 	private final ArrayList<Item> allowed_input = new ArrayList<Item>();
 	private final ArrayList<Item> allowed_tools = new ArrayList<Item>();
 
-	public static ShaperRecipe getInstance() {
-		return INSTANCE;
-	}
-
 	public ShaperRecipe() {
-		// Add Recipes Here!
+		// Add Recipes Here: Input, Tool, Output
 		addShaperRecipe(new ItemStack(Items.GOLD_INGOT), new ItemStack(ItemInit.HAMMER.get()),
 				new ItemStack(ItemInit.GOLD_PLATE.get()));
 	}
@@ -44,19 +37,16 @@ public class ShaperRecipe {
 	}
 
 	public ItemStack getShaperResult(ItemStack input, ItemStack tool) {
-		for (Entry<ItemStack, Map<ItemStack, ItemStack>> entry : this.smeltingList.columnMap().entrySet()) {
-			if (ItemStack.areItemStacksEqual(input, (ItemStack) entry.getKey())) {
-				for (Entry<ItemStack, ItemStack> ent : entry.getValue().entrySet()) {
-					if (ItemStack.areItemStacksEqual(tool, (ItemStack) ent.getKey())) {
-						return (ItemStack) ent.getValue();
-					}
-				}
+		for (Cell<ItemStack, ItemStack, ItemStack> cell : smeltingList.cellSet()) {
+			if (cell.getRowKey().getItem() == input.getItem() && cell.getColumnKey().getItem() == tool.getItem()) {
+				HumlandsMod.LOGGER.debug(cell.getValue());
+				return cell.getValue();
 			}
 		}
 		return ItemStack.EMPTY;
 	}
 
-	public Table<ItemStack, ItemStack, ItemStack> getDualSmeltingList() {
+	public Table<ItemStack, ItemStack, ItemStack> getSmeltingList() {
 		return this.smeltingList;
 	}
 

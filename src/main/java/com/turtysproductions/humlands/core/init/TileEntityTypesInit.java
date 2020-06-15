@@ -1,6 +1,7 @@
 package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
+import com.turtysproductions.humlands.common.test.MultiblockTileEntity;
 import com.turtysproductions.humlands.common.tileentities.FluxExtractorTileEntity;
 import com.turtysproductions.humlands.common.tileentities.ShaperTileEntity;
 import com.turtysproductions.humlands.common.tileentities.TimeCapsuleTileEntity;
@@ -26,4 +27,9 @@ public class TileEntityTypesInit {
 	public static final RegistryObject<TileEntityType<ShaperTileEntity>> SHAPER_TILE_ENTITY = TILE_ENTITY_TYPES
 			.register("shaper_tile_entity",
 					() -> TileEntityType.Builder.create(ShaperTileEntity::new, BlockInit.SHAPER.get()).build(null));
+	
+	//TESTING!!!
+	public static final RegistryObject<TileEntityType<MultiblockTileEntity>> MULTIBLOCK_TILE_ENTITY = TILE_ENTITY_TYPES
+			.register("multiblock_tile_entity",
+					() -> TileEntityType.Builder.create(MultiblockTileEntity::new, BlockInit.MULTIBLOCK_CONTROLLER.get()).build(null));
 }
