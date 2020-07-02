@@ -378,11 +378,10 @@ public class Mummy extends CreatureEntity {
 			zombievillagerentity.onInitialSpawn(this.world,
 					this.world.getDifficultyForLocation(new BlockPos(zombievillagerentity)), SpawnReason.CONVERSION,
 					new Mummy.GroupData(false), (CompoundNBT) null);
-			zombievillagerentity.func_213792_a(villagerentity.getVillagerData());
-			zombievillagerentity
-					.func_223727_a(villagerentity.func_223722_es().serialize(NBTDynamicOps.INSTANCE).getValue());
-			zombievillagerentity.func_213790_g(villagerentity.getOffers().write());
-			zombievillagerentity.func_213789_a(villagerentity.getXp());
+			zombievillagerentity.setVillagerData(villagerentity.getVillagerData());
+			zombievillagerentity.setGossips(villagerentity.getGossip().serialize(NBTDynamicOps.INSTANCE).getValue());
+			zombievillagerentity.setOffers(villagerentity.getOffers().write());
+			zombievillagerentity.setEXP(villagerentity.getXp());
 			zombievillagerentity.setChild(villagerentity.isChild());
 			zombievillagerentity.setNoAI(villagerentity.isAIDisabled());
 			if (villagerentity.hasCustomName()) {
