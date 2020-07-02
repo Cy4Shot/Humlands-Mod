@@ -8,7 +8,7 @@
 
 <u><b>What are the current plans for the mod?</b></u>
 <br>
-<i>We don't have a specific goal to allow for more creativity. However, you can check the trello board here:  https://trello.com/b/m76L73Ku/humlands-mod</i>
+<i>We don't have a specific goal to allow for more creativity. However, you can check the trello board below!</i>
 
 <u><b>Socials?</b></u>
 <ul>
