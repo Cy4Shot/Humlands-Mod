@@ -14,7 +14,6 @@
 <ul>
 <li>Trello: <a href="https://trello.com/b/m76L73Ku/humlands-mod">click here</a></li>
 <li>GitHub: <a href="https://github.com/Cy4Shot/Humlands-Mod">click here</a></li>
-<li>Website: <a href="https://cy4shot.github.io/Humlands-Mod/">click here</a></li>
 <li>Discord: <a href="https://discord.gg/CqNmMfY">click here</a></li>
 </ul>
 
