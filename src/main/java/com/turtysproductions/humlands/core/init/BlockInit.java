@@ -21,6 +21,8 @@ import com.turtysproductions.humlands.common.blocks.ScrapSandBlock;
 import com.turtysproductions.humlands.common.blocks.ShaperBlock;
 import com.turtysproductions.humlands.common.blocks.SifterBlock;
 import com.turtysproductions.humlands.common.blocks.TimeCapsule;
+import com.turtysproductions.humlands.common.test.MultiblockController;
+import com.turtysproductions.humlands.common.test.MultiblockPart;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -38,6 +40,16 @@ public class BlockInit {
 
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS,
 			HumlandsMod.MOD_ID);
+	
+	//TESTING!!!!!!!!!!
+	
+	public static final RegistryObject<Block> MULTIBLOCK_CONTROLLER = BLOCKS.register("multiblock_controller",
+			() -> new MultiblockController(PropertyInit.MACHINE_PROPERTY));
+	
+	public static final RegistryObject<Block> MULTIBLOCK_PART = BLOCKS.register("multiblock_part",
+			() -> new MultiblockPart(PropertyInit.MACHINE_PROPERTY));
+	
+	//STOP TESTING!!!!
 
 	public static final RegistryObject<Block> IRON_ORE_CLUMP = BLOCKS.register("iron_ore_clump",
 			() -> new OreClump(PropertyInit.ORE_PROPERTY.notSolid()));

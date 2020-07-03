@@ -15,6 +15,7 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.DirectionProperty;
@@ -169,16 +170,16 @@ public class ShaperBlock extends Block {
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
 			Hand handIn, BlockRayTraceResult p_225533_6_) {
-		if (worldIn.isRemote)
+		if (worldIn.isRemote
+				|| (handIn.equals(Hand.MAIN_HAND) && !(player.getHeldItemMainhand().getItem() instanceof BlockItem)))
 			return ActionResultType.PASS;
 		BlockPos newPos = pos;
 		if (state.get(HALF) == DoubleBlockHalf.UPPER)
 			newPos = pos.down();
 		ShaperTileEntity tileEntity = (ShaperTileEntity) worldIn.getTileEntity(newPos);
-		HumlandsMod.LOGGER.debug(tileEntity);
 		int slot = state.get(HALF) == DoubleBlockHalf.UPPER ? 1 : 0;
 
-		if (player.getHeldItem(handIn).isEmpty() && !tileEntity.getInventory().get(slot).isEmpty())
+		if (!tileEntity.getInventory().get(slot).isEmpty())
 			tileEntity.removeInv(slot, player);
 		else {
 			if (slot == 1)
@@ -188,6 +189,13 @@ public class ShaperBlock extends Block {
 		}
 
 		return ActionResultType.SUCCESS;
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public void onBlockClicked(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) {
+		HumlandsMod.LOGGER.debug("Clicked boi");
+		super.onBlockClicked(state, worldIn, pos, player);
 	}
 
 	@Override

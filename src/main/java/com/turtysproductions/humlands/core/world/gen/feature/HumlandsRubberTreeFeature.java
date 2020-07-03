@@ -24,8 +24,26 @@ public class HumlandsRubberTreeFeature extends AbstractSmallTreeFeature<TreeFeat
 		this.extra_log_chance = extra_log_chance;
 	}
 
-	public boolean func_225557_a_(IWorldGenerationReader worldReader, Random rand, BlockPos pos, Set<BlockPos> set1,
-			Set<BlockPos> set2, MutableBoundingBox mutableBoundingBox, TreeFeatureConfig config) {
+	@Override
+	protected boolean func_227216_a_(IWorldGenerationReader worldReader, Random rand, BlockPos pos,
+			Set<BlockPos> blockSet, MutableBoundingBox boundingBox, BaseTreeFeatureConfig config) {
+		if (!isAirOrLeaves(worldReader, pos) && !isTallPlants(worldReader, pos) && !isWater(worldReader, pos))
+			return false;
+		else {
+			this.func_227217_a_(worldReader, pos,
+					rand.nextInt(extra_log_chance) == 0
+							? BlockInit.RUBBER_STREAMING_RUBBER_WOOD_LOG.get().getDefaultState()
+							: BlockInit.RUBBER_WOOD_LOG.get().getDefaultState(),
+					boundingBox);
+			blockSet.add(pos.toImmutable());
+			return true;
+		}
+	}
+
+	@Override
+	protected boolean place(IWorldGenerationReader worldReader, Random rand, BlockPos pos,
+			Set<BlockPos> set1, Set<BlockPos> set2, MutableBoundingBox mutableBoundingBox,
+			TreeFeatureConfig config) {
 		int i = config.baseHeight + rand.nextInt(config.heightRandA + 1) + rand.nextInt(config.heightRandB + 1);
 		int j = config.trunkHeight >= 0 ? config.trunkHeight + rand.nextInt(config.trunkHeightRandom + 1)
 				: i - (config.foliageHeight + rand.nextInt(config.foliageHeightRandom + 1));
@@ -40,22 +58,6 @@ public class HumlandsRubberTreeFeature extends AbstractSmallTreeFeature<TreeFeat
 			this.func_227213_a_(worldReader, rand, i, blockpos,
 					config.trunkTopOffset + rand.nextInt(config.trunkTopOffsetRandom + 1), set1, mutableBoundingBox,
 					config);
-			return true;
-		}
-	}
-
-	@Override
-	protected boolean func_227216_a_(IWorldGenerationReader worldReader, Random rand, BlockPos pos,
-			Set<BlockPos> blockSet, MutableBoundingBox boundingBox, BaseTreeFeatureConfig config) {
-		if (!isAirOrLeaves(worldReader, pos) && !isTallPlants(worldReader, pos) && !isWater(worldReader, pos))
-			return false;
-		else {
-			this.func_227217_a_(worldReader, pos,
-					rand.nextInt(extra_log_chance) == 0
-							? BlockInit.RUBBER_STREAMING_RUBBER_WOOD_LOG.get().getDefaultState()
-							: BlockInit.RUBBER_WOOD_LOG.get().getDefaultState(),
-					boundingBox);
-			blockSet.add(pos.toImmutable());
 			return true;
 		}
 	}
