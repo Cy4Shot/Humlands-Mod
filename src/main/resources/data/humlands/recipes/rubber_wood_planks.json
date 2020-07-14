@@ -9,10 +9,14 @@
 
 	"key": 
 	{
-		"L": 
+		"L": [
 		{
 			"item": "humlands:rubber_wood_log"
+		},
+		{
+			"item": "humlands:stripped_rubber_wood_log"
 		}
+		]
 	},
 
 	"result": 
