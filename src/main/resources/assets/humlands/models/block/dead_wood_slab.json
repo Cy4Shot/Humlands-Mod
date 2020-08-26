@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "humlands:blocks/dead_wood_planks",
+        "top": "humlands:blocks/dead_wood_planks",
+        "side": "humlands:blocks/dead_wood_planks"
+    }
+}
