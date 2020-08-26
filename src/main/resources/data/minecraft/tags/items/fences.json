@@ -4,6 +4,7 @@
 	[
 		"#minecraft:wooden_fences",
 		"minecraft:nether_brick_fence",
-		"humlands:rubber_wood_fence"
+		"humlands:rubber_wood_fence",
+		"humlands:dead_wood_fence"
 	]
 }

@@ -2,6 +2,7 @@
 	"replace": false,
 	"values": 
 	[
-		"humlands:rubber_leaves"
+		"humlands:rubber_leaves",
+		"humlands:dead_leaves"
 	]
 }

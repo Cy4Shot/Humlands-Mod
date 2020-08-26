@@ -1,6 +1,7 @@
 package com.turtysproductions.humlands.core.world.gen;
 
 import com.turtysproductions.humlands.core.init.BlockInit;
+import com.turtysproductions.humlands.core.world.gen.feature.HumlandsDeadTree;
 import com.turtysproductions.humlands.core.world.gen.feature.HumlandsFossilFeature;
 import com.turtysproductions.humlands.core.world.gen.feature.HumlandsOreClumpFeature;
 import com.turtysproductions.humlands.core.world.gen.feature.HumlandsRubberTreeFeature;
@@ -46,13 +47,19 @@ public class ModBiomeFeatures {
 								Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(5, 0.1F, 1))));
 	}
 
+	public static void addDeadTrees(Biome biome, int chance) {
+		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
+				Feature.NORMAL_TREE.withConfiguration(HumlandsDeadTree.DEAD_TREE_CONFIG).withPlacement(
+						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1f, 1))));
+	}
+
 	public static void addOvergroundFossils(Biome biome, int chance) {
 		biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
 				new HumlandsFossilFeature(NoFeatureConfig::deserialize)
 						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
 	}
-	
+
 	public static void addRuinedLands(Biome b) {
 		addRuinedLandsPile(b);
 		addRuinedLandsMonsterRooms(b);
@@ -63,52 +70,60 @@ public class ModBiomeFeatures {
 		addRuinedLandsHouse(b);
 		addRuinedLandsPillar(b);
 	}
-	
+
 	public static void addRuinedLandsPile(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-				new RuinedLandsPileFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				new RuinedLandsPileFeature(NoFeatureConfig::deserialize)
+						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(1))));
 	}
 
 	public static void addRuinedLandsMonsterRooms(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-				new RuinedLandsMobRoomFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				new RuinedLandsMobRoomFeature(NoFeatureConfig::deserialize)
+						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(12))));
 	}
-	
+
 	public static void addRuinedLandsAquaduct(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-				new RuinedLandsAquaductFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				new RuinedLandsAquaductFeature(NoFeatureConfig::deserialize)
+						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(3))));
 	}
-	
+
 	public static void addRuinedLandsArch(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-				new RuinedLandsArchFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				new RuinedLandsArchFeature(NoFeatureConfig::deserialize)
+						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(1))));
 	}
-	
+
 	public static void addRuinedLandsHolder(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-				new RuinedLandsHolderFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				new RuinedLandsHolderFeature(NoFeatureConfig::deserialize)
+						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(1))));
 	}
-	
+
 	public static void addRuinedLandsLantern(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-				new RuinedLandsLanternFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				new RuinedLandsLanternFeature(NoFeatureConfig::deserialize)
+						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(2))));
 	}
-	
+
 	public static void addRuinedLandsHouse(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-				new RuinedLandsHouseFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				new RuinedLandsHouseFeature(NoFeatureConfig::deserialize)
+						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(4))));
 	}
-	
+
 	public static void addRuinedLandsPillar(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES,
-				new RuinedLandsPillarFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+				new RuinedLandsPillarFeature(NoFeatureConfig::deserialize)
+						.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(1))));
 	}
 
@@ -138,5 +153,4 @@ public class ModBiomeFeatures {
 				new LumberMillFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
 	}
-
 }
