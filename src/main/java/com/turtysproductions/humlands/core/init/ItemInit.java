@@ -130,10 +130,6 @@ public class ItemInit {
 			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS),
 					() -> EntityTypesInit.MUMMY.get()));
 	
-	public static final RegistryObject<Item> HUMMBLEWEED_SPAWN_EGG = ITEMS.register("humbleweed_spawn_egg",
-			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS), 
-					() -> EntityTypesInit.HUMBLEWEED.get()));
-	
 	public static final RegistryObject<Item> HUMAHOG_SPAWN_EGG = ITEMS.register("humahog_spawn_egg", 
 			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS), 
 					() -> EntityTypesInit.HUMAHOG.get()));

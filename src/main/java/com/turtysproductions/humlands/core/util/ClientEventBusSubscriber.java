@@ -29,6 +29,8 @@ public class ClientEventBusSubscriber {
 		EntityBinderInit.bindAllEntities();
 		RenderTypeLookup.setRenderLayer(BlockInit.RUBBER_WOOD_TRAPDOOR.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.RUBBER_WOOD_DOOR.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_WOOD_TRAPDOOR.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_WOOD_DOOR.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.SCRAP_GLASS.get(), RenderType.getTranslucent());
 		TileEntityRendererDispatcher.instance.setSpecialRendererInternal(TileEntityTypesInit.SHAPER_TILE_ENTITY.get(),
 				new ShaperTileEntityRenderer(TileEntityRendererDispatcher.instance));

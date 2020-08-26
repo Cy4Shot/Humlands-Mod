@@ -5,6 +5,7 @@ import com.turtysproductions.humlands.core.world.biomes.DirtyHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.RubberWoodForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.RuinedLandsBiome;
+import com.turtysproductions.humlands.core.world.biomes.WasteLandsBiome;
 import com.turtysproductions.humlands.core.world.gen.builder.DirtyHumlandsSurfaceBuilder;
 import com.turtysproductions.humlands.core.world.gen.builder.FarHumlandsSurfaceBuilder;
 import com.turtysproductions.humlands.core.world.gen.builder.RuinedLandsSurfaceBuilder;
@@ -85,6 +86,15 @@ public class BiomeInit {
 									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState(),
 									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
 					.category(Category.FOREST).depth(0.125f).downfall(0.0f).parent((String) null)));
+	
+	public static final RegistryObject<Biome> WASTE_LANDS = BIOMES.register("wastelands",
+			() -> new WasteLandsBiome(new Biome.Builder().precipitation(RainType.NONE).scale(0.2f)
+					.temperature(0.1f).waterColor(0x896D4B).waterFogColor(0x896D4B)
+					.surfaceBuilder(SurfaceBuilder.DEFAULT, 
+							new SurfaceBuilderConfig(BlockInit.WASTELAND_GRASS.get().getDefaultState(),
+									BlockInit.WASTELAND_DIRT.get().getDefaultState(),
+									BlockInit.WASTELAND_DIRT.get().getDefaultState()))
+					.category(Category.PLAINS).depth(0.125f).downfall(0.0f).parent((String) null)));
 
 	public static final BiomeDictionary.Type HUMLANDS = BiomeDictionary.Type.getType("HUMLANDS");
 
@@ -94,6 +104,7 @@ public class BiomeInit {
 		BiomeDictionary.addTypes(DIRTY_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.PLAINS);
 		BiomeDictionary.addTypes(RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 		BiomeDictionary.addTypes(RUINED_LANDS.get(), HUMLANDS, BiomeDictionary.Type.HOT);
+		BiomeDictionary.addTypes(WASTE_LANDS.get(), HUMLANDS, BiomeDictionary.Type.PLAINS);
 	}
 
 	@SuppressWarnings({ "deprecation", "unchecked" })

@@ -3,6 +3,8 @@
 	"values": 
 	[
 		"humlands:rubber_wood_forest_grass",
-		"humlands:rubber_wood_forest_dirt"
+		"humlands:rubber_wood_forest_dirt",
+		"humlands:wasteland_grass",
+		"humlands:wasteland_dirt"
 	]
 }

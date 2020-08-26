@@ -107,6 +107,7 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> RUBBER_WOOD_PLANKS = BLOCKS.register("rubber_wood_planks",
 			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
+	
 	public static final RegistryObject<Block> RUBBER_WOOD_STAIRS = BLOCKS.register("rubber_wood_stairs",
 			() -> new CustomStairs(RUBBER_WOOD_PLANKS.get().getDefaultState(),
 					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
@@ -154,4 +155,50 @@ public class BlockInit {
 	public static final RegistryObject<Block> DEAD_WOOD_LOG = BLOCKS.register("dead_wood_log",
 			() -> new LogBlock(MaterialColor.WOOD,
 					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<Block> DEAD_LEAVES = BLOCKS.register("dead_leaves",
+			() -> new CustomLeaves(Block.Properties.from(Blocks.OAK_LEAVES)));
+	
+	public static final RegistryObject<Block> DEAD_WOOD_PLANKS = BLOCKS.register("dead_wood_planks", 
+			() -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
+	
+	public static final RegistryObject<Block> DEAD_WOOD_STAIRS = BLOCKS.register("dead_wood_stairs",
+			() -> new CustomStairs(DEAD_WOOD_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<Block> DEAD_WOOD_BUTTON = BLOCKS.register("dead_wood_button",
+			() -> new CustomWoodButton(
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> DEAD_WOOD_SLAB = BLOCKS.register("dead_wood_slab",
+			() -> new CustomSlab(
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> DEAD_WOOD_FENCE_GATE = BLOCKS.register("dead_wood_fence_gate",
+			() -> new CustomFenceGate(
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> DEAD_WOOD_FENCE = BLOCKS.register("dead_wood_fence",
+			() -> new CustomFence(
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> DEAD_WOOD_PRESSURE_PLATE = BLOCKS.register("dead_wood_pressure_plate",
+			() -> new CustomPressurePlate(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> DEAD_WOOD_TRAPDOOR = BLOCKS.register("dead_wood_trapdoor",
+			() -> new CustomTrapdoor(Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F)
+					.sound(SoundType.WOOD).notSolid()));
+
+	public static final RegistryObject<Block> DEAD_WOOD_DOOR = BLOCKS.register("dead_wood_door",
+			() -> new CustomDoor(Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F, 3.0F)
+					.sound(SoundType.WOOD).notSolid()));
+	
+	public static final RegistryObject<Block> WASTELAND_GRASS = BLOCKS.register("wasteland_grass", 
+			() -> new CustomGrass(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(2.0F, 2.0F)
+					.sound(SoundType.PLANT)));
+	
+	public static final RegistryObject<Block> WASTELAND_DIRT = BLOCKS.register("wasteland_dirt", 
+			() -> new Block(Block.Properties.create(Material.ORGANIC).hardnessAndResistance(2.0F, 2.0F)
+					.sound(SoundType.GROUND)));
 }
