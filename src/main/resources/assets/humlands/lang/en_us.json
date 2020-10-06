@@ -32,6 +32,8 @@
 	"block.humlands.rubber_wood_forest_dirt": "Rubber Wood Forest Dirt",
 	"block.humlands.time_capsule": "Time Capsule",
 	"block.humlands.dead_wood_log": "Dead Wood Log",
+	"block.humlands.dead_wood_planks": "Dead Wood Planks",
+	"block.humlands.dead_wood_door": "Dead Wood Door",
 	"block.humlands.dead_wood_stairs": "Dead Wood Stairs",
 	"block.humlands.dead_wood_button": "Dead Wood Button",
 	"block.humlands.dead_wood_pressure_plate": "Dead Wood Pressure Plate",
@@ -42,7 +44,7 @@
 	"block.humlands.dead_leaves": "Dead Leaves",
 	"block.humlands.wasteland_grass": "Wasteland Grass",
 	"block.humlands.wasteland_dirt": "Wasteland Dirt",
-				
+	"block.humlands.flux_extractor": "Flux Extractor",
 	"item.humlands.carbon_sheet": "Carbon Sheet",
 	"item.humlands.carbon_tube": "Carbon Tube",
 	"item.humlands.diamond_encrusted_bone": "Diamond Encrusted Bone",
@@ -82,6 +84,7 @@
 	"biome.humlands.far_humlands": "Far Humlands",
 	"biome.humlands.dirty_humlands": "Dirty Humlands",
 	"container.time_capsule": "Time Capsule",
+	"container.flux_extractor": "Flux Extractor",
 	"entity.humlands.centipede": "Centipede",
 	"entity.humlands.humahog": "Humahog",
 	"entity.humlands.humadillo": "Humadillo"
