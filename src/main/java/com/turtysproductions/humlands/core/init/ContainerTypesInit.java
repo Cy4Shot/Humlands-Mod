@@ -3,7 +3,6 @@ package com.turtysproductions.humlands.core.init;
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.container.FluxExtractorContainer;
 import com.turtysproductions.humlands.common.container.TimeCapsuleContainer;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.util.math.BlockPos;
@@ -25,4 +24,6 @@ public class ContainerTypesInit {
 				return new FluxExtractorContainer(windowId, Minecraft.getInstance().world, pos, inv,
 						Minecraft.getInstance().player);
 			}));
+	
+
 }

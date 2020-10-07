@@ -1,0 +1,10 @@
+{
+	"type": "humlands:sifter",
+	"output": {
+		"item": "minecraft:iron_nugget"
+	},
+	
+	"input": {
+		"item": "humlands:scrap_sand"
+	}
+}
