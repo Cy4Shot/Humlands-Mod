@@ -23,6 +23,7 @@ import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.BlockBlobConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
@@ -152,5 +153,9 @@ public class ModBiomeFeatures {
 		biome.addFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION,
 				new LumberMillFeature(NoFeatureConfig::deserialize).withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(chance))));
+	}
+
+	public static void addSandbergs(Biome biome, BlockState b, int freq) {
+		biome.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.ICEBERG.withConfiguration(new BlockStateFeatureConfig(b)).withPlacement(Placement.FOREST_ROCK.configure(new FrequencyConfig(freq))));
 	}
 }

@@ -14,6 +14,7 @@ public class WasteLandsBiome extends HumlandsBaseBiome {
 		DefaultBiomeFeatures.addGrass(this);
 		ModBiomeFeatures.addCustomRocks(this, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 5);
 		ModBiomeFeatures.addCustomRocks(this, BlockInit.SCRAP_SAND.get().getDefaultState(), 5);
+		ModBiomeFeatures.addSandbergs(this, BlockInit.SCRAP_SAND.get().getDefaultState(), 3);
 		ModBiomeFeatures.addOreClump(this, BlockInit.FLUX_ORE_CLUMP.get().getDefaultState(), 6);
 	}
 	

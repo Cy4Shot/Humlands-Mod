@@ -25,6 +25,7 @@ public class ParticleInit {
 
 	// Used to register the particle factories, created in the particle class
 	// (Client only)
+	@SuppressWarnings("resource")
 	@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = HumlandsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 	public static class FactoryHandler {
 		@SubscribeEvent

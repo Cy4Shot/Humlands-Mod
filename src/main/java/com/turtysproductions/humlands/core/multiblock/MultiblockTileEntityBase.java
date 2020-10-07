@@ -2,8 +2,6 @@ package com.turtysproductions.humlands.core.multiblock;
 
 import java.util.Arrays;
 
-import com.turtysproductions.humlands.HumlandsMod;
-
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -43,17 +41,12 @@ public abstract class MultiblockTileEntityBase extends TileEntity implements ITi
 
 	private boolean hasStructureAtX(BlockData[] pattern, BlockPos corner, BlockPos axis, int flip) {
 		for (BlockData data : pattern) {
-			HumlandsMod.LOGGER
-					.debug(BlockPosUtil
-							.multiplyBPos(new BlockPos(flip - data.pos.add(1, 1, 1).getX(),
-									data.pos.add(1, 1, 1).getY(), data.pos.add(1, 1, 1).getZ()), axis)
-							.add(corner.subtract(new BlockPos(1, 1, 1))));
 			if (!(data.allowedBlocks
 					.contains(world.getBlockState(BlockPosUtil
 							.multiplyBPos(new BlockPos(flip - data.pos.add(1, 1, 1).getX(),
 									data.pos.add(1, 1, 1).getY(), data.pos.add(1, 1, 1).getZ()), axis)
 							.add(corner.subtract(new BlockPos(1, 1, 1))))))) {
-				HumlandsMod.LOGGER.debug("failed multiblock test in direction:" + axis.toString());
+				//HumlandsMod.LOGGER.debug("failed multiblock test in direction:" + axis.toString());
 				return false;
 			}
 		}
@@ -62,17 +55,12 @@ public abstract class MultiblockTileEntityBase extends TileEntity implements ITi
 
 	private boolean hasStructureAtY(BlockData[] pattern, BlockPos corner, BlockPos axis, int flip) {
 		for (BlockData data : pattern) {
-			HumlandsMod.LOGGER
-					.debug(BlockPosUtil
-							.multiplyBPos(new BlockPos(data.pos.add(1, 1, 1).getX(),
-									flip - data.pos.add(1, 1, 1).getY(), data.pos.add(1, 1, 1).getZ()), axis)
-							.add(corner.subtract(new BlockPos(1, 1, 1))));
 			if (!(data.allowedBlocks
 					.contains(world.getBlockState(BlockPosUtil
 							.multiplyBPos(new BlockPos(data.pos.add(1, 1, 1).getX(),
 									flip - data.pos.add(1, 1, 1).getY(), data.pos.add(1, 1, 1).getZ()), axis)
 							.add(corner.subtract(new BlockPos(1, 1, 1))))))) {
-				HumlandsMod.LOGGER.debug("failed multiblock test in direction:" + axis.toString());
+				//HumlandsMod.LOGGER.debug("failed multiblock test in direction:" + axis.toString());
 				return false;
 			}
 		}
@@ -81,16 +69,11 @@ public abstract class MultiblockTileEntityBase extends TileEntity implements ITi
 
 	private boolean hasStructureAtZ(BlockData[] pattern, BlockPos corner, BlockPos axis, int flip) {
 		for (BlockData data : pattern) {
-			HumlandsMod.LOGGER
-					.debug(BlockPosUtil
-							.multiplyBPos(new BlockPos(data.pos.add(1, 1, 1).getX(), data.pos.add(1, 1, 1).getY(),
-									flip - data.pos.add(1, 1, 1).getZ()), axis)
-							.add(corner.subtract(new BlockPos(1, 1, 1))));
 			if (!(data.allowedBlocks.contains(world.getBlockState(BlockPosUtil
 					.multiplyBPos(new BlockPos(data.pos.add(1, 1, 1).getX(), data.pos.add(1, 1, 1).getY(),
 							flip - data.pos.add(1, 1, 1).getZ()), axis)
 					.add(corner.subtract(new BlockPos(1, 1, 1))))))) {
-				HumlandsMod.LOGGER.debug("failed multiblock test in direction:" + axis.toString());
+				//HumlandsMod.LOGGER.debug("failed multiblock test in direction:" + axis.toString());
 				return false;
 			}
 		}
