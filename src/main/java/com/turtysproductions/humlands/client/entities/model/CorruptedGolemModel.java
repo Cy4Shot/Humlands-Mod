@@ -6,7 +6,6 @@ import com.turtysproductions.humlands.common.entities.CorruptedGolem;
 
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
 
 public class CorruptedGolemModel<T extends CorruptedGolem> extends EntityModel<T> {
 	private final ModelRenderer CorruptedGolem;
