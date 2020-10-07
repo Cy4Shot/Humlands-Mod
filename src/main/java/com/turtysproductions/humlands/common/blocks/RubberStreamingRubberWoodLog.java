@@ -8,7 +8,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -46,5 +48,15 @@ public class RubberStreamingRubberWoodLog extends LogBlock {
 			client.addParticle(ParticleInit.DRIPPING_RUBBER.get(), d9, d10, d11, 0.0D, 0.0D, 0.0D);
 
 		}
+	}
+	
+	@Override
+	public int getFlammability(BlockState state, IBlockReader world, BlockPos pos, Direction face){
+		return 5;
+	}
+	
+	@Override
+	public int getFireSpreadSpeed(BlockState state, IBlockReader world, BlockPos pos, Direction face){
+		return 5;
 	}
 }

@@ -2,11 +2,25 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "humlands:rubber_wood_door",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
           "name": "humlands:rubber_wood_door"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
         }
       ]
     }

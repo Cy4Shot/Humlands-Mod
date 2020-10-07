@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "down": "humlands:blocks/wasteland_dirt",
+        "up": "humlands:blocks/wasteland_grass_top",
+        "side": "humlands:blocks/wasteland_grass_side"
+    }
+}

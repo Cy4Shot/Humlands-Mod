@@ -1,6 +1,5 @@
 package com.turtysproductions.humlands.common.tileentities;
 
-import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.recipe.ShaperRecipe;
 import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 
@@ -16,7 +15,6 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.BlockPos;
 
 public class ShaperTileEntity extends TileEntity implements IClearable, ITickableTileEntity {
 
@@ -42,13 +40,9 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 			ItemStack itemstack = this.inventory.get(0);
 			if (!itemstack.isEmpty() && !this.inventory.get(1).isEmpty()) {
 				this.cookingTime++;
-				HumlandsMod.LOGGER.debug(this.cookingTime);
 				if (this.cookingTime >= this.cookingTotalTime) {
-					ItemStack itemstack1 = recipeHandler.getShaperResult(itemstack, this.inventory.get(1));
-					BlockPos blockpos = this.getPos();
-					InventoryHelper.spawnItemStack(this.world, (double) blockpos.getX(), (double) blockpos.getY(),
-							(double) blockpos.getZ(), itemstack1);
-					this.inventory.set(0, ItemStack.EMPTY);
+					this.inventory.set(0, recipeHandler.getShaperResult(itemstack, this.inventory.get(1)));
+					this.cookingTime = 0;
 					this.inventoryChanged();
 				}
 			}
@@ -108,7 +102,7 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 		if (!this.inventory.get(slot).isEmpty()) {
 			this.cookingTime = 0;
 			player.inventory.addItemStackToInventory(this.inventory.get(slot));
-			this.inventory.set(0, ItemStack.EMPTY);
+			this.inventory.set(slot, ItemStack.EMPTY);
 			this.inventoryChanged();
 			return true;
 		}

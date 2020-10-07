@@ -18,7 +18,6 @@ public class ContainerTypesInit {
 	public static final RegistryObject<ContainerType<TimeCapsuleContainer>> TIME_CAPSULE_CONTAINER = CONTAINER_TYPES
 			.register("time_capsule", () -> IForgeContainerType.create(TimeCapsuleContainer::new));
 
-	@SuppressWarnings("resource")
 	public static final RegistryObject<ContainerType<FluxExtractorContainer>> FLUX_EXTRACTOR_CONTAINER = CONTAINER_TYPES
 			.register("flux_extractor", () -> IForgeContainerType.create((windowId, inv, data) -> {
 				BlockPos pos = data.readBlockPos();

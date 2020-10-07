@@ -5,9 +5,11 @@ import com.turtysproductions.humlands.core.world.biomes.DirtyHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.FarHumlandsBiome;
 import com.turtysproductions.humlands.core.world.biomes.RubberWoodForestBiome;
 import com.turtysproductions.humlands.core.world.biomes.RuinedLandsBiome;
+import com.turtysproductions.humlands.core.world.biomes.WasteLandsBiome;
 import com.turtysproductions.humlands.core.world.gen.builder.DirtyHumlandsSurfaceBuilder;
 import com.turtysproductions.humlands.core.world.gen.builder.FarHumlandsSurfaceBuilder;
 import com.turtysproductions.humlands.core.world.gen.builder.RuinedLandsSurfaceBuilder;
+import com.turtysproductions.humlands.core.world.gen.builder.WasteLandsSurfaceBuilder;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
@@ -31,19 +33,21 @@ public class BiomeInit {
 	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES,
 			HumlandsMod.MOD_ID);
 
-	public static final RegistryObject<Biome> FAR_HUMLANDS = BIOMES.register("far_humlands",
-			() -> new FarHumlandsBiome(new Biome.Builder()
-					.surfaceBuilder(
-							new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
-									register("far_humlands_surface",
-											new FarHumlandsSurfaceBuilder(
-													SurfaceBuilderConfig::deserialize)),
-									new SurfaceBuilderConfig(Blocks.RED_SAND.getDefaultState(),
-											Blocks.RED_SAND.getDefaultState(),
-											Blocks.RED_SANDSTONE.getDefaultState())))
-					.precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.125F).scale(0.05F)
-					.temperature(1000.8F).downfall(0.4F).waterColor(4159204).waterFogColor(329011)
-					.parent((String) null)));
+	public static final RegistryObject<Biome> FAR_HUMLANDS = BIOMES
+			.register("far_humlands",
+					() -> new FarHumlandsBiome(
+							new Biome.Builder()
+									.surfaceBuilder(
+											new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
+													register("far_humlands_surface",
+															new FarHumlandsSurfaceBuilder(
+																	SurfaceBuilderConfig::deserialize)),
+													new SurfaceBuilderConfig(Blocks.RED_SAND.getDefaultState(),
+															Blocks.RED_SAND.getDefaultState(),
+															Blocks.RED_SANDSTONE.getDefaultState())))
+									.precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.125F)
+									.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
+									.waterFogColor(329011).parent((String) null)));
 
 	public static final RegistryObject<Biome> DIRTY_HUMLANDS = BIOMES
 			.register("dirty_humlands",
@@ -60,7 +64,7 @@ public class BiomeInit {
 									.precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.125F)
 									.scale(0.05F).temperature(1000.8F).downfall(0.4F).waterColor(4159204)
 									.waterFogColor(329011).parent((String) null)));
-	
+
 	public static final RegistryObject<Biome> RUINED_LANDS = BIOMES
 			.register("ruined_lands",
 					() -> new RuinedLandsBiome(
@@ -86,6 +90,17 @@ public class BiomeInit {
 									BlockInit.RUBBER_WOOD_FOREST_DIRT.get().getDefaultState()))
 					.category(Category.FOREST).depth(0.125f).downfall(0.0f).parent((String) null)));
 
+	public static final RegistryObject<Biome> WASTE_LANDS = BIOMES.register("wastelands",
+			() -> new WasteLandsBiome(new Biome.Builder().precipitation(RainType.NONE).scale(0.2f).temperature(0.1f)
+					.waterColor(0x896D4B).waterFogColor(0x896D4B)
+					.surfaceBuilder(new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
+							register("waste_lands_surface",
+									new WasteLandsSurfaceBuilder(SurfaceBuilderConfig::deserialize)),
+							new SurfaceBuilderConfig(BlockInit.SCRAP_SAND.get().getDefaultState(),
+									BlockInit.SCRAP_SAND.get().getDefaultState(),
+									BlockInit.WASTELAND_GRASS.get().getDefaultState())))
+					.category(Category.PLAINS).depth(0.125f).downfall(0.0f).parent((String) null)));
+
 	public static final BiomeDictionary.Type HUMLANDS = BiomeDictionary.Type.getType("HUMLANDS");
 
 	public static void addBiomeTypes() {
@@ -94,6 +109,7 @@ public class BiomeInit {
 		BiomeDictionary.addTypes(DIRTY_HUMLANDS.get(), HUMLANDS, BiomeDictionary.Type.PLAINS);
 		BiomeDictionary.addTypes(RUBBER_WOOD_FOREST.get(), HUMLANDS, BiomeDictionary.Type.FOREST);
 		BiomeDictionary.addTypes(RUINED_LANDS.get(), HUMLANDS, BiomeDictionary.Type.HOT);
+		BiomeDictionary.addTypes(WASTE_LANDS.get(), HUMLANDS, BiomeDictionary.Type.PLAINS);
 	}
 
 	@SuppressWarnings({ "deprecation", "unchecked" })

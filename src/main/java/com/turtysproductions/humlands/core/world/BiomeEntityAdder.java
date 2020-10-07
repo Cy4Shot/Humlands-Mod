@@ -1,4 +1,4 @@
-package com.turtysproductions.humlands.core.world.gen;
+package com.turtysproductions.humlands.core.world;
 
 import com.turtysproductions.humlands.core.init.BiomeInit;
 import com.turtysproductions.humlands.core.init.EntityTypesInit;

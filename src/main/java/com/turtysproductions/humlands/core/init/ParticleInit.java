@@ -27,7 +27,6 @@ public class ParticleInit {
 	// (Client only)
 	@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = HumlandsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 	public static class FactoryHandler {
-		@SuppressWarnings("resource")
 		@SubscribeEvent
 		public static void registerFactories(ParticleFactoryRegisterEvent event) {
 			Minecraft.getInstance().particles.registerFactory(ParticleInit.DRIPPING_RUBBER.get(),

@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "humlands:blocks/flux_extractor_top",
+        "front": "humlands:blocks/flux_extractor_front_on",
+        "side": "humlands:blocks/flux_extractor_side"
+    }
+}

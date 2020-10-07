@@ -18,7 +18,7 @@ import com.turtysproductions.humlands.core.init.RecipeSerializerInit;
 import com.turtysproductions.humlands.core.init.SoundInit;
 import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
-import com.turtysproductions.humlands.core.world.gen.BiomeEntityAdder;
+import com.turtysproductions.humlands.core.world.BiomeEntityAdder;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
