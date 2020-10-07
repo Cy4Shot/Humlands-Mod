@@ -120,6 +120,7 @@ public class ShaperTileEntity extends TileEntity implements IClearable, ITickabl
 		this.inventory.clear();
 	}
 
+	
 	public void dropAllItems() {
 		if (!this.getWorld().isRemote) {
 			InventoryHelper.dropItems(this.getWorld(), this.getPos(), this.getInventory());

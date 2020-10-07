@@ -14,6 +14,7 @@ import com.turtysproductions.humlands.core.init.EntityTypesInit;
 import com.turtysproductions.humlands.core.init.FluidInit;
 import com.turtysproductions.humlands.core.init.ItemInit;
 import com.turtysproductions.humlands.core.init.ParticleInit;
+import com.turtysproductions.humlands.core.init.RecipeSerializerInit;
 import com.turtysproductions.humlands.core.init.SoundInit;
 import com.turtysproductions.humlands.core.init.TileEntityTypesInit;
 import com.turtysproductions.humlands.core.tab.HumlandsTab;
@@ -57,6 +58,7 @@ public class HumlandsMod {
 		EntityTypesInit.ENTITY_TYPES.register(bus);
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
+        RecipeSerializerInit.RECIPE_SERIALIZERS.register(bus);
         TileEntityTypesInit.TILE_ENTITY_TYPES.register(bus);
         ContainerTypesInit.CONTAINER_TYPES.register(bus);
         ParticleInit.PARTICLES.register(bus);

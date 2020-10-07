@@ -2,6 +2,8 @@ package com.turtysproductions.humlands.core.init;
 
 import com.turtysproductions.humlands.HumlandsMod;
 import com.turtysproductions.humlands.common.entities.Centipede;
+import com.turtysproductions.humlands.common.entities.CorruptedGolem;
+import com.turtysproductions.humlands.common.entities.Cyberpede;
 import com.turtysproductions.humlands.common.entities.Humadillo;
 import com.turtysproductions.humlands.common.entities.Humahog;
 import com.turtysproductions.humlands.common.entities.Humbleweed;
@@ -42,6 +44,14 @@ public class EntityTypesInit {
 					.build(new ResourceLocation(HumlandsMod.MOD_ID, "rubber_ball_entity").toString()));
 	
 	public static final RegistryObject<EntityType<Centipede>> CENTIPEDE = ENTITY_TYPES.register("centipede",
-			() -> EntityType.Builder.<Centipede>create(Centipede::new, EntityClassification.CREATURE).size(2.5f, 0.5f)
+			() -> EntityType.Builder.<Centipede>create(Centipede::new, EntityClassification.MONSTER).size(2.5f, 0.5f)
 					.build(new ResourceLocation(HumlandsMod.MOD_ID, "centipede").toString()));
+	
+	public static final RegistryObject<EntityType<Cyberpede>> CYBERPEDE = ENTITY_TYPES.register("cyberpede", 
+			() -> EntityType.Builder.<Cyberpede>create(Cyberpede::new, EntityClassification.MISC).size(2.5f, 0.5f)
+			.build(new ResourceLocation(HumlandsMod.MOD_ID, "cyberpede").toString()));
+	
+	public static final RegistryObject<EntityType<CorruptedGolem>> CORRUPTED_GOLEM = ENTITY_TYPES.register("corrupted_golem", 
+			() -> EntityType.Builder.<CorruptedGolem>create(CorruptedGolem::new, EntityClassification.MISC).size(1.5f, 4.0f)
+			.build(new ResourceLocation(HumlandsMod.MOD_ID, "corrupted_golem").toString()));
 }

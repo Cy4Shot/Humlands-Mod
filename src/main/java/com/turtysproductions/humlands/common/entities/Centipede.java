@@ -18,12 +18,10 @@ import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerBossInfo;
-import net.minecraftforge.fml.network.NetworkHooks;
 
 public class Centipede extends CreatureEntity 
 {
@@ -160,9 +158,5 @@ public class Centipede extends CreatureEntity
 		return false;
 	}
 	
-	@Override
-	public IPacket<?> createSpawnPacket() {
-		
-		return NetworkHooks.getEntitySpawningPacket(this);
-	}
+	
 }

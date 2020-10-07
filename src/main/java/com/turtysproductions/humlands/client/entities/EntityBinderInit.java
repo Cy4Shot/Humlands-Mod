@@ -1,6 +1,7 @@
 package com.turtysproductions.humlands.client.entities;
 
 import com.turtysproductions.humlands.client.entities.render.CentipedeRender;
+import com.turtysproductions.humlands.client.entities.render.CyberpedeRender;
 import com.turtysproductions.humlands.client.entities.render.HumadilloRender;
 import com.turtysproductions.humlands.client.entities.render.HumahogRender;
 import com.turtysproductions.humlands.client.entities.render.HumbleweedRender;
@@ -20,5 +21,6 @@ public class EntityBinderInit {
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RUBBER_BALL_ENTITY.get(),
 				manager -> new SpriteRenderer<>(manager, Minecraft.getInstance().getItemRenderer()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CENTIPEDE.get(), CentipedeRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CYBERPEDE.get(), CyberpedeRender::new);
 	}
 }

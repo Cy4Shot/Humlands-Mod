@@ -44,7 +44,6 @@ public class HumlandsRubberTreeFeature extends AbstractSmallTreeFeature<TreeFeat
 		}
 	}
 
-	@Override
 	protected boolean func_227216_a_(IWorldGenerationReader worldReader, Random rand, BlockPos pos,
 			Set<BlockPos> blockSet, MutableBoundingBox boundingBox, BaseTreeFeatureConfig config) {
 		if (!isAirOrLeaves(worldReader, pos) && !isTallPlants(worldReader, pos) && !isWater(worldReader, pos))
@@ -58,5 +57,13 @@ public class HumlandsRubberTreeFeature extends AbstractSmallTreeFeature<TreeFeat
 			blockSet.add(pos.toImmutable());
 			return true;
 		}
+	}
+
+	@Override
+	protected boolean place(IWorldGenerationReader generationReader, Random rand, BlockPos positionIn,
+			Set<BlockPos> p_225557_4_, Set<BlockPos> p_225557_5_, MutableBoundingBox boundingBoxIn,
+			TreeFeatureConfig configIn) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

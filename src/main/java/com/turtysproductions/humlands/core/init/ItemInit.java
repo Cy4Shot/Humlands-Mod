@@ -129,4 +129,23 @@ public class ItemInit {
 	public static final RegistryObject<Item> MUMMY_SPAWN_EGG = ITEMS.register("mummy_spawn_egg",
 			() -> new ModSpawnEgg(new Item.Properties().group(HumlandsTab.HUMLANDS),
 					() -> EntityTypesInit.MUMMY.get()));
+	
+	public static final RegistryObject<Item> CYBERPEDE_STORAGE_MODULE = ITEMS.register("cyberpede_storage_module",
+			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

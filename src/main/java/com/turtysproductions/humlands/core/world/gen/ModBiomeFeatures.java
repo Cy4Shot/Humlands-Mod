@@ -120,7 +120,7 @@ public class ModBiomeFeatures {
 
 	public static void addOreClump(Biome biomeIn, BlockState block, int chance) {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
-				new HumlandsOreClumpFeature(BlockClusterFeatureConfig::func_227300_a_)
+				new HumlandsOreClumpFeature(BlockClusterFeatureConfig::deserialize)
 						.withConfiguration((new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(block),
 								new SimpleBlockPlacer())).tries(64).func_227317_b_().build())
 						.withPlacement(Placement.CHANCE_HEIGHTMAP_DOUBLE.configure(new ChanceConfig(8))));
